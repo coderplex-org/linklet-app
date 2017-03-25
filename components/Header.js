@@ -48,7 +48,7 @@ export default props => (
             </Link>
           </li>}
         {props.about &&
-          <li class='filterBtn'>
+          <li className='filterBtn'>
             <a onClick={props.toggleFilter} href='#'>
               <FilterIcon />
             </a>

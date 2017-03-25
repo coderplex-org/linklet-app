@@ -38,7 +38,8 @@ export default ({ title }) => (
     <meta name='theme-color' content='#3f51b5' />
     <title>{title}</title>
     <meta
-      description='Linklet as of now contains the links which are shared in whatsapp freeCodeCamp Hyderabad group.'
+      name='description'
+      content='Linklet as of now contains the links which are shared in whatsapp freeCodeCamp Hyderabad group.'
     />
     <meta property='og:type' content='website' />
     <meta property='og:title' content={title} />

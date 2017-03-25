@@ -176,9 +176,9 @@ export default (
               </strong>
               {' '}
               <Link href='/' scroll><a>clear</a></Link>
-              (Showing Page: {page})
             </div>
-        </span>
+            (Showing Page: {page})
+          </span>
         : <span>
             Total:
             {' '}
