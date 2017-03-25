@@ -180,7 +180,14 @@ export default (
             </div>
         </span>
         : <span>
-            Total: <strong>{totalLinks}</strong> links were added upto now (Showing Page: {page})
+            Total:
+            {' '}
+          <strong>{totalLinks}</strong>
+          {' '}
+            links were added upto now (Showing Page:
+            {' '}
+          {page}
+            )
           </span>}
     </div>
     <ul className='list'>
