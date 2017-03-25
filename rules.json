@@ -1,0 +1,6 @@
+{
+	"rules": [
+		{"pathname": "/api/**", "dest": "api.links.linklet.ml"},
+		{"dest": "linklet-app.now.sh"}
+	]
+}

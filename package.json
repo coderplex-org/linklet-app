@@ -1,0 +1,41 @@
+{
+  "name": "next-fcc-links",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "date-fns": "^1.28.1",
+    "next": "beta",
+    "nprogress": "^0.2.0",
+    "rc-pagination": "^1.8.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-ga": "^2.1.2",
+    "react-lazyload": "^2.2.5",
+    "react-modal-dialog": "^4.0.7"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "npm run lint && now -t $TB",
+    "alias": "now -t $TB alias",
+    "alias-rules": "now -t $TB alias linklet.ml -r rules.json",
+    "lint": "prettier 'lib/*.js' 'components/*.js' 'pages/*.js' --write --single-quote && standard --fix"
+  },
+  "devDependencies": {
+    "prettier": "^0.22.0",
+    "standard": "^9.0.2"
+  },
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinaypuppal/linklet-app.git"
+  },
+  "keywords": [],
+  "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinaypuppal/linklet-app/issues"
+  },
+  "homepage": "https://github.com/vinaypuppal/linklet-app#readme",
+  "description": ""
+}
