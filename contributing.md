@@ -5,7 +5,7 @@
 
   ```bash
   # Get the latest snapshot
-  git clone https://github.com/vinaypuppal/linklet linklet
+  git clone https://github.com/vinaypuppal/linklet-app linklet
 
   # Change directory
   cd linklet
