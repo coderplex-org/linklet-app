@@ -264,6 +264,7 @@ export default props => {
           color: #fff;
           overflow-y: auto;
           box-shadow: 0 0 4px rgba(0,0,0,.14), 2px 4px 8px rgba(0,0,0,.28);
+          z-index: 3;
         }
         main {
           padding: 0 20px;
