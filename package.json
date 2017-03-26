@@ -19,11 +19,20 @@
     "deploy": "npm run lint && now -t $TB",
     "alias": "now -t $TB alias",
     "alias-rules": "now -t $TB alias linklet.ml -r rules.json",
-    "lint": "prettier 'lib/*.js' 'components/*.js' 'pages/*.js' --write --single-quote && standard --fix"
+    "lint": "prettier 'lib/*.js' 'components/*.js' 'pages/*.js' --write --single-quote && standard --fix",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.0",
     "prettier": "^0.22.0",
     "standard": "^9.0.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "git add"
+    ]
   },
   "version": "1.0.0",
   "repository": {
