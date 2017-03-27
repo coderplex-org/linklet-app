@@ -68,7 +68,7 @@ export default ({ query, page, totalLinks }) => {
     return (
       <div className='info'>
         <p>
-          Total: <strong> {totalLinks} </strong>link/s were found upto now
+          Total: <strong> {totalLinks} </strong>link/s were added upto now
         </p>
         <p className='pageNum'>
           Page: {page}
