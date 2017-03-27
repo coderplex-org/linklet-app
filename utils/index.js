@@ -8,4 +8,4 @@ const truncateString = (str, num) => {
   return str
 }
 
-export {truncateString}
+export { truncateString }

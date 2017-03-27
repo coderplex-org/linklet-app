@@ -7,6 +7,8 @@ import LinkIcon from './LinkIcon'
 import FilterIcon from './FilterIcon'
 import { logEvent } from '../lib/analytics'
 
+import '../utils/offlineInstaller'
+
 Router.onRouteChangeStart = () => {
   NProgress.start()
 }

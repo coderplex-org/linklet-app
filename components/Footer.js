@@ -4,7 +4,11 @@ export default () => (
     <p>
       ☛
       {' '}
-      <a target='_blank' href='https://github.com/vinaypuppal/linklet-app'>
+      <a
+        rel='noopener'
+        target='_blank'
+        href='https://github.com/vinaypuppal/linklet-app'
+      >
         Source Code
       </a>
       {' '}

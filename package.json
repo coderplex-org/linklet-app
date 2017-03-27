@@ -3,6 +3,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "date-fns": "^1.28.1",
+    "express": "^4.15.2",
     "next": "^2.0.0",
     "nprogress": "^0.2.0",
     "rc-pagination": "^1.8.0",
@@ -15,18 +16,19 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server",
     "deploy": "npm run lint && now -t $TB",
     "alias": "now -t $TB alias",
     "alias-rules": "now -t $TB alias linklet.ml -r rules.json",
-    "lint": "prettier 'lib/*.js' 'components/*.js' 'pages/*.js' --write --single-quote && standard --fix",
+    "lint": "prettier 'lib/*.js' 'utils/*.js' 'components/*.js' 'pages/*.js' --write --single-quote && standard --fix",
     "precommit": "lint-staged"
   },
   "devDependencies": {
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
     "prettier": "^0.22.0",
-    "standard": "^9.0.2"
+    "standard": "^9.0.2",
+    "sw-precache-webpack-plugin": "^0.9.1"
   },
   "lint-staged": {
     "*.js": [

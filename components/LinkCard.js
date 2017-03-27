@@ -14,7 +14,12 @@ export default ({ link }) => {
   }
   return (
     <li key={link._id} className='list__item'>
-      <a className='list__itemLink' href={link.url} target='_blank'>
+      <a
+        rel='noopener'
+        className='list__itemLink'
+        href={link.url}
+        target='_blank'
+      >
         <div className='item__media'>
           {link.image
             ? <LazyLoad height={200} offset={100}>
@@ -62,7 +67,7 @@ export default ({ link }) => {
             cursor: pointer;
             width: 100%;
             text-decoration: none;
-            color: #888;
+            color: #444;
           }
           .list__item:hover {
             box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
@@ -101,7 +106,7 @@ export default ({ link }) => {
           .desc {
             margin: 0;
             font-size: 14px;
-            color: #888;
+            color: #444;
             padding: 5px 10px;
             line-height: 1.2em;
             max-height: 3.8em;
@@ -122,7 +127,7 @@ export default ({ link }) => {
             align-items: center;
           }
           .item__footer span {
-            color: #999;
+            color: #666;
           }
           .item__footer a {
             text-decoration: none;
