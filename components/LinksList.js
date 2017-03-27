@@ -46,6 +46,7 @@ export default (
             padding: 0;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
           }
           .pagination{
             display: flex;
