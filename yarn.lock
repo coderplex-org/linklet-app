@@ -2780,9 +2780,9 @@ ncp@~2.0.0:
   version "2.0.0"
   resolved ncp-2.0.0.tgz#195a21d6c46e361d2fb1281ba38b91e9df7bdbb3
 
-next@2.0.0-beta.40:
-  version "2.0.0-beta.40"
-  resolved next-2.0.0-beta.40.tgz#b581ec0770059863966bc9fea4f5fe80930ff9ce
+next@^2.0.0:
+  version "2.0.0"
+  resolved next-2.0.0.tgz#abab032e58c47e238b488550e0c9c3d829bf5728
   dependencies:
     ansi-html "0.0.7"
     babel-core "6.24.0"
