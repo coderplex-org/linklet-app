@@ -14,7 +14,8 @@ export default () => (
         padding: 0;
         margin: 0;
         background: #f4f4f4;
-        font-family: -apple-system, 
+        font-family: -apple-system,
+              system-ui,
               BlinkMacSystemFont,
               "Segoe UI", 
               Roboto, 
