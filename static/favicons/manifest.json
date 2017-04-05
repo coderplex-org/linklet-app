@@ -2,7 +2,6 @@
 	"name": "Linklet App",
 	"short_name": "Linklet",
 	"description": "The app that helps you find the best links shared in fcc-hyd WA group!",
-	"orientation": "portrait-primary",
 	"start_url": "/",
 	"theme_color": "#253592",
 	"background_color": "#3f51b5",
