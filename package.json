@@ -1,10 +1,10 @@
 {
   "name": "linklet-app",
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.16.0",
     "date-fns": "^1.28.2",
     "express": "^4.15.2",
-    "next": "^2.0.1",
+    "next": "^2.1.0",
     "nprogress": "^0.2.0",
     "rc-pagination": "^1.8.2",
     "react": "^15.4.2",
@@ -27,7 +27,7 @@
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
     "prettier": "^0.22.0",
-    "standard": "^9.0.2",
+    "standard": "^10.0.1",
     "sw-precache-webpack-plugin": "^0.9.1"
   },
   "lint-staged": {
