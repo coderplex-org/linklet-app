@@ -18,7 +18,7 @@ import { initGA, logPageView } from '../lib/analytics'
 
 export default class Home extends Component {
   static async getInitialProps ({ query }) {
-    const { start, end, page = 1 } = query
+    const { start, end, page = 1, search } = query
 
     const today = new Date()
     const yesterday = addDays(today, -1)
@@ -48,9 +48,9 @@ export default class Home extends Component {
     let res
     try {
       if (start && end) {
-        res = await db.getByFilter({ start, end, page })
+        res = await db.getByFilter({ start, end, page, search })
       } else {
-        res = await db.getAll({ page })
+        res = await db.getAll({ page, search })
       }
     } catch (e) {
       throw e
@@ -111,6 +111,7 @@ export default class Home extends Component {
           toggleFilter={this.toggleFilter.bind(this)}
         />
         <SideBar
+          url={url}
           filterOptions={filterOptions}
           toggleFilter={this.toggleFilter.bind(this)}
           filterOpenState={this.state.toggleFilter}

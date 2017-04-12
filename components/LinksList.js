@@ -3,14 +3,16 @@ import Pagination from 'rc-pagination'
 import LinkCard from './LinkCard'
 import PageInfo from './PageInfo'
 import Footer from '../components/Footer'
+import SearchBar from '../components/Search'
 
 export default (
   { data: { links, isLastPage, totalLinks, perPage, page }, url: { query } }
 ) => (
   <main>
+    <SearchBar query={query} />
     <PageInfo query={query} page={page} totalLinks={totalLinks} />
     <ul className='list'>
-      {links.map(link => <LinkCard key={link._id} link={link} />)}
+      {links.map(link => <LinkCard key={link._id} link={link} query={query} />)}
     </ul>
     <div className='pagination'>
       <Pagination
@@ -20,14 +22,29 @@ export default (
         onChange={(current, pageSize) => {
           const start = query && query.start
           const end = query && query.end
+          const search = query && query.search
           if (start && end) {
-            Router.push(`/?start=${start}&end=${end}&page=${current}`)
-              .then(() => window.scrollTo(0, 0))
-              .catch(e => console.log(e))
+            if (search) {
+              Router.push(
+                `/?start=${start}&end=${end}&page=${current}&search=${search}`
+              )
+                .then(() => window.scrollTo(0, 0))
+                .catch(e => console.log(e))
+            } else {
+              Router.push(`/?start=${start}&end=${end}&page=${current}`)
+                .then(() => window.scrollTo(0, 0))
+                .catch(e => console.log(e))
+            }
           } else {
-            Router.push(`/?page=${current}`)
-              .then(() => window.scrollTo(0, 0))
-              .catch(e => console.log(e))
+            if (search) {
+              Router.push(`/?page=${current}&search=${search}`)
+                .then(() => window.scrollTo(0, 0))
+                .catch(e => console.log(e))
+            } else {
+              Router.push(`/?page=${current}`)
+                .then(() => window.scrollTo(0, 0))
+                .catch(e => console.log(e))
+            }
           }
         }}
       />
@@ -42,7 +59,7 @@ export default (
           }
           .list {
             list-style-type: none;
-            margin: 0 auto;
+            margin: 0 20px;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
@@ -54,7 +71,8 @@ export default (
           }
           @media(max-width: 720px) {
             main {
-              margin: 0 20px;
+              margin: 0;
+              padding-top: 120px;
             }
           }
           @media(max-width: 520px) {

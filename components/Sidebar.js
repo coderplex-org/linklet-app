@@ -2,11 +2,20 @@ import format from 'date-fns/format'
 import addDays from 'date-fns/add_days'
 import Router from 'next/router'
 
-const changeRoute = (start, end) => {
-  console.log({ start, end })
-  Router.push(`/?start=${start}&end=${end}`)
-    .then(() => window.scrollTo(0, 0))
-    .catch(e => console.log(e))
+const changeRoute = (start, end, props) => {
+  const search = props.url.query
+    ? props.url.query.search ? props.url.query.search : null
+    : null
+  console.log({ start, end, search })
+  if (search) {
+    Router.push(`/?start=${start}&end=${end}&search=${search}`)
+      .then(() => window.scrollTo(0, 0))
+      .catch(e => console.log(e))
+  } else {
+    Router.push(`/?start=${start}&end=${end}`)
+      .then(() => window.scrollTo(0, 0))
+      .catch(e => console.log(e))
+  }
 }
 
 export default props => {
@@ -47,7 +56,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       new Date(yesterday).getTime(),
-                      new Date(today).getTime()
+                      new Date(today).getTime(),
+                      props
                     )
                   }}
                   id='today'
@@ -69,7 +79,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       addDays(yesterday, -1).getTime(),
-                      new Date(yesterday).getTime()
+                      new Date(yesterday).getTime(),
+                      props
                     )
                   }}
                   id='yesterday'
@@ -96,7 +107,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       new Date(last7thDay).getTime(),
-                      new Date(today).getTime()
+                      new Date(today).getTime(),
+                      props
                     )
                   }}
                   id='last-seven-days'
@@ -118,7 +130,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       new Date(thisWeekStartDay).getTime(),
-                      new Date(thisWeekLastDay).getTime()
+                      new Date(thisWeekLastDay).getTime(),
+                      props
                     )
                   }}
                   id='this-week'
@@ -140,7 +153,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       new Date(lastWeekStartDay).getTime(),
-                      new Date(lastWeekLastDay).getTime()
+                      new Date(lastWeekLastDay).getTime(),
+                      props
                     )
                   }}
                   id='last-week'
@@ -167,7 +181,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       new Date(last30thDay).getTime(),
-                      new Date(today).getTime()
+                      new Date(today).getTime(),
+                      props
                     )
                   }}
                   id='last-30-days'
@@ -189,7 +204,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       new Date(thisMonthStartDay).getTime(),
-                      new Date(today).getTime()
+                      new Date(today).getTime(),
+                      props
                     )
                   }}
                   id='this-month'
@@ -212,7 +228,8 @@ export default props => {
                     props.toggleFilter()
                     changeRoute(
                       new Date(lastMonthStartDay).getTime(),
-                      new Date(lastMonthEndDay).getTime()
+                      new Date(lastMonthEndDay).getTime(),
+                      props
                     )
                   }}
                   id='last-month'

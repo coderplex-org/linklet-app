@@ -1,0 +1,6 @@
+- [] Add search Bar
+- [] Add Github Authentication
+- [] Allow users to post links with tags
+- [] Allow users to upvote links
+- [] Allow users to filter links by tags
+- [] Change UI to reflect above

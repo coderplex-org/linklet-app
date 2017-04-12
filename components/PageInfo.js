@@ -9,7 +9,7 @@ export default ({ query, page, totalLinks }) => {
           <strong>Total: {totalLinks} </strong>link/s were found from <span>
             <strong>
               {
-                `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')}`
+                `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')} ${query.search ? `containing ${query.search} word` : ''}`
               }
               {' '}
             </strong>
@@ -67,9 +67,19 @@ export default ({ query, page, totalLinks }) => {
   } else {
     return (
       <div className='info'>
-        <p>
-          Total: <strong> {totalLinks} </strong>link/s were added upto now
-        </p>
+        {query.search
+          ? <p>
+              Total:
+              {' '}
+            <strong> {totalLinks} </strong>
+              link/s were found containing word
+              {' '}
+            <strong>{query.search}</strong>
+          </p>
+          : <p>
+              Total: <strong> {totalLinks} </strong>link/s were added upto now
+            </p>}
+
         <p className='pageNum'>
           Page: {page}
         </p>

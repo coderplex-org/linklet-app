@@ -3,8 +3,9 @@ import format from 'date-fns/format'
 import LazyLoad from 'react-lazyload'
 import db from '../lib/db'
 import { truncateString } from '../utils'
+import Highlighter from 'react-highlight-words'
 
-export default ({ link }) => {
+export default ({ link, query: { search } }) => {
   let imgUrl
   // fetch http imges over proxy to avoid mixed content error
   if (link.image && /http:.*/.test(link.image)) {
@@ -29,15 +30,29 @@ export default ({ link }) => {
         </div>
         <div className='item__content'>
           <h3 className='title'>
-            {link.title ? truncateString(link.title, 100) : link.url}
+            <Highlighter
+              highlightClassName='highlight'
+              searchWords={[search]}
+              textToHighlight={
+                link.title ? truncateString(link.title, 100) : link.url
+              }
+            />
           </h3>
           <p className='desc'>
             {link.description
-              ? truncateString(link.description, 140)
+              ? <Highlighter
+                highlightClassName='highlight'
+                searchWords={[search]}
+                textToHighlight={truncateString(link.description, 100)}
+                />
               : 'No Description'}
           </p>
           <p className='link'>
-            {truncateString(link.url, 40)}
+            <Highlighter
+              highlightClassName='highlight'
+              searchWords={[search]}
+              textToHighlight={truncateString(link.url, 40)}
+            />
           </p>
         </div>
         <div className='item__footer'>
@@ -99,19 +114,12 @@ export default ({ link }) => {
             padding: 5px 10px;
             color: #444;
             font-size: 18px;
-            line-height: 1.2em;
-            max-height: 2.8em;
-            overflow: hidden;
           }
           .desc {
             margin: 0;
             font-size: 14px;
             color: #444;
             padding: 5px 10px;
-            line-height: 1.2em;
-            max-height: 3.8em;
-            text-overflow: ellipses;
-            overflow: hidden;
           }
           .link {
             padding: 5px 10px;

@@ -266,10 +266,88 @@ export default () => (
         .rc-pagination-simple .rc-pagination-simple-pager input:hover {
           border-color: #2db7f5;
         }
+        .react-autosuggest__container {
+          position: relative;
+          width: 90%;
+          margin: 0 auto;
+        }
+        .react-autosuggest__input {
+          position: relative;
+          width: 100%;
+          height: 60px;
+          padding: 20px 0 20px 40px;
+          font-family: "Dosis", sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          outline: none;
+          border: none;
+          box-shadow: 0 1px 2px 1px #ccc, 0 1px 2px -1px #ccc;
+        }
+        .react-autosuggest__container::after {
+          content: '🔍';
+          font-size: 26px;
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          transform: translateY(-40%); 
+        }
+        .react-autosuggest__input:focus {
+          outline: none;
+        }
+
+        .react-autosuggest__container--open .react-autosuggest__input {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        .react-autosuggest__suggestions-container {
+          max-height: 300px;
+          overflow: auto;
+          position: absolute;
+          box-shadow: 1px 2px 8px #ccc;
+          top: 51px;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          background-color: #fff;
+          font-family: "Dosis", sans-serif;
+          font-weight: 300;
+          font-size: 16px;
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+          z-index: 2;
+        }
+        .react-autosuggest__suggestions-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        .react-autosuggest__suggestion {
+          cursor: pointer;
+          padding: 10px 20px;
+          border-bottom: 1px dotted #ccc;
+        }
+
+        .react-autosuggest__suggestion--highlighted {
+          background-color: #ddd;
+        }
         @media only screen and (max-width: 1024px) {
           .rc-pagination-item-after-jump-prev,
           .rc-pagination-item-before-jump-next {
             display: none;
+          }
+        }
+        @media (max-width: 720px) {
+          .react-autosuggest__container {
+            position: fixed;
+            z-index: 9;
+            top: 56px;
+            left: 0;
+            width: 100%;
+          }
+          .react-autosuggest__container::after {
+            font-size: 20px;
           }
         }
     `
