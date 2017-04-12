@@ -74,7 +74,10 @@ export default ({ query, page, totalLinks }) => {
             <strong> {totalLinks} </strong>
               link/s were found containing word
               {' '}
-            <strong>{query.search}</strong>
+            <span>
+              <strong>{query.search}</strong>
+              <Link href='/' scroll><a>clear</a></Link>
+            </span>
           </p>
           : <p>
               Total: <strong> {totalLinks} </strong>link/s were added upto now
@@ -92,6 +95,11 @@ export default ({ query, page, totalLinks }) => {
           }
           .info p {
             text-align: center;
+          }
+          p span {
+            border: 1px solid #888;
+            border-radius: 4px;
+            padding: 10px;
           }
           .pageNum {
             color: #999;

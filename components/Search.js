@@ -44,20 +44,6 @@ export default class Search extends React.Component {
     })
   }
   onChange (event, { newValue }) {
-    if (!newValue) {
-      if (this.props.query) {
-        let { start, end } = this.props.query
-        if (start && end) {
-          Router.push(`/?start=${start}&end=${end}`)
-            .then(() => window.scrollTo(0, 0))
-            .catch(e => console.log(e))
-          return
-        }
-      }
-      Router.push(`/`)
-        .then(() => window.scrollTo(0, 0))
-        .catch(e => console.log(e))
-    }
     this.setState({
       value: newValue
     })
