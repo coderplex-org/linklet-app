@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Router from 'next/router'
 import Header from '../components/Header'
+import BottomBar from '../components/BottomBar'
 
 import addDays from 'date-fns/add_days'
 import startOfWeek from 'date-fns/start_of_week'
@@ -103,6 +104,7 @@ export default class Home extends Component {
   }
   render () {
     const { data, filterOptions, url } = this.props
+    console.log(url)
     return (
       <div className='home'>
         <Header
@@ -118,6 +120,7 @@ export default class Home extends Component {
           showModal={this.handleClick.bind(this)}
         />
         <LinksList data={data} url={url} />
+        <BottomBar url={url} />
         {this.state.isShowingModal &&
           <ModalContainer onClose={this.handleClose.bind(this)}>
             <ModalDialog onClose={this.handleClose.bind(this)}>

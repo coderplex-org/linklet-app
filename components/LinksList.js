@@ -2,7 +2,6 @@ import Router from 'next/router'
 import Pagination from 'rc-pagination'
 import LinkCard from './LinkCard'
 import PageInfo from './PageInfo'
-import Footer from '../components/Footer'
 import SearchBar from '../components/Search'
 
 export default (
@@ -49,12 +48,11 @@ export default (
         }}
       />
     </div>
-    <Footer />
     <style jsx>
       {
         `
           main {
-            padding-top: 70px;
+            padding: 70px 0;
             margin-left: 200px;
           }
           .list {
