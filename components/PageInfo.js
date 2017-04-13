@@ -20,6 +20,9 @@ const renderInfo = (query, totalLinks) => {
             text-align: center;
             width: 100%;
             line-height: 2;
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-size: 12px;
           }
           span {
             font-weight: bold;
@@ -56,6 +59,9 @@ const renderInfo = (query, totalLinks) => {
             text-align: center;
             width: 100%;
             line-height: 2;
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-size: 12px;
           }
           span {
             font-weight: bold;
@@ -92,6 +98,9 @@ const renderInfo = (query, totalLinks) => {
             text-align: center;
             width: 100%;
             line-height: 2;
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-size: 12px;
           }
           span {
             font-weight: bold;
@@ -122,6 +131,9 @@ const renderInfo = (query, totalLinks) => {
             text-align: center;
             width: 100%;
             line-height: 2;
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-size: 12px;
           }
         `
             }
@@ -145,6 +157,9 @@ export default ({ query, page, totalLinks }) => {
         .text-center {
           text-align: center;
           width: 100%;
+          margin: 10px 0 0 0;
+          padding: 0;
+          font-size: 12px;
         }
       `
         }
