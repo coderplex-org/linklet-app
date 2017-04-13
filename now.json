@@ -1,6 +1,6 @@
 {
 	"name": "linket-app",
-	"alias": ["linklet-app.now.sh"],
+	"alias": ["staging-linklet-app.now.sh"],
 	"env": {
 		"API_URL":"@linklet-api-url"
 	}

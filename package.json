@@ -23,6 +23,7 @@
     "deploy": "npm run lint && now -t $TB",
     "alias": "now -t $TB alias",
     "alias-rules": "now -t $TB alias linklet.ml -r rules.json",
+    "alias-staging-rules": "now -t $TB alias staging.linklet.ml -r staging-rules.json",
     "lint": "prettier 'lib/*.js' 'utils/*.js' 'components/*.js' 'pages/*.js' --write --single-quote && standard --fix",
     "precommit": "lint-staged"
   },
