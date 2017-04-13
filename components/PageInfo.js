@@ -107,6 +107,18 @@ export default ({ query, page, totalLinks }) => {
             margin: 0;
             padding: 0;
           }
+          @media(max-width: 520px) {
+            p {
+              display: flex;
+              flex-direction: column;
+            }
+            p > * {
+              margin: 5px 0;
+            }
+            p span strong {
+              margin-right: 10px;
+            }
+          }
         `
           }
         </style>
