@@ -2,4 +2,4 @@
 - [] Add Github Authentication
 - [] Allow users to post links with tags
 - [] Allow users to view links posted by them in seperate view
-
+- [] Implement settings for push notifications
