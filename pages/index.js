@@ -104,7 +104,6 @@ export default class Home extends Component {
   }
   render () {
     const { data, filterOptions, url } = this.props
-    console.log(url)
     return (
       <div className='home'>
         <Header

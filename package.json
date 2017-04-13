@@ -13,6 +13,7 @@
     "react-dom": "15.4.2",
     "react-ga": "^2.2.0",
     "react-highlight-words": "^0.6.0",
+    "react-icons": "^2.2.3",
     "react-lazyload": "^2.2.5",
     "react-modal-dialog": "^4.0.7"
   },
