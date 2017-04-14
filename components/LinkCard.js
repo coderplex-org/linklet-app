@@ -2,11 +2,8 @@ import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import format from 'date-fns/format'
 import { truncateString } from '../utils'
 import Highlighter from 'react-highlight-words'
-import MdVisibility from 'react-icons/lib/md/visibility'
-// import FaHeart from 'react-icons/lib/fa/heart'
-import FaHeartO from 'react-icons/lib/fa/heart-o'
 
-export default ({ link, query: { search } }) => {
+export default ({ link, query: { search } = {} } = {}) => {
   return (
     <li key={link._id} className='list__item'>
       <div className='item__content'>
@@ -40,19 +37,24 @@ export default ({ link, query: { search } }) => {
         <div className='meta'>
           <ul>
             <li>
-              <div>
-                <MdVisibility />
-                <span>2 Views</span>
+              <div className='by-wa'>
+                Added From whatsapp
               </div>
-            </li>
-            <li className='heart'>
-              <a href='#'>
-                <FaHeartO />
-                <span>2</span>
-              </a>
+              {/* <a className='by-user' rel='noopener' href='https://github.com/vinaypuppal' target='_blank'>
+                <img src='https://avatar.tobi.sh/vinaypuppal' alt='vinaypuppal' />
+                <span className='info'>
+                  <span>Added By</span>
+                  <span>VinayPuppal</span>
+                </span>
+              </a> */}
             </li>
             <li>
-              <a rel='noopener' href={link.url} target='_blank'>
+              <a
+                className='open'
+                rel='noopener'
+                href={link.url}
+                target='_blank'
+              >
                 Open
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
                   <path
@@ -100,16 +102,15 @@ export default ({ link, query: { search } }) => {
           .desc {
             margin: 0;
             font-size: 14px;
-            padding: 5px 10px;
+            padding: 10px;
           }
-          .item__footer span {
+          .item__footer > span {
             color: #666;
             display: inline-block;
             padding: 5px 10px;
-          }
-          .item__footer > span {
             padding-left: 20px;
             padding-bottom: 10px;
+            font-size: 14px;
           }
           .item__footer .meta {
             display: flex;
@@ -133,6 +134,32 @@ export default ({ link, query: { search } }) => {
             border-right: 1px solid #eee;
             border-left: 1px solid #eee;
           }
+          .meta li:first-child {
+            flex: 2;
+            color: #888;
+          }
+          .by-user {
+            flex: 1;
+            text-decoration: none;
+            color: #0366d6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .by-user img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 5px;
+          }
+          .by-user .info {
+            display: flex;
+            flex-direction: column;
+          }
+          .by-user .info span:first-child {
+            color: #888;
+            font-size: 10px;
+          }
           svg {
             width: 20px;
             height: 20px;
@@ -140,14 +167,14 @@ export default ({ link, query: { search } }) => {
             margin-left: 10px;
           }
           .meta li div,
-          .item__footer a {
+          .item__footer .open {
             width: 100%;
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
           }
-          .item__footer a {
+          .item__footer .open {
             cursor: pointer;
             width: 100%;
             text-decoration: none;
@@ -155,14 +182,11 @@ export default ({ link, query: { search } }) => {
             font-weight: bold;
             transition: all 0.25s;
           }
-          .item__footer a:hover {
+          .item__footer .open:hover {
             color: teal;
           }
-          .item__footer a:hover > svg {
+          .item__footer .open:hover > svg {
             fill: teal;
-          }
-          .meta .heart a{
-            color: #444;
           }
           @media(max-width: 720px) {
             .list__item {

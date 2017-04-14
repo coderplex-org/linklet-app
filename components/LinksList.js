@@ -53,6 +53,7 @@ export default (
         `
           main {
             padding: 70px 0;
+            padding-top: 100px;
             margin-left: 200px;
           }
           .list {

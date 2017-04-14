@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/Header'
-import BottomBar from '../components/BottomBar'
 import { initGA, logPageView } from '../lib/analytics'
 
 export default class Profile extends React.Component {
@@ -11,14 +10,13 @@ export default class Profile extends React.Component {
   render () {
     return (
       <div className='Profile'>
-        <Header title='Linklet | Profile' />
+        <Header url={this.props.url} title='Linklet | Profile' />
         <main>
           <h1>Profile</h1>
           <p>
             😎 Implement Soon!...
           </p>
         </main>
-        <BottomBar url={this.props.url} />
         <style jsx>
           {
             `

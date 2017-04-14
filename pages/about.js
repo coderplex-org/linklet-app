@@ -11,7 +11,7 @@ export default class About extends React.Component {
   render () {
     return (
       <div className='about'>
-        <Header title='Linklet | About' home />
+        <Header url={this.props.url} title='Linklet | About' home />
         <main>
           <h1>About</h1>
           <p>

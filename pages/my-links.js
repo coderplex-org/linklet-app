@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/Header'
-import BottomBar from '../components/BottomBar'
 import { initGA, logPageView } from '../lib/analytics'
 
 export default class MyLinks extends React.Component {
@@ -11,14 +10,13 @@ export default class MyLinks extends React.Component {
   render () {
     return (
       <div className='MyLinks'>
-        <Header title='Linklet | MyLinks' />
+        <Header url={this.props.url} title='Linklet | MyLinks' />
         <main>
           <h1>MyLinks</h1>
           <p>
             😎 Implement Soon!...
           </p>
         </main>
-        <BottomBar url={this.props.url} />
         <style jsx>
           {
             `

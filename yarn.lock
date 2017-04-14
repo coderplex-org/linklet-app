@@ -2944,6 +2944,10 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+lodash._getnative@^3.0.0:
+  version "3.9.1"
+  resolved lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5
+
 lodash._reinterpolate@~3.0.0:
   version "3.0.0"
   resolved lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d
@@ -2955,6 +2959,22 @@ lodash.cond@^4.3.0:
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c
+
+lodash.isarguments@^3.0.0:
+  version "3.1.0"
+  resolved lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a
+
+lodash.isarray@^3.0.0:
+  version "3.0.4"
+  resolved lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55
+
+lodash.keys@^3.1.2:
+  version "3.1.2"
+  resolved lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a
+  dependencies:
+    lodash._getnative "^3.0.0"
+    lodash.isarguments "^3.0.0"
+    lodash.isarray "^3.0.0"
 
 lodash.template@^4.4.0:
   version "4.4.0"
@@ -3590,7 +3610,7 @@ pbkdf2@^3.0.3:
   dependencies:
     create-hmac "^1.1.2"
 
-performance-now@^0.2.0:
+performance-now@^0.2.0, performance-now@~0.2.0:
   version "0.2.0"
   resolved performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5
 
@@ -3753,6 +3773,12 @@ querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620
 
+raf@^3.3.0:
+  version "3.3.0"
+  resolved raf-3.3.0.tgz#93845eeffc773f8129039f677f80a36044eee2c3
+  dependencies:
+    performance-now "~0.2.0"
+
 randomatic@^1.1.3:
   version "1.1.6"
   resolved randomatic-1.1.6.tgz#110dcabff397e9dcff7c0789ccc0a49adf1ec5bb
@@ -3822,6 +3848,13 @@ react-ga@^2.2.0:
     create-react-class "^15.5.2"
     object-assign "^4.0.1"
     prop-types "^15.5.6"
+
+react-headroom@^2.1.4:
+  version "2.1.4"
+  resolved react-headroom-2.1.4.tgz#9a227b05e375d9f7c8948d12fbb685b1135cb6bb
+  dependencies:
+    raf "^3.3.0"
+    shallowequal "^0.2.2"
 
 react-highlight-words@^0.6.0:
   version "0.6.0"
@@ -4209,6 +4242,12 @@ sha.js@^2.3.6:
 shallow-equal@^1.0.0:
   version "1.0.0"
   resolved shallow-equal-1.0.0.tgz#508d1838b3de590ab8757b011b25e430900945f7
+
+shallowequal@^0.2.2:
+  version "0.2.2"
+  resolved shallowequal-0.2.2.tgz#1e32fd5bcab6ad688a4812cb0cc04efc75c7014e
+  dependencies:
+    lodash.keys "^3.1.2"
 
 shebang-command@^1.2.0:
   version "1.2.0"

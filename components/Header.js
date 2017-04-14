@@ -5,6 +5,7 @@ import Meta from './Meta'
 import GlobalStyles from './GlobalStyles'
 import LinkIcon from './LinkIcon'
 import FilterIcon from './FilterIcon'
+import BottomBar from './BottomBar'
 import { logEvent } from '../lib/analytics'
 
 import '../utils/offlineInstaller'
@@ -36,19 +37,8 @@ export default props => (
       </a>
     </Link>
     <nav>
+      <BottomBar url={props.url} />
       <ul>
-        {props.about &&
-          <li>
-            <Link href='/about'>
-              <a>About</a>
-            </Link>
-          </li>}
-        {props.home &&
-          <li>
-            <Link href='/'>
-              <a>Back To Home</a>
-            </Link>
-          </li>}
         {props.about &&
           <li className='filterBtn'>
             <a onClick={props.toggleFilter} href='#'>
@@ -75,11 +65,14 @@ export default props => (
       nav {
         width: 100%;
         padding: 0 40px;
+        display: flex;
       }
       nav ul {
         display: flex;
         justify-content: flex-end;
         list-style: none;
+        padding: 0;
+        margin: 0;
       }
       nav ul li {
         margin: 0 20px;
@@ -118,6 +111,11 @@ export default props => (
         }
         @media(max-width: 720px) {
           .filterBtn {
+            display: block;
+          }
+        }
+        @media(max-width: 720px) {
+          nav {
             display: block;
           }
         }
