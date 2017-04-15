@@ -1,3 +1,5 @@
+/* global location */
+
 import Link from 'next/link'
 import format from 'date-fns/format'
 
@@ -11,7 +13,7 @@ const renderInfo = (query, totalLinks) => {
             {' ' +
               `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')} ${query.search ? `containing ${query.search} word` : ''}` +
               ' '}
-            <Link href='/' scroll><a>clear</a></Link>
+            <Link href={`${location.pathname}`} scroll><a>clear</a></Link>
           </span>
           <style jsx>
             {
@@ -50,7 +52,7 @@ const renderInfo = (query, totalLinks) => {
             {' ' +
               `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')}` +
               ' '}
-            <Link href='/' scroll><a>clear</a></Link>
+            <Link href={`${location.pathname}`} scroll><a>clear</a></Link>
           </span>
           <style jsx>
             {
@@ -89,7 +91,7 @@ const renderInfo = (query, totalLinks) => {
           Total: <strong>{totalLinks}</strong> were found containing word
           <span>
             {' ' + query.search + ' '}
-            <Link href='/' scroll><a>clear</a></Link>
+            <Link href={`${location.pathname}`} scroll><a>clear</a></Link>
           </span>
           <style jsx>
             {

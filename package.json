@@ -2,6 +2,7 @@
   "name": "linklet-app",
   "dependencies": {
     "axios": "^0.16.0",
+    "cookie-parser": "^1.4.3",
     "date-fns": "^1.28.2",
     "express": "^4.15.2",
     "ismobilejs": "^0.4.1",
@@ -10,16 +11,18 @@
     "rc-pagination": "^1.8.5",
     "react": "15.4.2",
     "react-autosuggest": "^9.0.0",
+    "react-cookie": "^1.0.5",
     "react-dom": "15.4.2",
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.4",
     "react-highlight-words": "^0.6.0",
     "react-icons": "^2.2.3",
     "react-lazyload": "^2.2.5",
-    "react-modal-dialog": "^4.0.7"
+    "react-modal-dialog": "^4.0.7",
+    "url-regex": "^4.0.0"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "NODE_ENV=development node server",
     "build": "next build",
     "start": "NODE_ENV=production node server",
     "deploy": "npm run lint && now -t $TB",

@@ -1,11 +1,15 @@
 import React from 'react'
 import Header from '../components/Header'
 import NProgress from 'nprogress'
+import Router from 'next/router'
 import LinkCard from '../components/LinkCard'
 import { initGA, logPageView } from '../lib/analytics'
 import db from '../lib/db'
+import urlRegex from 'url-regex'
 
-export default class SubmitLink extends React.Component {
+import SecretPage from '../hocs/SecretPage'
+
+class SubmitLink extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -21,14 +25,19 @@ export default class SubmitLink extends React.Component {
     logPageView()
   }
   handleFetch () {
+    if (!urlRegex().test(this.state.url)) {
+      this.setState({
+        error: 'Sorry, this link is invalid'
+      })
+      return
+    }
     NProgress.start()
     db
       .getMetaData(this.state.url)
       .then(({ data }) => {
         NProgress.done()
-        console.log(data)
         this.setState({
-          info: 'Toggle swtich to Private if you want keep link as bookmark without sharing it publicly',
+          info: 'Click Save to submit link to linklet',
           linkData: data,
           showPreview: true,
           error: ''
@@ -37,10 +46,31 @@ export default class SubmitLink extends React.Component {
       .catch(e => {
         NProgress.done()
         console.log(e)
-        this.setState({ error: e.message })
+        this.setState({ error: e.response.data.message })
       })
   }
-  handleSave () {}
+  handleSave () {
+    console.log('---Saving---')
+    NProgress.start()
+    db
+      .saveLink(this.state.linkData)
+      .then(link => {
+        NProgress.done()
+        Router.push('/my-links')
+      })
+      .catch(e => {
+        NProgress.done()
+        let message
+        console.log(e.response)
+        if (e.response.data.code === 11000) {
+          message = 'Sorry, its seems like this link already exist in linklet!...'
+        } else {
+          message = e.message
+        }
+        console.log(message)
+        this.setState({ error: message })
+      })
+  }
   handleBack () {
     this.setState({
       info: 'Simply give us the URL we will fetch metadata and show preview before you can submit it to linklet',
@@ -52,8 +82,15 @@ export default class SubmitLink extends React.Component {
   render () {
     return (
       <div className='SubmitLink'>
-        <Header url={this.props.url} title='Linklet | SubmitLink' />
+        <Header
+          user={this.props.user}
+          url={this.props.url}
+          title='Linklet | SubmitLink'
+        />
         <main>
+          <p className='error'>
+            {this.state.error}
+          </p>
           {!this.state.showPreview &&
             <div className='card'>
               <div className='group'>
@@ -77,7 +114,8 @@ export default class SubmitLink extends React.Component {
             <ul className='preview'>
               <LinkCard
                 link={Object.assign(this.state.linkData, {
-                  timestamp: new Date().getTime()
+                  timestamp: new Date().getTime(),
+                  _creator: this.props.user
                 })}
                 url={this.props.url}
               />
@@ -122,6 +160,10 @@ export default class SubmitLink extends React.Component {
           font-size: 14px;
           font-weight: 300;
           margin: 10px auto;
+        }
+        p.error {
+          color: red;
+          font-weight: bold;
         }
         .group { 
           position:relative;
@@ -261,3 +303,5 @@ export default class SubmitLink extends React.Component {
     )
   }
 }
+
+export default SecretPage(SubmitLink)

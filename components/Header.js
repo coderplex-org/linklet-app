@@ -37,7 +37,7 @@ export default props => (
       </a>
     </Link>
     <nav>
-      <BottomBar url={props.url} />
+      <BottomBar user={props.user} url={props.url} />
       <ul>
         {props.about &&
           <li className='filterBtn'>

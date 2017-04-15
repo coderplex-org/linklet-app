@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Router from 'next/router'
 import Header from '../components/Header'
 
+import PublicPage from '../hocs/PublicPage'
+
 import addDays from 'date-fns/add_days'
 import startOfWeek from 'date-fns/start_of_week'
 import lastDayOfWeek from 'date-fns/last_day_of_week'
@@ -16,8 +18,8 @@ import SideBar from '../components/Sidebar'
 import LinksList from '../components/LinksList'
 import { initGA, logPageView } from '../lib/analytics'
 
-export default class Home extends Component {
-  static async getInitialProps ({ query }) {
+class Home extends Component {
+  static async getInitialProps ({ query, req }) {
     const { start, end, page = 1, search } = query
 
     const today = new Date()
@@ -48,9 +50,9 @@ export default class Home extends Component {
     let res
     try {
       if (start && end) {
-        res = await db.getByFilter({ start, end, page, search })
+        res = await db.getByFilter({ start, end, page, search, req })
       } else {
-        res = await db.getAll({ page, search })
+        res = await db.getAll({ page, search, req })
       }
     } catch (e) {
       throw e
@@ -96,7 +98,7 @@ export default class Home extends Component {
     const { from, to } = this.state
     this.handleClose()
     Router.push(
-      `/?start=${new Date(from).getTime()}&end=${new Date(to).getTime()}`
+      `${this.props.url.pathname}?start=${new Date(from).getTime()}&end=${new Date(to).getTime()}`
     )
       .then(() => window.scrollTo(0, 0))
       .catch(e => console.log(e))
@@ -106,6 +108,7 @@ export default class Home extends Component {
     return (
       <div className='home'>
         <Header
+          user={this.props.user}
           url={url}
           about
           title='Linklet | Home'
@@ -179,3 +182,5 @@ export default class Home extends Component {
     )
   }
 }
+
+export default PublicPage(Home)

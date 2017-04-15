@@ -8,11 +8,13 @@ const changeRoute = (start, end, props) => {
     : null
   console.log({ start, end, search })
   if (search) {
-    Router.push(`/?start=${start}&end=${end}&search=${search}`)
+    Router.push(
+      `${props.url.pathname}?start=${start}&end=${end}&search=${search}`
+    )
       .then(() => window.scrollTo(0, 0))
       .catch(e => console.log(e))
   } else {
-    Router.push(`/?start=${start}&end=${end}`)
+    Router.push(`${props.url.pathname}?start=${start}&end=${end}`)
       .then(() => window.scrollTo(0, 0))
       .catch(e => console.log(e))
   }

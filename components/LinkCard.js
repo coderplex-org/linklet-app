@@ -37,16 +37,25 @@ export default ({ link, query: { search } = {} } = {}) => {
         <div className='meta'>
           <ul>
             <li>
-              <div className='by-wa'>
-                Added From whatsapp
-              </div>
-              {/* <a className='by-user' rel='noopener' href='https://github.com/vinaypuppal' target='_blank'>
-                <img src='https://avatar.tobi.sh/vinaypuppal' alt='vinaypuppal' />
-                <span className='info'>
-                  <span>Added By</span>
-                  <span>VinayPuppal</span>
-                </span>
-              </a> */}
+              {link._creator
+                ? <a
+                  className='by-user'
+                  rel='noopener'
+                  href={`https://github.com/${link._creator.username}`}
+                  target='_blank'
+                  >
+                  <img
+                    src={link._creator.avatarUrl}
+                    alt={link._creator.username}
+                    />
+                  <span className='info'>
+                    <span>Added By</span>
+                    <span>VinayPuppal</span>
+                  </span>
+                </a>
+                : <div className='by-wa'>
+                    Added From whatsapp
+                  </div>}
             </li>
             <li>
               <a

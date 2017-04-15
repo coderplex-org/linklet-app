@@ -5,52 +5,56 @@ import PageInfo from './PageInfo'
 import SearchBar from '../components/Search'
 
 export default (
-  { data: { links, isLastPage, totalLinks, perPage, page }, url: { query } }
-) => (
-  <main>
-    <SearchBar query={query} />
-    <PageInfo query={query} page={page} totalLinks={totalLinks} />
-    <ul className='list'>
-      {links.map(link => <LinkCard key={link._id} link={link} query={query} />)}
-    </ul>
-    <div className='pagination'>
-      <Pagination
-        total={totalLinks}
-        pageSize={perPage}
-        current={Number(page)}
-        onChange={(current, pageSize) => {
-          const start = query && query.start
-          const end = query && query.end
-          const search = query && query.search
-          if (start && end) {
-            if (search) {
-              Router.push(
-                `/?start=${start}&end=${end}&page=${current}&search=${search}`
-              )
-                .then(() => window.scrollTo(0, 0))
-                .catch(e => console.log(e))
+  { data: { links, isLastPage, totalLinks, perPage, page }, url }
+) => {
+  const { query } = url
+  return (
+    <main>
+      <SearchBar url={url} query={query} />
+      <PageInfo query={query} page={page} totalLinks={totalLinks} />
+      <ul className='list'>
+        {links.map(link => (
+          <LinkCard key={link._id} link={link} query={query} />
+        ))}
+      </ul>
+      <div className='pagination'>
+        <Pagination
+          total={totalLinks}
+          pageSize={perPage}
+          current={Number(page)}
+          onChange={(current, pageSize) => {
+            const start = query && query.start
+            const end = query && query.end
+            const search = query && query.search
+            if (start && end) {
+              if (search) {
+                Router.push(
+                  `/?start=${start}&end=${end}&page=${current}&search=${search}`
+                )
+                  .then(() => window.scrollTo(0, 0))
+                  .catch(e => console.log(e))
+              } else {
+                Router.push(`/?start=${start}&end=${end}&page=${current}`)
+                  .then(() => window.scrollTo(0, 0))
+                  .catch(e => console.log(e))
+              }
             } else {
-              Router.push(`/?start=${start}&end=${end}&page=${current}`)
-                .then(() => window.scrollTo(0, 0))
-                .catch(e => console.log(e))
+              if (search) {
+                Router.push(`/?page=${current}&search=${search}`)
+                  .then(() => window.scrollTo(0, 0))
+                  .catch(e => console.log(e))
+              } else {
+                Router.push(`/?page=${current}`)
+                  .then(() => window.scrollTo(0, 0))
+                  .catch(e => console.log(e))
+              }
             }
-          } else {
-            if (search) {
-              Router.push(`/?page=${current}&search=${search}`)
-                .then(() => window.scrollTo(0, 0))
-                .catch(e => console.log(e))
-            } else {
-              Router.push(`/?page=${current}`)
-                .then(() => window.scrollTo(0, 0))
-                .catch(e => console.log(e))
-            }
-          }
-        }}
-      />
-    </div>
-    <style jsx>
-      {
-        `
+          }}
+        />
+      </div>
+      <style jsx>
+        {
+          `
           main {
             padding: 70px 0;
             padding-top: 100px;
@@ -83,7 +87,8 @@ export default (
             }
           }
         `
-      }
-    </style>
-  </main>
-)
+        }
+      </style>
+    </main>
+  )
+}
