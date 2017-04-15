@@ -12,15 +12,19 @@ export default class BottomBar extends React.Component {
     const input = document.querySelector('.react-autosuggest__input')
       ? document.querySelector('.react-autosuggest__input')
       : document.querySelector('input')
-    input.addEventListener('focus', this.handelFocus.bind(this))
-    input.addEventListener('blur', this.handelBlur.bind(this))
+    if (input) {
+      input.addEventListener('focus', this.handelFocus.bind(this))
+      input.addEventListener('blur', this.handelBlur.bind(this))
+    }
   }
   componentWillUnMount () {
     const input = document.querySelector('.react-autosuggest__input')
       ? document.querySelector('.react-autosuggest__input')
       : document.querySelector('input')
-    input.removeEventListener('focus', this.handelFocus.bind(this))
-    input.removeEventListener('blur', this.handelBlur.bind(this))
+    if (input) {
+      input.removeEventListener('focus', this.handelFocus.bind(this))
+      input.removeEventListener('blur', this.handelBlur.bind(this))
+    }
   }
   handelFocus () {
     this.setState({
