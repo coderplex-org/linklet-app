@@ -50,7 +50,7 @@ export default ({ link, query: { search } = {} } = {}) => {
                     />
                   <span className='info'>
                     <span>Added By</span>
-                    <span>VinayPuppal</span>
+                    <span>{link._creator.username}</span>
                   </span>
                 </a>
                 : <div className='by-wa'>
