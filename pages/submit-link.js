@@ -5,7 +5,6 @@ import Router from 'next/router'
 import LinkCard from '../components/LinkCard'
 import { initGA, logPageView } from '../lib/analytics'
 import db from '../lib/db'
-import urlRegex from 'url-regex'
 
 import SecretPage from '../hocs/SecretPage'
 
@@ -25,7 +24,11 @@ class SubmitLink extends React.Component {
     logPageView()
   }
   handleFetch () {
-    if (!urlRegex().test(this.state.url)) {
+    if (
+      /^((http[s]?|ftp):\/)?\/?([^:/\s]+)((\/\w+)*\/)([\w\-.]+[^#?\s]+)(.*)?(#[\w-]+)?$/.test(
+        this.state.url
+      )
+    ) {
       this.setState({
         error: 'Sorry, this link is invalid'
       })

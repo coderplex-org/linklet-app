@@ -18,8 +18,7 @@
     "react-highlight-words": "^0.6.0",
     "react-icons": "^2.2.3",
     "react-lazyload": "^2.2.5",
-    "react-modal-dialog": "^4.0.7",
-    "url-regex": "^4.0.0"
+    "react-modal-dialog": "^4.0.7"
   },
   "scripts": {
     "dev": "NODE_ENV=development node server",

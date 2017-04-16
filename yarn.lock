@@ -2509,10 +2509,6 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6
 
-ip-regex@^1.0.1:
-  version "1.0.3"
-  resolved ip-regex-1.0.3.tgz#dc589076f659f419c222039a33316f1c7387effd
-
 ipaddr.js@1.3.0:
   version "1.3.0"
   resolved ipaddr.js-1.3.0.tgz#1e03a52fdad83a8bbb2b25cbf4998b4cffcd3dec
@@ -4739,12 +4735,6 @@ url-parse-lax@^1.0.0:
   resolved url-parse-lax-1.0.0.tgz#7af8f303645e9bd79a272e7a14ac68bc0609da73
   dependencies:
     prepend-http "^1.0.1"
-
-url-regex@^4.0.0:
-  version "4.0.0"
-  resolved url-regex-4.0.0.tgz#eb48fbaf380fbf4c952c76ebd2d2ce00f9b4ca32
-  dependencies:
-    ip-regex "^1.0.1"
 
 url@0.11.0, url@^0.11.0:
   version "0.11.0"
