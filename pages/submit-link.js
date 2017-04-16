@@ -24,19 +24,13 @@ class SubmitLink extends React.Component {
     logPageView()
   }
   handleFetch () {
-    if (
-      /^((http[s]?|ftp):\/)?\/?([^:/\s]+)((\/\w+)*\/)([\w\-.]+[^#?\s]+)(.*)?(#[\w-]+)?$/.test(
-        this.state.url
-      )
-    ) {
-      this.setState({
-        error: 'Sorry, this link is invalid'
-      })
-      return
+    let url = this.state.url
+    if (url && !/^https?:\/\//i.test(url)) {
+      url = 'http://' + url
     }
     NProgress.start()
     db
-      .getMetaData(this.state.url)
+      .getMetaData(url)
       .then(({ data }) => {
         NProgress.done()
         this.setState({
@@ -48,7 +42,7 @@ class SubmitLink extends React.Component {
       })
       .catch(e => {
         NProgress.done()
-        console.log(e)
+        console.log(e.response)
         this.setState({ error: e.response.data.message })
       })
   }
