@@ -173,7 +173,7 @@ export default class Notification extends React.Component {
       <li>
         <label className='switch'>
           <input
-            onChange={this.handelInput.bind(this)}
+            onClick={this.handelInput.bind(this)}
             type='checkbox'
             checked={this.state.checked}
           />
