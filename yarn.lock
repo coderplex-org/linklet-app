@@ -3906,6 +3906,10 @@ react-lazyload@^2.2.5:
   version "2.2.5"
   resolved react-lazyload-2.2.5.tgz#0c871c7bf6541a33bef4ebfd49efa42a0f6e2c0a
 
+react-material-snackbar@^3.0.0:
+  version "3.0.0"
+  resolved react-material-snackbar-3.0.0.tgz#548121fdb7d8d7cf6b1fb421715550ceb9f35e54
+
 react-modal-dialog@^4.0.7:
   version "4.0.7"
   resolved react-modal-dialog-4.0.7.tgz#3926da2dfa91ff09f2d3149549e8d6ee5cbad9b5

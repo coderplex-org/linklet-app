@@ -7,6 +7,7 @@ import LinkIcon from './LinkIcon'
 import FilterIcon from './FilterIcon'
 import BottomBar from './BottomBar'
 import { logEvent } from '../lib/analytics'
+import NotificationBtn from './Notification'
 
 import '../utils/offlineInstaller'
 
@@ -45,6 +46,7 @@ export default props => (
               <FilterIcon />
             </a>
           </li>}
+        <NotificationBtn />
       </ul>
     </nav>
     <style jsx>
@@ -70,6 +72,7 @@ export default props => (
       nav ul {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         list-style: none;
         padding: 0;
         margin: 0;
