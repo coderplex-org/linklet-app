@@ -151,7 +151,8 @@ export default class Notification extends React.Component {
     }
   }
   saveSubscriptionID (subscription) {
-    var subscriptionId = subscription.endpoint.split('gcm/send/')[1] ||
+    var subscriptionId =
+      subscription.endpoint.split('gcm/send/')[1] ||
       subscription.endpoint.split(/\/wpush\/v\d\//)[1]
 
     console.log('Subscription ID', subscriptionId)
@@ -202,8 +203,7 @@ export default class Notification extends React.Component {
           <p>{this.state.message}</p>
         </SnackBar>
         <style jsx>
-          {
-            `
+          {`
           .switch {
             position: relative;
             display: inline-block;
@@ -252,8 +252,7 @@ export default class Notification extends React.Component {
             -webkit-transform: translateX(24px);
                     transform: translateX(24px);
           }
-        `
-          }
+        `}
         </style>
       </li>
     )

@@ -146,8 +146,7 @@ class Home extends Component {
             </ModalDialog>
           </ModalContainer>}
         <style jsx>
-          {
-            `
+          {`
             .home {
               min-height: 100%;
               width: 100%;
@@ -175,8 +174,7 @@ class Home extends Component {
             button:hover {
               background: green;
             }
-        `
-          }
+        `}
         </style>
       </div>
     )

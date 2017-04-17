@@ -20,8 +20,7 @@ export default class About extends React.Component {
         </main>
         <Footer />
         <style jsx>
-          {
-            `
+          {`
         .about {
           min-height: 100%;
           width: 100%;
@@ -37,8 +36,7 @@ export default class About extends React.Component {
           max-width: 600px;
           margin: 20px auto;
         }
-        `
-          }
+        `}
         </style>
       </div>
     )

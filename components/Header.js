@@ -50,8 +50,7 @@ export default props => (
       </ul>
     </nav>
     <style jsx>
-      {
-        `
+      {`
       header {
         background: #253592;
         height: 56px;
@@ -122,8 +121,7 @@ export default props => (
             display: block;
           }
         }
-      `
-      }
+      `}
     </style>
   </header>
 )

@@ -15,8 +15,7 @@ export default () => (
       ☚
     </p>
     <style jsx>
-      {
-        `
+      {`
       footer {
         color: #888;
         text-align: center;
@@ -25,8 +24,7 @@ export default () => (
         text-decoration: none;
         color: orangered;
       }
-    `
-      }
+    `}
     </style>
   </footer>
 )

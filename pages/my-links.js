@@ -153,8 +153,7 @@ class MyLinks extends Component {
             </ModalDialog>
           </ModalContainer>}
         <style jsx>
-          {
-            `
+          {`
             .home {
               min-height: 100%;
               width: 100%;
@@ -182,8 +181,7 @@ class MyLinks extends Component {
             button:hover {
               background: green;
             }
-        `
-          }
+        `}
         </style>
       </div>
     )

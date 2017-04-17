@@ -271,8 +271,7 @@ export default props => {
         </section>
       </main>
       <style jsx>
-        {
-          `
+        {`
         aside {
           width: 200px;
           position: fixed;
@@ -346,8 +345,7 @@ export default props => {
             margin: 20px;
           }
         }
-      `
-        }
+      `}
       </style>
     </aside>
   )

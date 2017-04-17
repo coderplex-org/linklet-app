@@ -60,7 +60,8 @@ class SubmitLink extends React.Component {
         let message
         console.log(e.response)
         if (e.response.data.code === 11000) {
-          message = 'Sorry, its seems like this link already exist in linklet!...'
+          message =
+            'Sorry, its seems like this link already exist in linklet!...'
         } else {
           message = e.message
         }
@@ -135,8 +136,7 @@ class SubmitLink extends React.Component {
           <p className='info'>{this.state.info}</p>
         </main>
         <style jsx>
-          {
-            `
+          {`
         .SubmitLink {
           min-height: 100%;
           width: 100%;
@@ -293,8 +293,7 @@ class SubmitLink extends React.Component {
             width: 100%;
           }
         }
-        `
-          }
+        `}
         </style>
       </div>
     )

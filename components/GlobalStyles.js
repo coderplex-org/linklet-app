@@ -1,8 +1,7 @@
 export default () => (
   <div>
     <style jsx global>
-      {
-        `
+      {`
         *,
         *::after,
         *::before {
@@ -316,8 +315,7 @@ export default () => (
             font-size: 20px;
           }
         }
-    `
-      }
+    `}
     </style>
   </div>
 )

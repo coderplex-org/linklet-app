@@ -38,9 +38,7 @@ export async function loadUser ({ req, res }) {
     if (!req) {
       // client side
       if (loginToken) {
-        const localUser = JSON.parse(
-          window.localStorage.getItem('sharedState')
-        )
+        const localUser = JSON.parse(window.localStorage.getItem('sharedState'))
         if (localUser && loadUser._id) {
           return {
             user: localUser,

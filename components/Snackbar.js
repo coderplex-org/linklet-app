@@ -17,13 +17,10 @@ export default class SnackBar extends Component {
         timer: nextProps.timer
       })
 
-      setTimeout(
-        () => {
-          this.setState({ showSnackBar: false })
-          this.props.onClose && this.props.onClose()
-        },
-        timer
-      )
+      setTimeout(() => {
+        this.setState({ showSnackBar: false })
+        this.props.onClose && this.props.onClose()
+      }, timer)
     }
   }
 

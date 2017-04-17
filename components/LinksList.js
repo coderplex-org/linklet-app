@@ -4,9 +4,10 @@ import LinkCard from './LinkCard'
 import PageInfo from './PageInfo'
 import SearchBar from '../components/Search'
 
-export default (
-  { data: { links, isLastPage, totalLinks, perPage, page }, url }
-) => {
+export default ({
+  data: { links, isLastPage, totalLinks, perPage, page },
+  url
+}) => {
   const { query } = url
   return (
     <main>
@@ -53,8 +54,7 @@ export default (
         />
       </div>
       <style jsx>
-        {
-          `
+        {`
           main {
             padding: 70px 0;
             padding-top: 100px;
@@ -86,8 +86,7 @@ export default (
               margin-top: 10px;
             }
           }
-        `
-        }
+        `}
       </style>
     </main>
   )

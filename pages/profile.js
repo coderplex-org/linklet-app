@@ -86,8 +86,7 @@ class Profile extends React.Component {
             </div>}
         </main>
         <style jsx>
-          {
-            `
+          {`
         .Profile {
           min-height: 100%;
           width: 100%;
@@ -195,8 +194,7 @@ class Profile extends React.Component {
             height: 100px;
           }
         }
-        `
-          }
+        `}
         </style>
       </div>
     )
