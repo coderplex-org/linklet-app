@@ -18,7 +18,6 @@
     "react-highlight-words": "^0.6.0",
     "react-icons": "^2.2.3",
     "react-lazyload": "^2.2.5",
-    "react-material-snackbar": "^3.0.0",
     "react-modal-dialog": "^4.0.7"
   },
   "scripts": {

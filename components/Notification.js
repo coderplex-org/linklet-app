@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import SnackBar from 'react-material-snackbar'
+import SnackBar from './Snackbar'
 import NProgress from 'nprogress'
 
 import db from '../lib/db'
@@ -16,19 +16,7 @@ export default class Notification extends React.Component {
   }
   componentDidMount () {
     if (Notification.permission === 'denied') {
-      this.setState({
-        show: true,
-        message: 'User has blocked push notification.'
-      })
-      return
-    }
-
-    // Check `push notification` is supported or not
-    if (!('PushManager' in window)) {
-      this.setState({
-        show: true,
-        message: "Sorry, Push notification isn't supported in your browser."
-      })
+      console.log('User has blocked push notification.')
       return
     }
     // Get `push notification` subscription
@@ -163,11 +151,21 @@ export default class Notification extends React.Component {
   }
 
   handelInput (e) {
+    console.log('clicked')
     if (this.state.checked) {
+      console.log('unsubscribing')
       this.unsubscribePush()
     } else {
+      console.log('subscribing')
       this.subscribePush()
     }
+  }
+  onSanckbarClose () {
+    console.log('snackbar closed')
+    this.setState({
+      show: false,
+      message: ''
+    })
   }
   render () {
     return (
@@ -180,7 +178,11 @@ export default class Notification extends React.Component {
           />
           <div className='slider round' />
         </label>
-        <SnackBar show={this.state.show} timer={4000}>
+        <SnackBar
+          onClose={this.onSanckbarClose.bind(this)}
+          show={this.state.show}
+          timer={4000}
+        >
           <p>{this.state.message}</p>
         </SnackBar>
         <style jsx>
