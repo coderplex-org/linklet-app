@@ -1,13 +1,13 @@
 /* global self, clients */
 // triggered everytime, when a push notification is received.
-console.log('Reached Here')
+console.log('Reached Here v2')
 
 let url
 
 self.addEventListener('push', function (event) {
   console.info('Event: Push')
-  console.log(event.data.json())
-  const playload = event.data.json()
+  console.log(event.data && event.data.json())
+  const playload = (event.data && event.data.json()) || {}
   var title = playload.title || 'No Title'
 
   var body = {

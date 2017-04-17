@@ -13,10 +13,9 @@ module.exports = {
           staticFileGlobs: [
             'static/**/*' // Precache all static files by default
           ],
-          importScripts: ['/push-sw.js'],
+          importScripts: ['/push-sw.hsdbcjhsvdc.js'],
           forceDelete: true,
           runtimeCaching: [
-            // Example with different handlers
             {
               handler: 'fastest',
               urlPattern: /[.](png|jpg|css)/
