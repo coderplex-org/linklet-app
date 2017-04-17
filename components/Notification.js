@@ -147,7 +147,8 @@ export default class Notification extends React.Component {
     })
   }
   saveSubscriptionID (subscription) {
-    var subscriptionId = subscription.endpoint.split('gcm/send/')[1]
+    var subscriptionId = subscription.endpoint.split('gcm/send/')[1] ||
+      subscription.endpoint.split(/\/wpush\/v\d\//)[1]
 
     console.log('Subscription ID', subscriptionId)
 
