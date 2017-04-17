@@ -14,6 +14,8 @@ export function logout () {
   // It's important to send the loginToken since that's the way
   // how we say our auth server to logout the user
   const href = `${db.baseUrl}/logout?loginToken=${loginToken}&appRedirectUrl=${encodeURIComponent(camebackUrl)}`
+  window.localStorage.removeItem('sharedState')
+  window.localStorage.setItem('logout', Date.now())
   location.href = href
 }
 
@@ -48,6 +50,7 @@ export async function loadUser ({ req, res }) {
         } else {
           // fetch user from api using loginToken
           const user = await fetchUser(loginToken)
+          window.localStorage.setItem('sharedState', JSON.stringify(user))
           return {
             user,
             isAuthenticated: true,
