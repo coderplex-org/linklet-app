@@ -3,7 +3,7 @@
   "dependencies": {
     "axios": "^0.16.0",
     "cookie-parser": "^1.4.3",
-    "date-fns": "^1.28.2",
+    "date-fns": "^1.28.3",
     "express": "^4.15.2",
     "ismobilejs": "^0.4.1",
     "next": "2.1.1",
@@ -15,7 +15,7 @@
     "react-dom": "15.4.2",
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.4",
-    "react-highlight-words": "^0.6.0",
+    "react-highlight-words": "^0.7.1",
     "react-icons": "^2.2.3",
     "react-lazyload": "^2.2.5",
     "react-modal-dialog": "^4.0.7"
@@ -28,14 +28,14 @@
     "alias": "now -t $TB alias",
     "alias-rules": "now -t $TB alias linklet.ml -r rules.json",
     "alias-staging-rules": "now -t $TB alias staging.linklet.ml -r staging-rules.json",
-    "lint": "prettier 'lib/*.js' 'utils/*.js' 'components/*.js' 'pages/*.js' --write --single-quote && standard --fix",
+    "lint": "prettier 'lib/*.js' 'utils/*.js' 'components/*.js' 'pages/*.js' --write --single-quote --no-semi && standard --fix",
     "precommit": "lint-staged"
   },
   "devDependencies": {
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
-    "prettier": "^0.22.0",
-    "standard": "^10.0.1",
+    "prettier": "^1.1.0",
+    "standard": "^10.0.2",
     "sw-precache-webpack-plugin": "^0.9.1"
   },
   "lint-staged": {
