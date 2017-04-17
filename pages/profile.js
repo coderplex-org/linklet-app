@@ -43,18 +43,20 @@ class Profile extends React.Component {
               <div className='username'>
                   @{this.props.user.username}
               </div>
+              {this.props.user.name &&
               <div className='name'>
                 <span className='label'>Name</span>
                 <span className='value'>
-                  {this.props.user.name || 'null'}
+                  {this.props.user.name}
                 </span>
-              </div>
+              </div>}
+              {this.props.user.email &&
               <div className='email'>
                 <span className='label'>Email</span>
                 <span className='value'>
-                  {this.props.user.email || 'UnKnown'}
+                  {this.props.user.email}
                 </span>
-              </div>
+              </div>}
               <button
                 onClick={() => {
                   NProgress.start()
