@@ -1,5 +1,5 @@
 - [x] Add search Bar
-- [] Add Github Authentication
+- [x] Add Github Authentication
 - [] Allow users to post links with tags
-- [] Allow users to view links posted by them in seperate view
-- [] Implement settings for push notifications
+- [x] Allow users to view links posted by them in seperate view
+- [x] Implement settings for push notifications
