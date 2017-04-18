@@ -10,3 +10,4 @@ Please see this [contributing.md](https://github.com/vinaypuppal/linklet-app/blo
 
 ## Authors
 - VinayPuppal ([@vinaypuppal](https://vinaypuppal.com))
+- UtkarshShukla ([@utkarshshukla7](https://github.com/UtkarshShukla7))
