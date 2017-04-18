@@ -30,22 +30,24 @@ export default ({
             if (start && end) {
               if (search) {
                 Router.push(
-                  `/?start=${start}&end=${end}&page=${current}&search=${search}`
+                  `${url.pathname}?start=${start}&end=${end}&page=${current}&search=${search}`
                 )
                   .then(() => window.scrollTo(0, 0))
                   .catch(e => console.log(e))
               } else {
-                Router.push(`/?start=${start}&end=${end}&page=${current}`)
+                Router.push(
+                  `${url.pathname}?start=${start}&end=${end}&page=${current}`
+                )
                   .then(() => window.scrollTo(0, 0))
                   .catch(e => console.log(e))
               }
             } else {
               if (search) {
-                Router.push(`/?page=${current}&search=${search}`)
+                Router.push(`${url.pathname}?page=${current}&search=${search}`)
                   .then(() => window.scrollTo(0, 0))
                   .catch(e => console.log(e))
               } else {
-                Router.push(`/?page=${current}`)
+                Router.push(`${url.pathname}?page=${current}`)
                   .then(() => window.scrollTo(0, 0))
                   .catch(e => console.log(e))
               }
