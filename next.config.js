@@ -13,7 +13,7 @@ module.exports = {
           staticFileGlobs: [
             'static/**/*' // Precache all static files by default
           ],
-          importScripts: ['/push-sw.hsdbcjhsvdc.js'],
+          importScripts: ['/push-sw.xyjhbdhbedj.js'],
           forceDelete: true,
           runtimeCaching: [
             {

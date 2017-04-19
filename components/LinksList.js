@@ -12,7 +12,7 @@ export default ({
   return (
     <main>
       <SearchBar url={url} query={query} />
-      <PageInfo query={query} page={page} totalLinks={totalLinks} />
+      <PageInfo url={url} query={query} page={page} totalLinks={totalLinks} />
       <ul className='list'>
         {links.map(link => (
           <LinkCard key={link._id} link={link} query={query} />
