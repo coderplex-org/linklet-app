@@ -1,9 +1,7 @@
-/* global location */
-
 import Link from 'next/link'
 import format from 'date-fns/format'
 
-const renderInfo = (query, totalLinks) => {
+const renderInfo = (query, totalLinks, url) => {
   if (query && query.start && query.end) {
     if (query.search) {
       return (
@@ -13,7 +11,7 @@ const renderInfo = (query, totalLinks) => {
             {' ' +
               `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')} ${query.search ? `containing ${query.search} word` : ''}` +
               ' '}
-            <Link href={`${location.pathname}`} scroll><a>clear</a></Link>
+            <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
           </span>
           <style jsx>
             {`
@@ -50,7 +48,7 @@ const renderInfo = (query, totalLinks) => {
             {' ' +
               `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')}` +
               ' '}
-            <Link href={`${location.pathname}`} scroll><a>clear</a></Link>
+            <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
           </span>
           <style jsx>
             {`
@@ -87,7 +85,7 @@ const renderInfo = (query, totalLinks) => {
           Total: <strong>{totalLinks}</strong> link/s were found containing word
           <span>
             {' ' + query.search + ' '}
-            <Link href={`${location.pathname}`} scroll><a>clear</a></Link>
+            <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
           </span>
           <style jsx>
             {`
@@ -138,11 +136,11 @@ const renderInfo = (query, totalLinks) => {
   }
 }
 
-export default ({ query, page, totalLinks }) => {
+export default ({ query, page, totalLinks, url }) => {
   return (
     <div>
       <div className='info'>
-        {renderInfo(query, totalLinks)}
+        {renderInfo(query, totalLinks, url)}
       </div>
       <p className='text-center'>Page: {page}</p>
       <style jsx>
