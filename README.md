@@ -9,7 +9,7 @@ We've have tons of resources shared daily in our Freecodecamp Hyderabad Whatsapp
 So I created a website that lists all the resources we have shared in the group since our inception. You can also now directly share resources on the website, and search for them using keywords and filter them based on particular date range. We have over 1200 links available on the site right now. Machine Learning, Web Development, Android Development, Python, whatever you're interested in, you'll find resources for it here.
 
 ## Community Ports
-[Android App](https://github.com/M-ZubairAhmed/Linklet-Android) (Under active development) by **@M-ZubairAhmed**
+[Android App](https://github.com/M-ZubairAhmed/Linklet-Android) (Under active development) by **[@M-ZubairAhmed](https://github.com/M-ZubairAhmed)**
 
 ## Contributing
 Please read this [contributing.md](https://github.com/vinaypuppal/linklet-app/blob/master/contributing.md)
