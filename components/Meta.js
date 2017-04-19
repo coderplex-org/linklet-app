@@ -39,19 +39,19 @@ export default ({ title }) => (
     <title>{title}</title>
     <meta
       name='description'
-      content='Linklet as of now contains the links which are shared in whatsapp freeCodeCamp Hyderabad group.'
+      content='The app that helps you find the best links shared in fcc-hyd WA group!'
     />
     <meta property='og:type' content='website' />
     <meta property='og:title' content={title} />
     <meta property='og:url' content='https://linklet.ml' />
     <meta
       property='og:image'
-      content='https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_600/v1490456906/Screen_Shot_2017-03-25_at_9.01.02_PM_y7dk6j.png'
+      content='https://res.cloudinary.com/vinaypuppal/image/upload/v1492605332/linklet_meta.png'
     />
     <meta property='og:site_name' content='Linklet' />
     <meta
       property='og:description'
-      content='Linklet as of now contains the links which are shared in whatsapp freeCodeCamp Hyderabad group.'
+      content='The app that helps you find the best links shared in fcc-hyd WA group!'
     />
   </Head>
 )

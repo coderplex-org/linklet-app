@@ -166,13 +166,17 @@ export default class BottomBar extends React.Component {
           li:last-child {
             border-right: none;
           }
+          @media(max-width: 1080px) {
+            div {
+              width: 100%;
+              margin-left: 0;
+            }
+          }
           @media(max-width: 720px) {
             div {
               position: fixed;
               left: 0;
               bottom: 0;
-              width: 100%;
-              margin-left: 0;
               background: #253592;
               box-shadow: 0 -1px 10px #ccc;
             }

@@ -58,7 +58,7 @@ export default ({
       <style jsx>
         {`
           main {
-            padding: 70px 0;
+            padding: 30px 0;
             padding-top: 100px;
             margin-left: 200px;
           }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Router from 'next/router'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 import PublicPage from '../hocs/PublicPage'
 
@@ -122,6 +123,7 @@ class Home extends Component {
           showModal={this.handleClick.bind(this)}
         />
         <LinksList data={data} url={url} />
+        <Footer />
         {this.state.isShowingModal &&
           <ModalContainer onClose={this.handleClose.bind(this)}>
             <ModalDialog onClose={this.handleClose.bind(this)}>

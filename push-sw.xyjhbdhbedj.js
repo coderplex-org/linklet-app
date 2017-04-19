@@ -16,6 +16,7 @@ self.addEventListener('push', function (event) {
     'icon': playload.icon || 'https://linklet.ml/static/favicons/favicon-32x32.png'
   }
   url = playload.body
+
   event.waitUntil(
     self.registration.showNotification(title, body)
   )
@@ -23,8 +24,6 @@ self.addEventListener('push', function (event) {
 
 self.addEventListener('notificationclick', function (event) {
   event.notification.close() // Close the notification
-
-  // Open the app and navigate to latest.html after clicking the notification
   event.waitUntil(
     clients.openWindow(url || '/')
   )

@@ -321,6 +321,8 @@ export default props => {
           aside {
             width: 100%;
             display: none;
+            top: 112px;
+            bottom: 56px;
           }
           aside.show {
             display: block

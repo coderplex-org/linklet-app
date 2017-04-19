@@ -118,7 +118,7 @@ class MyLinks extends Component {
           user={this.props.user}
           url={url}
           about
-          title='Linklet | Home'
+          title='Linklet | MyLinks'
           toggleFilter={this.toggleFilter.bind(this)}
         />
         <SideBar
