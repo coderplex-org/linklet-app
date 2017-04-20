@@ -7,7 +7,7 @@ export default () => (
     </p>
     <ul>
       <li>
-        <a href='https://https://github.com/vinaypuppal/linklet-app'>
+        <a href='https://github.com/vinaypuppal/linklet-app'>
           <FaGithub /> View on Github
         </a>
       </li>
