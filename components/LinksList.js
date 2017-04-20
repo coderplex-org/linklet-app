@@ -69,6 +69,7 @@ export default ({
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            min-height: 250px;
           }
           .pagination{
             display: flex;

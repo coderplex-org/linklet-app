@@ -2,6 +2,9 @@ import FaGithub from 'react-icons/lib/fa/github'
 
 export default () => (
   <footer>
+    <p>
+      Made with ❤ By <a href='https://vinaypuppal.com'>VinayPuppal</a>
+    </p>
     <ul>
       <li>
         <a href='https://https://github.com/vinaypuppal/linklet-app'>
@@ -25,8 +28,14 @@ export default () => (
         color: #888;
         width: 100%;
         min-height: 50px;
+        display: flex;
+      }
+      p{
+        margin-left: 240px;
+        font-size: 14px;
       }
       ul {
+        flex: 1;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -51,8 +60,14 @@ export default () => (
         footer {
           margin-left: 0;
           padding-bottom: 60px;
+          flex-direction: column;
+          align-items: center;
+        }
+        p {
+          margin-left: 0;
         }
         ul {
+          width: 100%;
           justify-content: flex-start;
         }
         ul li {

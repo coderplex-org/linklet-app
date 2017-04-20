@@ -65,7 +65,7 @@ export default props => (
       }
       nav {
         width: 100%;
-        padding: 0 40px;
+        padding: 0 30px;
         display: flex;
       }
       nav ul {
@@ -77,7 +77,7 @@ export default props => (
         margin: 0;
       }
       nav ul li {
-        margin: 0 20px;
+        margin: 0 30px;
       }
       nav ul li a {
         text-decoration: none;

@@ -9,7 +9,7 @@ const renderInfo = (query, totalLinks, url) => {
           Total: <strong>{totalLinks}</strong> link/s were found from
           <span>
             {' ' +
-              `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')} ${query.search ? `containing ${query.search} word` : ''}` +
+              `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(Number(query.end), 'MMM, Do YYYY')} ${query.search ? `containing ${query.search} word` : ''}` +
               ' '}
             <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
           </span>
@@ -26,7 +26,6 @@ const renderInfo = (query, totalLinks, url) => {
           span {
             font-weight: bold;
             text-transform: capitalize;
-            padding: 10px;
           }
           span a {
             color: blue;
@@ -46,7 +45,7 @@ const renderInfo = (query, totalLinks, url) => {
           Total: <strong>{totalLinks}</strong> link/s were found from
           <span>
             {' ' +
-              `${format(Number(query.start), 'MMM Do')} to ${format(Number(query.end), 'MMM Do')}` +
+              `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(Number(query.end), 'MMM, Do YYYY')}` +
               ' '}
             <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
           </span>
