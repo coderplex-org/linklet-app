@@ -3,16 +3,28 @@ import FaGithub from 'react-icons/lib/fa/github'
 export default () => (
   <footer>
     <p>
-      Made with ❤ By <a href='https://vinaypuppal.com'>VinayPuppal</a>
+      Made with ❤ By
+      {' '}
+      <a rel='noopener' target='_blank' href='https://vinaypuppal.com'>
+        VinayPuppal
+      </a>
     </p>
     <ul>
       <li>
-        <a href='https://github.com/vinaypuppal/linklet-app'>
+        <a
+          rel='noopener'
+          target='_blank'
+          href='https://github.com/vinaypuppal/linklet-app'
+        >
           <FaGithub /> View on Github
         </a>
       </li>
       <li>
-        <a href='https://github.com/vinaypuppal/linklet-app/issues/new'>
+        <a
+          rel='noopener'
+          target='_blank'
+          href='https://github.com/vinaypuppal/linklet-app/issues/new'
+        >
           Feedback
         </a>
       </li>
