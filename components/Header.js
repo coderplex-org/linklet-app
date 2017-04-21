@@ -1,3 +1,4 @@
+import React from 'react'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import Link from 'next/link'
@@ -8,6 +9,7 @@ import FilterIcon from './FilterIcon'
 import BottomBar from './BottomBar'
 import { logEvent } from '../lib/analytics'
 import NotificationBtn from './Notification'
+import FaSpinner from 'react-icons/lib/fa/spinner'
 
 console.log('started')
 Router.onRouteChangeStart = () => {
@@ -24,33 +26,53 @@ Router.onRouteChangeError = () => {
   NProgress.done()
 }
 
-export default props => (
-  <header>
-    <Meta title={props.title} />
-    <GlobalStyles />
-    <Link href='/'>
-      <a className='logo'>
-        <LinkIcon />
-        <h1>
-          <span>Link</span>
-          <span>let</span>
-        </h1>
-      </a>
-    </Link>
-    <nav>
-      <BottomBar user={props.user} url={props.url} />
-      <ul>
-        {props.about &&
-          <li className='filterBtn'>
-            <a onClick={props.toggleFilter} href='#'>
-              <FilterIcon />
-            </a>
-          </li>}
-        <NotificationBtn />
-      </ul>
-    </nav>
-    <style jsx>
-      {`
+export default class Header extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      interactive: false
+    }
+  }
+  componentDidMount () {
+    this.setState({
+      interactive: true
+    })
+  }
+  render () {
+    return (
+      <header>
+        <Meta title={this.props.title} />
+        <GlobalStyles />
+        <Link href='/'>
+          <a className='logo'>
+            <LinkIcon />
+            <h1>
+              <span>Link</span>
+              <span>let</span>
+            </h1>
+          </a>
+        </Link>
+        <nav>
+          <BottomBar user={this.props.user} url={this.props.url} />
+
+          {this.state.interactive
+            ? <ul>
+              {this.props.about &&
+              <li className='filterBtn'>
+                <a onClick={this.props.toggleFilter} href='#'>
+                  <FilterIcon />
+                </a>
+              </li>}
+              <NotificationBtn />
+            </ul>
+            : <ul>
+              <li className='spinner'>
+                <FaSpinner size={20} />
+              </li>
+            </ul>}
+        </nav>
+        <style jsx>
+          {`
       header {
         background: #253592;
         height: 56px;
@@ -62,6 +84,20 @@ export default props => (
         z-index: 9;
         display: flex;
         align-items: center;
+      }
+      .spinner {
+        color: #fff;
+        animation: load3 1.4s infinite linear;
+      }
+      @keyframes load3 {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
       }
       nav {
         width: 100%;
@@ -122,6 +158,8 @@ export default props => (
           }
         }
       `}
-    </style>
-  </header>
-)
+        </style>
+      </header>
+    )
+  }
+}
