@@ -7,7 +7,7 @@ We've have tons of resources shared daily in our Freecodecamp Hyderabad Whatsapp
 - It's hard to find the resources shared in the group
 - It's only available to our Whatsapp members.
 
-So I created a website that lists all the resources we have shared in the group since our inception. You can also now directly share resources on the website, and search for them using keywords and filter them based on particular date range. We have over 1200 links available on the site right now. Machine Learning, Web Development, Android Development, Python, whatever you're interested in, you'll find resources for it here.
+So I extracted all those resources and created a website that lists all the resources we have shared in the group since our inception. You can also now directly share resources on the website, and search for them using keywords and filter them based on particular date range. We have over 1200 links available on the site right now. Machine Learning, Web Development, Android Development, Python, whatever you're interested in, you'll find resources for it here.
 
 ## Tech Stack used
 - Frontend - [Next.js](https://github.com/zeit/next.js)
