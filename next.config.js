@@ -18,7 +18,16 @@ module.exports = {
           runtimeCaching: [
             {
               handler: 'fastest',
-              urlPattern: /[.](png|jpg|css)/
+              urlPattern: /[.](png|jpg|svg)/
+            },
+            {
+              handler: 'cacheFirst',
+              urlPattern: /\/_next\/.*/,
+              options: {
+                cache: {
+                  name: 'nextjs-cache'
+                }
+              }
             },
             {
               handler: 'networkFirst',

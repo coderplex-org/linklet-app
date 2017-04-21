@@ -33,7 +33,7 @@ const renderInfo = (query, totalLinks, url) => {
             text-decoration: none;
           }
           span a:hover {
-            color: lightblue;
+            color: teal;
           }
         `}
           </style>

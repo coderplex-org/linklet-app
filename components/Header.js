@@ -9,9 +9,9 @@ import BottomBar from './BottomBar'
 import { logEvent } from '../lib/analytics'
 import NotificationBtn from './Notification'
 
-import '../utils/offlineInstaller'
-
+console.log('started')
 Router.onRouteChangeStart = () => {
+  console.log('started listening')
   NProgress.start()
 }
 

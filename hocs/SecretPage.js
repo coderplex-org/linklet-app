@@ -40,6 +40,7 @@ export default Page => {
     }
 
     componentDidMount () {
+      require('../utils/offlineInstaller')
       window.addEventListener('storage', this.handleAuthChange, false)
     }
 

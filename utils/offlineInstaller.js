@@ -4,6 +4,7 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       scope: './'
     })
     .then(function (reg) {
+      console.log('sw rules here')
       reg.onupdatefound = function () {
         const installingWorker = reg.installing
 

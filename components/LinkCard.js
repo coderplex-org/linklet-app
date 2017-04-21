@@ -1,5 +1,6 @@
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import format from 'date-fns/format'
+import LazyLoad from 'react-lazyload'
 import { truncateString } from '../utils'
 import Highlighter from 'react-highlight-words'
 
@@ -44,10 +45,12 @@ export default ({ link, query: { search } = {} } = {}) => {
                   href={`https://github.com/${link._creator.username}`}
                   target='_blank'
                   >
-                  <img
-                    src={link._creator.avatarUrl}
-                    alt={link._creator.username}
-                    />
+                  <LazyLoad height={40} offset={100}>
+                    <img
+                      src={link._creator.avatarUrl}
+                      alt={link._creator.username}
+                      />
+                  </LazyLoad>
                   <span className='info'>
                     <span>Added By</span>
                     <span>{link._creator.username}</span>
