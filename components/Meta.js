@@ -24,7 +24,7 @@ export default ({ title }) => (
       href='static/favicons/favicon-16x16.png'
       sizes='16x16'
     />
-    <link rel='manifest' href='static/favicons/manifest.json?v2' />
+    <link rel='manifest' href='static/favicons/manifest.json?v3' />
     <link
       rel='mask-icon'
       href='static/favicons/safari-pinned-tab.svg'
