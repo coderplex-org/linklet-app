@@ -47,7 +47,7 @@ export default ({ link, query: { search } = {} } = {}) => {
                   >
                   <LazyLoad height={40} offset={100}>
                     <img
-                      src={link._creator.avatarUrl}
+                      src={`${link._creator.avatarUrl}&s=40`}
                       alt={link._creator.username}
                       />
                   </LazyLoad>

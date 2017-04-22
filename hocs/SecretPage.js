@@ -74,6 +74,14 @@ export default Page => {
       window.addEventListener('storage', this.handleAuthChange, false)
       window.addEventListener('online', this.updateNetworkStatus, false)
       window.addEventListener('offline', this.updateNetworkStatus, false)
+      if (!navigator.onLine) {
+        const body = document.querySelector('body')
+        body.style.filter = 'grayscale(1)'
+        this.setState({
+          show: true,
+          message: 'You are \'Offline\''
+        })
+      }
     }
 
     componentWillUnmount () {

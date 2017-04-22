@@ -1,6 +1,6 @@
 /* global self, clients */
 // triggered everytime, when a push notification is received.
-console.log('Reached Here v2')
+console.log('Reached Here v4')
 
 let url
 
