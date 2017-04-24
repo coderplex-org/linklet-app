@@ -1,6 +1,6 @@
 /* global self, clients */
 // triggered everytime, when a push notification is received.
-console.log('Reached Here v4')
+console.log('Reached Here v5')
 
 let url
 
@@ -12,7 +12,8 @@ self.addEventListener('push', function (event) {
 
   var body = {
     'body': playload.body || 'No Body',
-    'icon': playload.icon || 'https://linklet.ml/static/favicons/favicon-32x32.png'
+    'icon': playload.icon || 'https://linklet.ml/static/favicons/favicon-32x32.png',
+    'tag': 'links'
   }
   url = playload.body
 
@@ -22,6 +23,7 @@ self.addEventListener('push', function (event) {
 })
 
 self.addEventListener('notificationclick', function (event) {
+  console.log(event.notification)
   event.notification.close() // Close the notification
   event.waitUntil(
     clients.openWindow(url || '/')
