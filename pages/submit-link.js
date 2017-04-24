@@ -22,8 +22,10 @@ class SubmitLink extends React.Component {
   componentDidMount () {
     initGA()
     logPageView()
+    this.input.focus()
   }
-  handleFetch () {
+  handleFetch (e) {
+    e && e.preventDefault()
     let url = this.state.url
     if (url && !/^https?:\/\//i.test(url)) {
       url = 'http://' + url
@@ -91,22 +93,25 @@ class SubmitLink extends React.Component {
           </p>
           {!this.state.showPreview &&
             <div className='card'>
-              <div className='group'>
-                <input
-                  onChange={e => {
-                    this.setState({ url: e.target.value })
-                  }}
-                  value={this.state.url}
-                  type='text'
-                  required
-                />
-                <span className='highlight' />
-                <span className='bar' />
-                <label>URL</label>
-              </div>
-              <div className='group'>
-                <button onClick={this.handleFetch.bind(this)}>Fetch</button>
-              </div>
+              <form onSubmit={this.handleFetch.bind(this)}>
+                <div className='group'>
+                  <input
+                    ref={node => (this.input = node)}
+                    onChange={e => {
+                      this.setState({ url: e.target.value })
+                    }}
+                    value={this.state.url}
+                    type='text'
+                    required
+                  />
+                  <span className='highlight' />
+                  <span className='bar' />
+                  <label>URL</label>
+                </div>
+                <div className='group'>
+                  <button type='submit'>Fetch</button>
+                </div>
+              </form>
             </div>}
           {this.state.showPreview &&
             <ul className='preview'>
