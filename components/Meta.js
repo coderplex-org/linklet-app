@@ -39,7 +39,7 @@ export default ({ title }) => (
     <title>{title}</title>
     <meta
       name='description'
-      content='The app that helps you find the best links shared in fcc-hyd WA group!'
+      content='The app that helps you find the best links shared by FCC community!'
     />
     <meta property='og:type' content='website' />
     <meta property='og:title' content={title} />
@@ -51,7 +51,7 @@ export default ({ title }) => (
     <meta property='og:site_name' content='Linklet' />
     <meta
       property='og:description'
-      content='The app that helps you find the best links shared in fcc-hyd WA group!'
+      content='The app that helps you find the best links shared by FCC community!'
     />
   </Head>
 )
