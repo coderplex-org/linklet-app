@@ -39,7 +39,7 @@ app.prepare()
     })
     // serve service worker
     server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')))
-    server.get('/push-sw.opkojijojpjnjnj.js', (req, res) => res.sendFile(path.resolve('./push-sw.opkojijojpjnjnj.js')))
+    server.get('/push-sw.poiugnkmncf.js', (req, res) => res.sendFile(path.resolve('./push-sw.poiugnkmncf.js')))
 
     server.get('*', (req, res) => handle(req, res))
 

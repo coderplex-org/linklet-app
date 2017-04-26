@@ -6,17 +6,36 @@ const changeRoute = (start, end, props) => {
   const search = props.url.query
     ? props.url.query.search ? props.url.query.search : null
     : null
-  console.log({ start, end, search })
+  const sort = props.url.query
+    ? props.url.query.sort ? props.url.query.sort : null
+    : null
+  console.log({ start, end, search, sort })
   if (search) {
-    Router.push(
-      `${props.url.pathname}?start=${start}&end=${end}&search=${search}`
-    )
-      .then(() => window.scrollTo(0, 0))
-      .catch(e => console.log(e))
+    if (sort) {
+      Router.push(
+        `${props.url.pathname}?start=${start}&end=${end}&search=${search}&sort=${sort}`
+      )
+        .then(() => window.scrollTo(0, 0))
+        .catch(e => console.log(e))
+    } else {
+      Router.push(
+        `${props.url.pathname}?start=${start}&end=${end}&search=${search}`
+      )
+        .then(() => window.scrollTo(0, 0))
+        .catch(e => console.log(e))
+    }
   } else {
-    Router.push(`${props.url.pathname}?start=${start}&end=${end}`)
-      .then(() => window.scrollTo(0, 0))
-      .catch(e => console.log(e))
+    if (sort) {
+      Router.push(
+        `${props.url.pathname}?start=${start}&end=${end}&sort=${sort}`
+      )
+        .then(() => window.scrollTo(0, 0))
+        .catch(e => console.log(e))
+    } else {
+      Router.push(`${props.url.pathname}?start=${start}&end=${end}`)
+        .then(() => window.scrollTo(0, 0))
+        .catch(e => console.log(e))
+    }
   }
 }
 
@@ -325,7 +344,7 @@ export default props => {
             bottom: 56px;
           }
           aside.show {
-            display: block
+            display: block;
           }
           main {
             display: flex;

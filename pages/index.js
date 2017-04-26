@@ -21,7 +21,7 @@ import { initGA, logPageView } from '../lib/analytics'
 
 class Home extends Component {
   static async getInitialProps ({ query, req }) {
-    const { start, end, page = 1, search } = query
+    const { start, end, page = 1, search, sort = -1 } = query
 
     const today = new Date()
     const yesterday = addDays(today, -1)
@@ -51,9 +51,9 @@ class Home extends Component {
     let res
     try {
       if (start && end) {
-        res = await db.getByFilter({ start, end, page, search, req })
+        res = await db.getByFilter({ start, end, page, search, req, sort })
       } else {
-        res = await db.getAll({ page, search, req })
+        res = await db.getAll({ page, search, req, sort })
       }
     } catch (e) {
       throw e
@@ -105,7 +105,7 @@ class Home extends Component {
       .catch(e => console.log(e))
   }
   render () {
-    const { data, filterOptions, url } = this.props
+    const { data, filterOptions, url, user } = this.props
     return (
       <div className='home'>
         <Header
@@ -122,7 +122,7 @@ class Home extends Component {
           filterOpenState={this.state.toggleFilter}
           showModal={this.handleClick.bind(this)}
         />
-        <LinksList data={data} url={url} />
+        <LinksList user={user} data={data} url={url} />
         <Footer />
         {this.state.isShowingModal &&
           <ModalContainer onClose={this.handleClose.bind(this)}>

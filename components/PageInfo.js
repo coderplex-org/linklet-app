@@ -6,12 +6,20 @@ const renderInfo = (query, totalLinks, url) => {
     if (query.search) {
       return (
         <p className='text-center'>
-          Total: <strong>{totalLinks}</strong> link/s were found from
+          Total:
+          {' '}
+          <strong>{totalLinks}</strong>
+          {' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
+          {' '}
+          were found from
           <span>
             {' ' +
               `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(Number(query.end), 'MMM, Do YYYY')} ${query.search ? `containing ${query.search} word` : ''}` +
               ' '}
-            <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
+            <Link href={`${url.pathname}?sort=${query.sort || -1}`} scroll>
+              <a>clear</a>
+            </Link>
           </span>
           <style jsx>
             {`
@@ -42,12 +50,20 @@ const renderInfo = (query, totalLinks, url) => {
     } else {
       return (
         <p className='text-center'>
-          Total: <strong>{totalLinks}</strong> link/s were found from
+          Total:
+          {' '}
+          <strong>{totalLinks}</strong>
+          {' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
+          {' '}
+          were found from
           <span>
             {' ' +
               `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(Number(query.end), 'MMM, Do YYYY')}` +
               ' '}
-            <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
+            <Link href={`${url.pathname}?sort=${query.sort || -1}`} scroll>
+              <a>clear</a>
+            </Link>
           </span>
           <style jsx>
             {`
@@ -81,10 +97,18 @@ const renderInfo = (query, totalLinks, url) => {
     if (query && query.search) {
       return (
         <p className='text-center'>
-          Total: <strong>{totalLinks}</strong> link/s were found containing word
+          Total:
+          {' '}
+          <strong>{totalLinks}</strong>
+          {' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
+          {' '}
+          were found containing word
           <span>
             {' ' + query.search + ' '}
-            <Link href={`${url.pathname}`} scroll><a>clear</a></Link>
+            <Link href={`${url.pathname}?sort=${query.sort || -1}`} scroll>
+              <a>clear</a>
+            </Link>
           </span>
           <style jsx>
             {`
@@ -116,7 +140,13 @@ const renderInfo = (query, totalLinks, url) => {
     } else {
       return (
         <p className='text-center'>
-          Total: <strong>{totalLinks}</strong> link/s were added till today.
+          Total:
+          {' '}
+          <strong>{totalLinks}</strong>
+          {' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
+          {' '}
+          were added till today.
           <style jsx>
             {`
           .text-center {
@@ -135,21 +165,82 @@ const renderInfo = (query, totalLinks, url) => {
   }
 }
 
-export default ({ query, page, totalLinks, url }) => {
+export default ({ query, page, totalLinks, url, handelSort }) => {
+  const sort = (query && query.sort) || -1
   return (
     <div>
       <div className='info'>
         {renderInfo(query, totalLinks, url)}
       </div>
-      <p className='text-center'>Page: {page}</p>
+      <div className='flex'>
+        <p className='page-num'>Page: {page}</p>
+        <div className='sort'>
+          <div className='title'>Sort By:</div>
+          <select value={sort} onChange={handelSort} name='sort' id='sort'>
+            <option value='-1'>New to Old</option>
+            <option value='1'>Old to New</option>
+            <option value='-2'>Views - high to low</option>
+            <option value='2'>Views - low to high</option>
+            <option value='-3'>Bookmarks - high to low</option>
+            <option value='3'>Bookmarks - low to high</option>
+          </select>
+        </div>
+      </div>
       <style jsx>
         {`
-        .text-center {
+        .page-num {
           text-align: center;
           width: 100%;
           margin: 10px 0 0 0;
           padding: 0;
           font-size: 12px;
+        }
+        div {
+          position: relative;
+        }
+        .sort {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 60px;
+          width: 160px;
+          display: flex;
+          align-items: center;
+        }
+        .sort .title {
+          font-size: 12px;
+          font-weight: bold;
+        }
+        select {
+          width: 100px;
+          margin-left: 5px;
+          background: #fff;
+        }
+        @media(max-width: 950px) {
+          .sort {
+            right: 30px;
+          }
+        }
+        @media(max-width: 720px) {
+          .sort {
+            right: 10px;
+          }
+        }
+        @media(max-width: 600px) {
+          .sort {
+            position: static;
+            flex: 1;
+            transform: translateY(0);
+          }
+          .page-num {
+            flex: 1;
+            margin: 0;
+          }
+          .flex {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+          }
         }
       `}
       </style>

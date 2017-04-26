@@ -11,8 +11,8 @@
     "rc-pagination": "^1.8.5",
     "react": "^15.5.4",
     "react-autosuggest": "^9.0.1",
-    "react-dom": "^15.5.4",
     "react-cookie": "1.0.5",
+    "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.5",
     "react-highlight-words": "^0.7.1",
@@ -21,7 +21,7 @@
     "react-modal-dialog": "^4.0.7"
   },
   "scripts": {
-    "dev": "NODE_ENV=development node server",
+    "dev": "NODE_ENV=development nodemon server.js -w server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server",
     "deploy": "npm run lint && now -t $TB",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
+    "nodemon": "^1.11.0",
     "prettier": "^1.2.2",
     "standard": "^10.0.2",
     "sw-precache-webpack-plugin": "^0.9.1"

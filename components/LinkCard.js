@@ -1,84 +1,114 @@
+import React from 'react'
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import format from 'date-fns/format'
+import isThisMonth from 'date-fns/is_this_month'
 import LazyLoad from 'react-lazyload'
 import { truncateString } from '../utils'
 import Highlighter from 'react-highlight-words'
+import FaHeart from 'react-icons/lib/fa/bookmark'
+import FaEye from 'react-icons/lib/fa/eye'
 
-export default ({ link, query: { search } = {} } = {}) => {
-  return (
-    <li key={link._id} className='list__item'>
-      <div className='item__content'>
-        <h3 className='title'>
-          <Highlighter
-            highlightClassName='highlight'
-            searchWords={[search]}
-            textToHighlight={
-              link.title ? truncateString(link.title, 90) : link.url
-            }
-          />
-        </h3>
-        <p className='desc'>
-          {link.description
-            ? <Highlighter
+export default class LinkCard extends React.Component {
+  render () {
+    const { link, query: { search } = {}, user } = this.props
+    const likedLinkClass = user &&
+      link.bookmarkedBy &&
+      ~link.bookmarkedBy.indexOf(user._id)
+      ? 'liked'
+      : ''
+    return (
+      <li key={link._id} className='list__item'>
+        <div className='item__content'>
+          <h3 className='title'>
+            <Highlighter
               highlightClassName='highlight'
               searchWords={[search]}
-              textToHighlight={truncateString(link.description, 140)}
-              />
-            : 'No Description'}
-        </p>
-      </div>
-      <div className='item__footer'>
-        <span>
-          {distanceInWordsToNow(link.timestamp)}
-          {' '}
-          ago (
-          {format(link.timestamp, 'MMM, Do YYYY')}
-          )
-        </span>
-        <div className='meta'>
-          <ul>
-            <li>
-              {link._creator
-                ? <a
-                  className='by-user'
-                  rel='noopener'
-                  href={`https://github.com/${link._creator.username}`}
-                  target='_blank'
-                  >
-                  <LazyLoad height={40} offset={100}>
-                    <img
-                      src={`${link._creator.avatarUrl}&s=40`}
-                      alt={link._creator.username}
-                      />
-                  </LazyLoad>
-                  <span className='info'>
-                    <span>Added By</span>
-                    <span>{link._creator.username}</span>
-                  </span>
-                </a>
-                : <div className='by-wa'>
-                    Added From whatsapp
-                  </div>}
-            </li>
-            <li>
-              <a
-                className='open'
-                rel='noopener'
-                href={link.url}
-                target='_blank'
-              >
-                Open
-                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-                  <path d='M488.727 0H302.545c-12.853 0-23.273 10.42-23.273 23.273s10.42 23.273 23.273 23.273h129.997L192.999 286.09c-9.089 9.089-9.089 23.823 0 32.912 4.543 4.544 10.499 6.816 16.455 6.816 5.956 0 11.913-2.271 16.457-6.817L465.455 79.458v129.997c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V23.273C512 10.42 501.58 0 488.727 0z' />
-                  <path d='M395.636 232.727c-12.853 0-23.273 10.42-23.273 23.273v209.455H46.545V139.636H256c12.853 0 23.273-10.42 23.273-23.273S268.853 93.091 256 93.091H23.273C10.42 93.091 0 103.511 0 116.364v372.364C0 501.58 10.42 512 23.273 512h372.364c12.853 0 23.273-10.42 23.273-23.273V256c-.001-12.853-10.421-23.273-23.274-23.273z' />
-                </svg>
-              </a>
-            </li>
-          </ul>
+              textToHighlight={
+                link.title ? truncateString(link.title, 90) : link.url
+              }
+            />
+          </h3>
+          <p className='desc'>
+            {link.description
+              ? <Highlighter
+                highlightClassName='highlight'
+                searchWords={[search]}
+                textToHighlight={truncateString(link.description, 140)}
+                />
+              : 'No Description'}
+          </p>
         </div>
-      </div>
-      <style jsx>
-        {`
+        <div className='item__footer'>
+          <div className='info__stats'>
+            <span className='timestamp'>
+              {isThisMonth(link.timestamp)
+                ? 'Added ' + distanceInWordsToNow(link.timestamp) + ' ' + 'ago'
+                : 'Added On ' + format(link.timestamp, 'MMM, Do YYYY')}
+            </span>
+            <span className='stats'>
+              <a
+                title='bookmark'
+                className={`like__btn ${likedLinkClass}`}
+                onClick={e => {
+                  e.preventDefault()
+                  this.props.handelLike(link._id)
+                }}
+                href='#'
+              >
+                <FaHeart />
+                <span>{link.bookmarkedBy ? link.bookmarkedBy.length : 0}</span>
+              </a>
+              <span title='Views' className='views'>
+                <FaEye />
+                <span>{link.views || 0}</span>
+              </span>
+            </span>
+          </div>
+          <div className='meta'>
+            <ul>
+              <li>
+                {link._creator
+                  ? <a
+                    className='by-user'
+                    rel='noopener'
+                    href={`https://github.com/${link._creator.username}`}
+                    target='_blank'
+                    >
+                    <LazyLoad height={40} offset={100}>
+                      <img
+                        src={`${link._creator.avatarUrl}&s=40`}
+                        alt={link._creator.username}
+                        />
+                    </LazyLoad>
+                    <span className='info'>
+                      <span>Added By</span>
+                      <span>{link._creator.username}</span>
+                    </span>
+                  </a>
+                  : <div className='by-wa'>
+                      Added From whatsapp
+                    </div>}
+              </li>
+              <li>
+                <a
+                  onClick={() => this.props.handelOpen(link._id)}
+                  className='open'
+                  rel='noopener'
+                  href={link.url}
+                  target='_blank'
+                >
+                  Open
+                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                    <path d='M488.727 0H302.545c-12.853 0-23.273 10.42-23.273 23.273s10.42 23.273 23.273 23.273h129.997L192.999 286.09c-9.089 9.089-9.089 23.823 0 32.912 4.543 4.544 10.499 6.816 16.455 6.816 5.956 0 11.913-2.271 16.457-6.817L465.455 79.458v129.997c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V23.273C512 10.42 501.58 0 488.727 0z' />
+                    <path d='M395.636 232.727c-12.853 0-23.273 10.42-23.273 23.273v209.455H46.545V139.636H256c12.853 0 23.273-10.42 23.273-23.273S268.853 93.091 256 93.091H23.273C10.42 93.091 0 103.511 0 116.364v372.364C0 501.58 10.42 512 23.273 512h372.364c12.853 0 23.273-10.42 23.273-23.273V256c-.001-12.853-10.421-23.273-23.274-23.273z' />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <style jsx>
+          {`
           .list__item {
             margin: 20px auto;
             box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
@@ -100,7 +130,7 @@ export default ({ link, query: { search } = {} } = {}) => {
           .title {
             display: flex;
             align-items: center;
-            margin: 0 0 5px 0;
+            margin: 0;
             padding: 5px 10px;
             font-size: 18px;
             min-height: 75px;
@@ -111,13 +141,10 @@ export default ({ link, query: { search } = {} } = {}) => {
             font-size: 14px;
             padding: 10px;
           }
-          .item__footer > span {
+          .item__footer .info__stats {
             color: #666;
-            display: inline-block;
-            padding: 5px 10px;
-            padding-left: 20px;
-            padding-bottom: 10px;
-            font-size: 14px;
+            display: flex;
+            align-items: center;
           }
           .item__footer .meta {
             display: flex;
@@ -144,6 +171,7 @@ export default ({ link, query: { search } = {} } = {}) => {
           .meta li:first-child {
             flex: 2;
             color: #888;
+            border-right: 0;
           }
           .by-user {
             flex: 1;
@@ -195,13 +223,71 @@ export default ({ link, query: { search } = {} } = {}) => {
           .item__footer .open:hover > svg {
             fill: teal;
           }
+          .timestamp {
+            flex: 1;
+            border: 1px solid #eee;
+            border-bottom: 0;
+            border-left: 0;
+            border-right: 0;
+            min-height: 29px;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .stats {
+            flex: 1;
+            display: flex;
+          }
+          .views {
+            flex: 1;
+            color: #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #eee;
+            border-bottom: 0;
+            border-right: 0;
+            min-height: 29px;
+          }
+          .views > span {
+            color: #666;
+            font-weight: normal;
+            font-size: 12px;
+            margin-left: 5px;
+          }
+          .like__btn {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #666;
+            border: 1px solid #eee;
+            border-bottom: 0;
+            border-right: 0;
+            min-height: 29px;
+          }
+          .like__btn:hover,
+          .like__btn.liked,
+          .like__btn.liked:hover {
+            color: red;
+          }
+          .like__btn span {
+            margin-left: 5px;
+            color: #666;
+          }
           @media(max-width: 720px) {
             .list__item {
               margin: 10px auto;
             }
+            .like__btn:hover {
+              color: #666;
+            }
           }
         `}
-      </style>
-    </li>
-  )
+        </style>
+      </li>
+    )
+  }
 }

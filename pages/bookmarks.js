@@ -19,7 +19,7 @@ import SideBar from '../components/Sidebar'
 import LinksList from '../components/LinksList'
 import { initGA, logPageView } from '../lib/analytics'
 
-class MyLinks extends Component {
+class Bookmarks extends Component {
   static async getInitialProps ({ query, req }) {
     const { start, end, page = 1, search, sort = -1 } = query
 
@@ -57,11 +57,11 @@ class MyLinks extends Component {
           page,
           search,
           req,
-          myLinks: true,
+          bookmarks: true,
           sort
         })
       } else {
-        res = await db.getAll({ page, search, req, myLinks: true, sort })
+        res = await db.getAll({ page, search, req, bookmarks: true, sort })
       }
     } catch (e) {
       throw e
@@ -191,4 +191,4 @@ class MyLinks extends Component {
   }
 }
 
-export default SecretPage(MyLinks)
+export default SecretPage(Bookmarks)

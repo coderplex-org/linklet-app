@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import FaUser from 'react-icons/lib/md/face'
+import FaHeart from 'react-icons/lib/fa/bookmark-o'
 
 const IconPlaceHolder = () => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 58'>
@@ -91,6 +92,19 @@ export default class BottomBar extends React.Component {
                       <path d='M228.873 347.458c-13.669-12.103-36.426-10.743-48.574 2.938l-47.396 53.487c-8.342 9.412-24.159 10.387-33.58 2.043l-16.576-14.705c-4.747-4.207-7.57-10.025-7.955-16.383-.387-6.348 1.722-12.453 5.935-17.196l103.692-116.974c6.876-7.765 19.047-10.111 28.297-5.566 15.121 7.448 34.359 3.818 46.05-9.416 7.433-8.374 10.555-19.496 8.586-30.463-1.956-11.031-8.747-20.389-18.618-25.666-14.201-7.604-30.274-11.624-46.466-11.624-28.223 0-55.118 12.084-73.791 33.151L24.772 308.038C-11.29 348.704-7.536 411.12 33.133 447.181l16.564 14.482c18.021 15.979 41.229 24.582 65.345 24.582h.011c28.223 0 55.129-11.889 73.812-32.957l47.388-53.379c6.116-6.887 9.176-15.691 8.618-24.819-.533-9.068-4.736-17.694-11.538-23.706l-4.46-3.926z' />
                     </svg>
                     <span>My Links</span>
+                  </a>
+                  : <a className={pathname === '/my-links' ? 'active' : ''}>
+                    <IconPlaceHolder />
+                    <span>Loading</span>
+                  </a>}
+              </Link>
+            </li>
+            <li>
+              <Link href='/bookmarks'>
+                {this.state.interactive
+                  ? <a className={pathname === '/bookmarks' ? 'active' : ''}>
+                    <FaHeart size={35} />
+                    <span>Bookmarks</span>
                   </a>
                   : <a className={pathname === '/my-links' ? 'active' : ''}>
                     <IconPlaceHolder />
@@ -215,7 +229,6 @@ export default class BottomBar extends React.Component {
               left: 0;
               bottom: 0;
               background: #253592;
-              box-shadow: 0 -1px 10px #ccc;
             }
             div.show {
               display: flex;
@@ -231,6 +244,9 @@ export default class BottomBar extends React.Component {
               margin-left: 0;
               font-size: 8px;
               color: #fff;
+              display: flex;
+              align-items: flex-end;
+              padding-bottom: 5px;
             }
             a.active {
               background: #0d1c75;

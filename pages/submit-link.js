@@ -34,6 +34,7 @@ class SubmitLink extends React.Component {
     db
       .getMetaData(url)
       .then(({ data }) => {
+        console.log(data)
         NProgress.done()
         this.setState({
           info: 'Click Save to submit link to linklet',
