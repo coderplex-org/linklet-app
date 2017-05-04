@@ -48,6 +48,12 @@ export default class LinksList extends React.Component {
       .likeLink(_id)
       .then(({ data }) => {
         NProgress.done()
+        if (~data.bookmarkedBy.indexOf(this.props.user._id)) {
+          this.setState({
+            show: true,
+            message: 'Successfully "Bookmarked" this link'
+          })
+        }
         this.changeRoute()
       })
       .catch(e => {
