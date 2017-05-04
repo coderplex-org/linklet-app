@@ -29,8 +29,8 @@ export default () => (
         </a>
       </li>
       <li>
-        <a href='https://privacy.linklet.ml'>
-          Privacy
+        <a rel='noopener' target='_blank' href='/tos'>
+          Terms Of Service & Privacy
         </a>
       </li>
     </ul>

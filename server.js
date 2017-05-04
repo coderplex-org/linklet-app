@@ -40,7 +40,9 @@ app.prepare()
     // serve service worker
     server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')))
     server.get('/push-sw.poiugnkmncf.js', (req, res) => res.sendFile(path.resolve('./push-sw.poiugnkmncf.js')))
-
+    server.get('/tos', (req, res) => res.sendFile(path.resolve('./static/tos.html')))
+    // loaderio-6f468f97745e5172b62ac80d46970f10.txt
+    server.get('/loaderio-6f468f97745e5172b62ac80d46970f10.txt', (req, res) => res.sendFile(path.resolve('./static/loaderio-6f468f97745e5172b62ac80d46970f10.txt')))
     server.get('*', (req, res) => handle(req, res))
 
     server.listen(3000, err => {
