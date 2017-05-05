@@ -2,7 +2,7 @@ import React from 'react'
 import Router from 'next/router'
 import Autosuggest from 'react-autosuggest'
 import isMobile from 'ismobilejs'
-import tags from '../lib/tags.json'
+import axios from 'axios'
 
 // calculate suggestions for any given input value.
 function getSuggestions (value) {
@@ -10,7 +10,9 @@ function getSuggestions (value) {
   const inputLength = inputValue.length
   return inputLength === 0
     ? []
-    : tags.filter(tag => tag.toLowerCase().slice(0, inputLength) === inputValue)
+    : window.tags.filter(
+        tag => tag.toLowerCase().slice(0, inputLength) === inputValue
+      )
 }
 
 // When suggestion is clicked, Autosuggest needs to populate the input field
@@ -33,6 +35,16 @@ export default class Search extends React.Component {
         ? this.props.query.search ? this.props.query.search : ''
         : ''
     }
+  }
+  componentDidMount () {
+    window.tags = []
+    axios
+      .get(
+        'https://cdn.rawgit.com/vinaypuppal/linklet-app/aca4b5d1/lib/tags.json'
+      )
+      .then(({ data }) => {
+        window.tags = data
+      })
   }
   componentWillReceiveProps (nextProps) {
     this.setState({
