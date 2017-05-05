@@ -46,7 +46,7 @@ export default ({ title }) => (
     <meta property='og:url' content='https://linklet.ml' />
     <meta
       property='og:image'
-      content='https://res.cloudinary.com/vinaypuppal/image/upload/v1492605332/linklet_meta.png'
+      content='https://res.cloudinary.com/vinaypuppal/image/upload/v1494000036/Screen_Shot_2017-05-05_at_9.29.53_PM_ojqbio.png'
     />
     <meta property='og:site_name' content='Linklet' />
     <meta
