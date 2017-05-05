@@ -340,7 +340,7 @@ export default props => {
           aside {
             width: 100%;
             display: none;
-            top: 112px;
+            top: 56px;
             bottom: 56px;
           }
           aside.show {
