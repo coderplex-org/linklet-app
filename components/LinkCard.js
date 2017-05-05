@@ -175,7 +175,7 @@ export default class LinkCard extends React.Component {
             width: 100%;
             height: 150px;
             justify-content: center;
-            background-image: url("/static/link_bg.png");
+            background-image: url("https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.png");
             color: #fff;
             border-radius: 12px;
             border-bottom-left-radius: 0;
