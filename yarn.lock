@@ -897,7 +897,7 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bowser@^1.6.0:
+bowser@^1.0.0:
   version "1.6.1"
   resolved bowser-1.6.1.tgz#9157e9498f456e937173a2918f3b2161e5353eb3
 
@@ -1160,15 +1160,38 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77
 
+color-convert@0.2.x:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-0.2.1.tgz#363cab23c94b31a0d64db71048b8c6a940f8c68c"
+
 color-convert@^1.0.0:
   version "1.9.0"
   resolved color-convert-1.9.0.tgz#1accf97dd739b983bf994d56fec8f95853641b7a
   dependencies:
     color-name "^1.1.1"
 
+color-generator@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/color-generator/-/color-generator-0.1.0.tgz#e382046be384e07fa13de792498e937ff00819c3"
+  dependencies:
+    color "^0.6.0"
+
 color-name@^1.1.1:
   version "1.1.2"
   resolved color-name-1.1.2.tgz#5c8ab72b64bd2215d617ae9559ebb148475cf98d
+
+color-string@0.1.x:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/color-string/-/color-string-0.1.3.tgz#e865d2e3e59f665c3af0de14383f6bf0705685f3"
+  dependencies:
+    color-convert "0.2.x"
+
+color@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/color/-/color-0.6.0.tgz#53f4b27698e1fe42a19423dc092dd8ee529b4267"
+  dependencies:
+    color-convert "0.2.x"
+    color-string "0.1.x"
 
 combined-stream@^1.0.5, combined-stream@~1.0.5:
   version "1.0.5"
@@ -1363,12 +1386,6 @@ crypto-browserify@^3.11.0:
     pbkdf2 "^3.0.3"
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
-
-css-in-js-utils@^1.0.3:
-  version "1.0.3"
-  resolved css-in-js-utils-1.0.3.tgz#9ac7e02f763cf85d94017666565ed68a5b5f3215
-  dependencies:
-    hyphenate-style-name "^1.0.2"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -2450,7 +2467,7 @@ husky@^0.13.3:
     is-ci "^1.0.9"
     normalize-path "^1.0.0"
 
-hyphenate-style-name@^1.0.2:
+hyphenate-style-name@^1.0.1:
   version "1.0.2"
   resolved hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b
 
@@ -2516,11 +2533,11 @@ ini@~1.3.0:
   resolved ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e
 
 inline-style-prefixer@*:
-  version "3.0.2"
-  resolved inline-style-prefixer-3.0.2.tgz#989865e0c5de7a946acbea71e16e02741efe0dd7
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-2.0.5.tgz#c153c7e88fd84fef5c602e95a8168b2770671fe7"
   dependencies:
-    bowser "^1.6.0"
-    css-in-js-utils "^1.0.3"
+    bowser "^1.0.0"
+    hyphenate-style-name "^1.0.1"
 
 inquirer@^0.12.0:
   version "0.12.0"
@@ -3931,11 +3948,11 @@ public-encrypt@^4.0.0:
     parse-asn1 "^5.0.0"
     randombytes "^2.0.1"
 
-punycode@1.3.2:
+punycode@1.3.2, punycode@^1.2.4:
   version "1.3.2"
   resolved punycode-1.3.2.tgz#9653a036fb7c1ee42342f2325cceefea3926c48d
 
-punycode@^1.2.4, punycode@^1.4.1:
+punycode@^1.4.1:
   version "1.4.1"
   resolved punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e
 
@@ -4512,15 +4529,9 @@ source-list-map@^1.1.1:
   version "1.1.1"
   resolved source-list-map-1.1.1.tgz#1a33ac210ca144d1e561f906ebccab5669ff4cb4
 
-source-map-support@0.4.15:
+source-map-support@0.4.15, source-map-support@^0.4.2:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.15.tgz#03202df65c06d2bd8c7ec2362a193056fef8d3b1"
-  dependencies:
-    source-map "^0.5.6"
-
-source-map-support@^0.4.2:
-  version "0.4.14"
-  resolved source-map-support-0.4.14.tgz#9d4463772598b86271b4f523f6c1f4e02a7d6aef
   dependencies:
     source-map "^0.5.6"
 

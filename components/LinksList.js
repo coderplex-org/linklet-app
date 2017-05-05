@@ -170,10 +170,13 @@ export default class LinksList extends React.Component {
           @media(max-width: 720px) {
             main {
               margin: 0;
-              padding-top: 120px;
+              padding-top: 56px;
             }
           }
           @media(max-width: 520px) {
+            .list {
+              margin: 0;
+            }
             .info span {
               flex-wrap: wrap;
             }

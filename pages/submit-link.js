@@ -201,7 +201,7 @@ class SubmitLink extends React.Component {
         }
         ul.preview {
           list-style-type: none;
-          margin: 0 20px;
+          margin: 0;
           padding: 0;
           display: flex;
           flex-wrap: wrap;
@@ -294,6 +294,7 @@ class SubmitLink extends React.Component {
           main {
             text-align: center;
             display: block;
+            padding-bottom: 60px;
           }
           .card {
             width: 100%;

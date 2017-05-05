@@ -36,7 +36,9 @@ class Profile extends React.Component {
             ? <div className='actual'>
               <div className='avatar'>
                 <img
-                  src={this.props.user.avatarUrl}
+                  src={`//images.weserv.nl/?url=${this.props.user.avatarUrl
+                      .replace('http://', '')
+                      .replace('https://', '')}&w=180&h=180&&shape=circle`}
                   alt={this.props.username}
                   />
               </div>
@@ -171,6 +173,9 @@ class Profile extends React.Component {
           background: #eee;
         }
         @media (max-width: 720px) {
+          main {
+            padding-bottom: 60px;
+          }
           .dummy .avatar,
           .dummy .name, 
           .dummy .links-shared,

@@ -137,7 +137,12 @@ export default class BottomBar extends React.Component {
                   ? <a className={pathname === '/profile' ? 'active' : ''}>
                     {this.props.user
                         ? <img
-                          src={this.props.user.avatarUrl}
+                          src={`//images.weserv.nl/?url=${this.props.user.avatarUrl
+                              .replace('http://', '')
+                              .replace(
+                                'https://',
+                                ''
+                              )}&w=40&h=40&&shape=circle`}
                           alt={this.props.user.username}
                           />
                         : <FaUser size={40} />}

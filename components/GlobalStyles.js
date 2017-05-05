@@ -305,10 +305,6 @@ export default () => (
         }
         @media (max-width: 720px) {
           .react-autosuggest__container {
-            position: fixed;
-            z-index: 9;
-            top: 56px;
-            left: 0;
             width: 100%;
           }
           .react-autosuggest__container::after {

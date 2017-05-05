@@ -1,6 +1,6 @@
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![](https://img.shields.io/badge/lighthouse--score-98%2F100-blue.svg)](https://pwa-directory.appspot.com/pwas/5676600884461568#t=Linklet%20App&bg=%233f51b5&c=%23ffffff)
+[![](https://img.shields.io/badge/lighthouse--score-96%2F100-blue.svg)](https://pwa-directory.appspot.com/pwas/5676600884461568#t=Linklet%20App&bg=%233f51b5&c=%23ffffff)
 
 ## Linklet
 We've have tons of resources shared daily in our Freecodecamp Hyderabad Whatsapp group on various development topics. There has always been two main complaints

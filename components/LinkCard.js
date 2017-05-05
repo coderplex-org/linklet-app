@@ -1,4 +1,5 @@
 import React from 'react'
+import gen from 'color-generator'
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import format from 'date-fns/format'
 import isThisMonth from 'date-fns/is_this_month'
@@ -16,15 +17,28 @@ export default class LinkCard extends React.Component {
       ~link.bookmarkedBy.indexOf(user._id)
       ? 'liked'
       : ''
+    const bgColor = gen(0.99, 0.5).hexString()
     return (
       <li key={link._id} className='list__item'>
         <div className='item__content'>
-          <h3 className='title'>
+          <div className='image'>
+            {link.image &&
+              <LazyLoad height={150} offset={50}>
+                <img
+                  src={`//images.weserv.nl/?url=${link.image
+                    .replace('http://', '')
+                    .replace('https://', '')}&w=360&h=150`}
+                  alt={link.title}
+                />
+              </LazyLoad>}
+            <span style={{ backgroundColor: bgColor }} />
+          </div>
+          <h3 className='title' style={{ backgroundColor: bgColor }}>
             <Highlighter
               highlightClassName='highlight'
               searchWords={[search]}
               textToHighlight={
-                link.title ? truncateString(link.title, 90) : link.url
+                link.title ? truncateString(link.title, 60) : link.url
               }
             />
           </h3>
@@ -76,7 +90,9 @@ export default class LinkCard extends React.Component {
                     >
                     <LazyLoad height={40} offset={100}>
                       <img
-                        src={`${link._creator.avatarUrl}&s=40`}
+                        src={`//images.weserv.nl/?url=${link._creator.avatarUrl
+                            .replace('http://', '')
+                            .replace('https://', '')}&w=40&h=40&&shape=circle`}
                         alt={link._creator.username}
                         />
                     </LazyLoad>
@@ -125,7 +141,6 @@ export default class LinkCard extends React.Component {
           .item__content {
             width: 100%;
             min-height: 127px;
-            padding: 10px 10px 0 10px;
           }
           .title {
             display: flex;
@@ -134,7 +149,37 @@ export default class LinkCard extends React.Component {
             padding: 5px 10px;
             font-size: 18px;
             min-height: 75px;
-            border-bottom: 1px solid #eee;
+            color: #fff;
+          }
+          .image {
+            width: 100%;
+            height: 150px;
+            position: relative;
+          }
+          .image img {
+            width: 100%;
+            height: 150px;
+            position: relative;
+            z-index: 2;
+            border-radius: 12px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          .image span {
+            z-index: 1;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            justify-content: center;
+            background-image: url("/static/link_bg.png");
+            color: #fff;
+            border-radius: 12px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
           }
           .desc {
             margin: 0;
@@ -283,6 +328,20 @@ export default class LinkCard extends React.Component {
             }
             .like__btn:hover {
               color: #666;
+            }
+          }
+          @media(max-width: 520px) {
+            .list__item {
+              margin: 8px auto;
+              width: 100%;
+            }
+            .list__item,
+            .image img,
+            .image span {
+              border-radius: 0;
+            }
+            .desc {
+              padding: 20px 10px;
             }
           }
         `}
