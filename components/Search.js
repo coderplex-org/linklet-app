@@ -37,7 +37,20 @@ export default class Search extends React.Component {
     }
   }
   componentDidMount () {
-    window.tags = []
+    window.tags = [
+      'web',
+      'javascript',
+      'code',
+      'programming',
+      'learning',
+      'development',
+      'react',
+      'software',
+      'apps',
+      'css',
+      'developers',
+      'app'
+    ]
     axios
       .get(
         'https://cdn.rawgit.com/vinaypuppal/linklet-app/aca4b5d1/lib/tags.json'
