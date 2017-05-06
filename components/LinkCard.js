@@ -10,6 +10,17 @@ import FaHeart from 'react-icons/lib/fa/bookmark'
 import FaEye from 'react-icons/lib/fa/eye'
 
 export default class LinkCard extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      bgColor: 'rgb(128, 102, 1)'
+    }
+  }
+  componentDidMount () {
+    this.setState({
+      bgColor: gen(0.99, 0.5).hexString()
+    })
+  }
   render () {
     const { link, query: { search } = {}, user } = this.props
     const likedLinkClass = user &&
@@ -17,7 +28,6 @@ export default class LinkCard extends React.Component {
       ~link.bookmarkedBy.indexOf(user._id)
       ? 'liked'
       : ''
-    const bgColor = gen(0.99, 0.5).hexString()
     return (
       <li key={link._id} className='list__item'>
         <div className='item__content'>
@@ -31,9 +41,9 @@ export default class LinkCard extends React.Component {
                   alt={link.title}
                 />
               </LazyLoad>}
-            <span style={{ backgroundColor: bgColor }} />
+            <span style={{ backgroundColor: this.state.bgColor }} />
           </div>
-          <h3 className='title' style={{ backgroundColor: bgColor }}>
+          <h3 className='title' style={{ backgroundColor: this.state.bgColor }}>
             <Highlighter
               highlightClassName='highlight'
               searchWords={[search]}
