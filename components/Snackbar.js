@@ -60,13 +60,3 @@ export default class SnackBar extends React.Component {
     )
   }
 }
-
-SnackBar.defaultProps = {
-  show: 'false'
-}
-
-SnackBar.propTypes = {
-  show: React.PropTypes.bool.isRequired,
-  timer: React.PropTypes.number,
-  onClose: React.PropTypes.func
-}
