@@ -63,7 +63,7 @@ export default class BottomBar extends React.Component {
         <nav>
           <ul>
             <li>
-              <Link href='/'>
+              <Link prefetch href='/'>
                 {this.state.interactive
                   ? <a className={pathname === '/' ? 'active' : ''}>
                     <svg
@@ -81,7 +81,7 @@ export default class BottomBar extends React.Component {
               </Link>
             </li>
             <li>
-              <Link href='/my-links'>
+              <Link prefetch href='/my-links'>
                 {this.state.interactive
                   ? <a className={pathname === '/my-links' ? 'active' : ''}>
                     <svg
@@ -100,7 +100,7 @@ export default class BottomBar extends React.Component {
               </Link>
             </li>
             <li>
-              <Link href='/bookmarks'>
+              <Link prefetch href='/bookmarks'>
                 {this.state.interactive
                   ? <a className={pathname === '/bookmarks' ? 'active' : ''}>
                     <FaHeart size={35} />
@@ -113,7 +113,7 @@ export default class BottomBar extends React.Component {
               </Link>
             </li>
             <li>
-              <Link href='/submit-link'>
+              <Link prefetch href='/submit-link'>
                 {this.state.interactive
                   ? <a className={pathname === '/submit-link' ? 'active' : ''}>
                     <svg
@@ -132,7 +132,7 @@ export default class BottomBar extends React.Component {
               </Link>
             </li>
             <li>
-              <Link href='/profile'>
+              <Link prefetch href='/profile'>
                 {this.state.interactive
                   ? <a className={pathname === '/profile' ? 'active' : ''}>
                     {this.props.user
