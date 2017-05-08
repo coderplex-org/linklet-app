@@ -53,5 +53,9 @@ export default ({ title }) => (
       property='og:description'
       content='The app that helps you find the best links shared by FCC community!'
     />
+    <link rel='preconnect' href='https://images.weserv.nl' />
+    <link rel='preconnect' href='https://res.cloudinary.com' />
+    <link rel='preconnect' href='https://www.google-analytics.com' />
+    <link rel='preconnect' href='https://cdn.rawgit.com' />
   </Head>
 )
