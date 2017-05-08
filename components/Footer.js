@@ -68,7 +68,7 @@ export default () => (
       a:hover {
         color: #222;
       }
-      @media(max-width: 720px) {
+      @media(max-width: 1020px) {
         footer {
           margin-left: 0;
           padding-bottom: 60px;
@@ -83,9 +83,13 @@ export default () => (
           justify-content: flex-start;
         }
         ul li {
-          flex: 1;
+          flex: 2;
           border-left: 1px solid #ccc;
           padding: 0;
+          font-size: 10px;
+        }
+        ul li:nth-child(2) {
+          flex: 1;
         }
       }
     `}

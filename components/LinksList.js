@@ -2,7 +2,7 @@ import React from 'react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import Pagination from 'rc-pagination'
-import LinkCard from './LinkCard'
+import MLinkCard from './MLinkCard'
 import PageInfo from './PageInfo'
 import SearchBar from '../components/Search'
 import db from '../lib/db'
@@ -122,7 +122,7 @@ export default class LinksList extends React.Component {
         />
         <ul className='list'>
           {links.map(link => (
-            <LinkCard
+            <MLinkCard
               key={link._id}
               link={link}
               query={query}
@@ -135,7 +135,7 @@ export default class LinksList extends React.Component {
         <div className='pagination'>
           <Pagination
             total={totalLinks}
-            pageSize={perPage}
+            pageSize={Number(perPage)}
             current={Number(page)}
             onChange={(current, pageSize) => this.changeRoute(current, true)}
           />
@@ -167,16 +167,21 @@ export default class LinksList extends React.Component {
             display: flex;
             justify-content: center;
           }
-          @media(max-width: 720px) {
+          @media(max-width: 1020px) {
             main {
               margin: 0;
               padding-top: 56px;
             }
-          }
-          @media(max-width: 520px) {
             .list {
               margin: 0;
             }
+          }
+          @media(max-width: 720px) {
+            .list {
+              margin-top: 10px;
+            }
+          }
+          @media(max-width: 520px) {
             .info span {
               flex-wrap: wrap;
             }

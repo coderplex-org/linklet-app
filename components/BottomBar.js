@@ -160,8 +160,8 @@ export default class BottomBar extends React.Component {
         </nav>
         <style jsx>{`
           div {
-            width: calc(100% - 200px);
-            margin-left: 200px;
+            width: calc(100% - 50px);
+            margin-left: 50px;
             min-height: 56px;
             display: flex;
           }
@@ -222,18 +222,14 @@ export default class BottomBar extends React.Component {
           li:last-child {
             border-right: none;
           }
-          @media(max-width: 1080px) {
-            div {
-              width: 100%;
-              margin-left: 0;
-            }
-          }
-          @media(max-width: 720px) {
+          @media(max-width: 1020px) {
             div {
               position: fixed;
               left: 0;
               bottom: 0;
               background: #253592;
+              width: 100%;
+              margin-left: 0;
             }
             div.show {
               display: flex;

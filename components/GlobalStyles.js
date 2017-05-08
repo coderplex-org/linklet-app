@@ -12,7 +12,7 @@ export default () => (
         width: 100%;
         padding: 0;
         margin: 0;
-        background: #fafafa;
+        background: #F5F5F5;
         font-family: -apple-system,
               system-ui,
               BlinkMacSystemFont,
@@ -53,6 +53,31 @@ export default () => (
         box-shadow: 0 0 10px #f7e830, 0 0 5px #f7e830;
         opacity: 1.0;
         transform: rotate(3deg) translate(0px, -4px);
+        }
+        .links-enter {
+          opacity: 0.01;
+        }
+
+        .links-enter.links-enter-active {
+          opacity: 1;
+          transition: opacity 500ms ease-in;
+        }
+
+        .links-leave {
+          opacity: 1;
+        }
+
+        .links-leave.links-leave-active {
+          opacity: 0.01;
+          transition: opacity 300ms ease-in;
+        }
+        .links-appear {
+          opacity: 0.01;
+        }
+
+        .links-appear.links-appear-active {
+          opacity: 1;
+          transition: opacity .5s ease-in;
         }
         .rc-pagination {
           font-size: 12px;
@@ -233,7 +258,7 @@ export default () => (
         }
         .react-autosuggest__container {
           position: relative;
-          width: 90%;
+          width: 80%;
           margin: 0 auto;
         }
         .react-autosuggest__input {
@@ -303,7 +328,7 @@ export default () => (
             display: none;
           }
         }
-        @media (max-width: 720px) {
+        @media (max-width: 1020px) {
           .react-autosuggest__container {
             width: 100%;
           }

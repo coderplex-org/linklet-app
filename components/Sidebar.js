@@ -336,7 +336,7 @@ export default props => {
         label .title {
           font-weight: bold;
         }
-        @media(max-width: 720px) {
+        @media(max-width: 1020px) {
           aside {
             width: 100%;
             display: none;

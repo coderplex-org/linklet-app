@@ -332,7 +332,7 @@ export default class LinkCard extends React.Component {
             margin-left: 5px;
             color: #666;
           }
-          @media(max-width: 720px) {
+          @media(max-width: 1020px) {
             .list__item {
               margin: 10px auto;
             }

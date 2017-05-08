@@ -36,7 +36,7 @@ const renderInfo = (query, totalLinks, url) => {
             text-transform: capitalize;
           }
           span a {
-            color: blue;
+            color: red;
             margin: 0 10px;
             text-decoration: none;
           }
@@ -81,12 +81,12 @@ const renderInfo = (query, totalLinks, url) => {
             padding: 10px;
           }
           span a {
-            color: blue;
+            color: red;
             margin: 0 10px;
             text-decoration: none;
           }
           span a:hover {
-            color: lightblue;
+            color: lightred;
           }
         `}
           </style>
@@ -126,12 +126,12 @@ const renderInfo = (query, totalLinks, url) => {
             padding: 10px;
           }
           span a {
-            color: blue;
+            color: red;
             margin: 0 10px;
             text-decoration: none;
           }
           span a:hover {
-            color: lightblue;
+            color: lightred;
           }
         `}
           </style>
@@ -202,7 +202,7 @@ export default ({ query, page, totalLinks, url, handelSort }) => {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: 60px;
+          right: 120px;
           width: 160px;
           display: flex;
           align-items: center;
@@ -221,12 +221,13 @@ export default ({ query, page, totalLinks, url, handelSort }) => {
             right: 30px;
           }
         }
-        @media(max-width: 720px) {
+        @media(max-width: 1020px) {
           .sort {
             right: 10px;
           }
         }
         @media(max-width: 600px) {
+          
           .sort {
             position: static;
             flex: 1;

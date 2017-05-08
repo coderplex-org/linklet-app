@@ -147,12 +147,12 @@ export default class Header extends React.Component {
         .logo h1 span {
           color: #FF7058;
         }
-        @media(max-width: 720px) {
+        @media(max-width: 1020px) {
           .filterBtn {
             display: block;
           }
         }
-        @media(max-width: 720px) {
+        @media(max-width: 1020px) {
           nav {
             display: block;
           }
