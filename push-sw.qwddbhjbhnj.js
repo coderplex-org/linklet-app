@@ -12,7 +12,8 @@ self.addEventListener('push', function (event) {
 
   var body = {
     'body': playload.body || 'No Body',
-    'icon': playload.icon || 'https://linklet.ml/static/favicons/favicon-32x32.png'
+    'icon': playload.icon || 'https://linklet.ml/static/favicons/android-chrome-192x192.png',
+    'badge': 'https://linklet.ml/static/favicons/mstile-70x70.png'
   }
   url = playload.body
 

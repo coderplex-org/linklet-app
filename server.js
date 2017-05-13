@@ -40,7 +40,7 @@ app.prepare()
 
     // serve service worker
     server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')))
-    server.get('/push-sw.poiugnkmncf.js', (req, res) => res.sendFile(path.resolve('./push-sw.poiugnkmncf.js')))
+    server.get('/push-sw.qwddbhjbhnj.js', (req, res) => res.sendFile(path.resolve('./push-sw.qwddbhjbhnj.js')))
 
     // tos
     server.get('/tos', (req, res) => res.sendFile(path.resolve('./static/tos.html')))
