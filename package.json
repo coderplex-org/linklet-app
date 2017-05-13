@@ -19,7 +19,8 @@
     "react-highlight-words": "^0.7.2",
     "react-icons": "^2.2.4",
     "react-lazyload": "^2.2.7",
-    "react-modal-dialog": "^4.0.7"
+    "react-modal-dialog": "^4.0.7",
+    "sw-precache-webpack-plugin": "^0.11.0"
   },
   "scripts": {
     "dev": "NODE_ENV=development nodemon server.js -w server.js",
@@ -37,8 +38,7 @@
     "lint-staged": "^3.4.1",
     "nodemon": "^1.11.0",
     "prettier": "^1.3.1",
-    "standard": "^10.0.2",
-    "sw-precache-webpack-plugin": "^0.11.0"
+    "standard": "^10.0.2"
   },
   "lint-staged": {
     "*.js": [
