@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 
 import SecretPage from '../hocs/SecretPage'
 
+import mobileJs from 'ismobilejs'
 import addDays from 'date-fns/add_days'
 import startOfWeek from 'date-fns/start_of_week'
 import lastDayOfWeek from 'date-fns/last_day_of_week'
@@ -66,7 +67,10 @@ class Bookmarks extends Component {
     } catch (e) {
       throw e
     }
-    return { data: res.data, filterOptions }
+    const isMobile = req
+      ? mobileJs(req.headers['user-agent']).any
+      : mobileJs.any
+    return { data: res.data, filterOptions, isMobile }
   }
   constructor (props) {
     super(props)
@@ -113,7 +117,7 @@ class Bookmarks extends Component {
       .catch(e => console.log(e))
   }
   render () {
-    const { data, filterOptions, url, user } = this.props
+    const { data, filterOptions, url, user, isMobile } = this.props
     return (
       <div className='home'>
         <Header
@@ -130,7 +134,7 @@ class Bookmarks extends Component {
           filterOpenState={this.state.toggleFilter}
           showModal={this.handleClick.bind(this)}
         />
-        <LinksList user={user} data={data} url={url} />
+        <LinksList user={user} data={data} url={url} isMobile={isMobile} />
         <Footer />
         {this.state.isShowingModal &&
           <ModalContainer onClose={this.handleClose.bind(this)}>

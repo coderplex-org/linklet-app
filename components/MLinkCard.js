@@ -8,6 +8,7 @@ import isThisMonth from 'date-fns/is_this_month'
 import FaBookmark from 'react-icons/lib/fa/bookmark'
 import FaEye from 'react-icons/lib/fa/eye'
 import FaWA from 'react-icons/lib/fa/whatsapp'
+import FaExt from 'react-icons/lib/fa/external-link'
 
 export default class MLinkCard extends React.Component {
   render () {
@@ -122,6 +123,16 @@ export default class MLinkCard extends React.Component {
               <span>{link.views || 0}</span>
             </span>
           </div>
+          <div className='ext-link'>
+            <a
+              onClick={() => this.props.handelOpen(link._id)}
+              rel='noopener'
+              href={link.url}
+              target='_blank'
+            >
+              <FaExt />
+            </a>
+          </div>
         </div>
         <style jsx>{`
           .list__item {
@@ -140,16 +151,15 @@ export default class MLinkCard extends React.Component {
           a.open {
             display: flex;
             justify-content: space-between;
-            padding: 10px 15px;
-            padding-bottom: 2px;
+            padding: 15px;
             text-decoration: none;
           }
           .left {
             padding-right: 10px;
-            flex: 2
+            flex: 2;
           }
           .right {
-            flex: 1;
+            overflow: hidden;
           }
           .title {
             color: #000;
@@ -167,6 +177,10 @@ export default class MLinkCard extends React.Component {
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+          }
+          .image img{
+            width: 100%;
+            height: 80px;
           }
           .meta {
             padding: 10px 15px;
@@ -192,9 +206,9 @@ export default class MLinkCard extends React.Component {
             align-items: center;
             margin-right: 5px;
             text-decoration: underline;
-            font-size: 8px;
           }
           .bookmark a,
+          .ext-link a,
           .views span {
             color: #666;
             text-decoration: none;
@@ -202,6 +216,7 @@ export default class MLinkCard extends React.Component {
             align-items: center;
           }
           .bookmark a span,
+          .ext-link a span,
           .views span span {
             margin-left: 5px;
           }
@@ -226,6 +241,9 @@ export default class MLinkCard extends React.Component {
             .list__item:hover {
               transform: translate(0, 0);
               box-shadow: none;
+            }
+            .ext-link {
+              display: none;
             }
           }
           @media (max-width: 480px) {

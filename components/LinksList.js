@@ -3,6 +3,7 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 import Pagination from 'rc-pagination'
 import MLinkCard from './MLinkCard'
+import LinkCard from './LinkCard'
 import PageInfo from './PageInfo'
 import SearchBar from '../components/Search'
 import db from '../lib/db'
@@ -107,8 +108,37 @@ export default class LinksList extends React.Component {
       }
     }
   }
+  renderLinks (isMobile, links, user, query) {
+    if (isMobile) {
+      return links.map(link => (
+        <MLinkCard
+          key={link._id}
+          link={link}
+          query={query}
+          user={user}
+          handelLike={this.handelLike.bind(this)}
+          handelOpen={this.handelOpen.bind(this)}
+        />
+      ))
+    }
+    return links.map(link => (
+      <LinkCard
+        key={link._id}
+        link={link}
+        query={query}
+        user={user}
+        handelLike={this.handelLike.bind(this)}
+        handelOpen={this.handelOpen.bind(this)}
+      />
+    ))
+  }
   render () {
-    const { data: { links, totalLinks, perPage, page }, url, user } = this.props
+    const {
+      data: { links, totalLinks, perPage, page },
+      url,
+      user,
+      isMobile
+    } = this.props
     const { query } = url
     return (
       <main>
@@ -121,16 +151,7 @@ export default class LinksList extends React.Component {
           totalLinks={totalLinks}
         />
         <ul className='list'>
-          {links.map(link => (
-            <MLinkCard
-              key={link._id}
-              link={link}
-              query={query}
-              user={user}
-              handelLike={this.handelLike.bind(this)}
-              handelOpen={this.handelOpen.bind(this)}
-            />
-          ))}
+          {this.renderLinks(isMobile, links, user, query)}
         </ul>
         <div className='pagination'>
           <Pagination
