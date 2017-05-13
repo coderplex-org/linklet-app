@@ -25,6 +25,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon server.js -w server.js",
     "build": "next build",
+    "heroku-postbuild": "next build",
     "start": "NODE_ENV=production node server",
     "deploy": "npm run lint && now -t $TB",
     "alias": "now -t $TB alias",
