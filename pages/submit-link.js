@@ -3,9 +3,10 @@ import Header from '../components/Header'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import LinkCard from '../components/LinkCard'
-import { initGA, logPageView } from '../lib/analytics'
+import { logPageView } from '../lib/analytics'
 import db from '../lib/db'
 
+import ContainerPage from '../hocs/ContainerPage'
 import SecretPage from '../hocs/SecretPage'
 
 class SubmitLink extends React.Component {
@@ -20,7 +21,6 @@ class SubmitLink extends React.Component {
     }
   }
   componentDidMount () {
-    initGA()
     logPageView()
     this.input.focus()
   }
@@ -307,4 +307,4 @@ class SubmitLink extends React.Component {
   }
 }
 
-export default SecretPage(SubmitLink)
+export default ContainerPage(SecretPage(SubmitLink))

@@ -1,11 +1,10 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { initGA, logPageView } from '../lib/analytics'
+import { logPageView } from '../lib/analytics'
 
 export default class About extends React.Component {
   componentDidMount () {
-    initGA()
     logPageView()
   }
   render () {
