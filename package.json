@@ -7,7 +7,7 @@
     "date-fns": "^1.28.5",
     "express": "^4.15.3",
     "ismobilejs": "^0.4.1",
-    "next": "3.0.0-beta7",
+    "next": "3.0.0-beta8",
     "nprogress": "^0.2.0",
     "rc-pagination": "^1.8.7",
     "react": "^15.5.4",
