@@ -3,6 +3,7 @@ import Router from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+import ContainerPage from '../hocs/ContainerPage'
 import SecretPage from '../hocs/SecretPage'
 
 import mobileJs from 'ismobilejs'
@@ -18,7 +19,7 @@ import { ModalContainer, ModalDialog } from 'react-modal-dialog'
 import db from '../lib/db'
 import SideBar from '../components/Sidebar'
 import LinksList from '../components/LinksList'
-import { initGA, logPageView } from '../lib/analytics'
+import { logPageView } from '../lib/analytics'
 
 class Bookmarks extends Component {
   static async getInitialProps ({ query, req }) {
@@ -82,7 +83,6 @@ class Bookmarks extends Component {
     }
   }
   componentDidMount () {
-    initGA()
     logPageView()
   }
   toggleFilter (e) {
@@ -195,4 +195,4 @@ class Bookmarks extends Component {
   }
 }
 
-export default SecretPage(Bookmarks)
+export default ContainerPage(SecretPage(Bookmarks))

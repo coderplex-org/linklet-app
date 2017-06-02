@@ -1,17 +1,17 @@
 import React from 'react'
 import NProgress from 'nprogress'
 import Header from '../components/Header'
-import { initGA, logPageView } from '../lib/analytics'
+import { logPageView } from '../lib/analytics'
 import FaGithub from 'react-icons/lib/fa/github'
 import FaSignOut from 'react-icons/lib/fa/sign-out'
 
+import ContainerPage from '../hocs/ContainerPage'
 import PublicPage from '../hocs/PublicPage'
 
 import { login, logout } from '../utils/authenticate'
 
 class Profile extends React.Component {
   componentDidMount () {
-    initGA()
     logPageView()
     console.log(this.props)
   }
@@ -206,4 +206,4 @@ class Profile extends React.Component {
   }
 }
 
-export default PublicPage(Profile)
+export default ContainerPage(PublicPage(Profile))

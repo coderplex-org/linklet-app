@@ -3,6 +3,7 @@ import Router from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+import ContainerPage from '../hocs/ContainerPage'
 import PublicPage from '../hocs/PublicPage'
 
 import mobileJs from 'ismobilejs'
@@ -18,7 +19,7 @@ import { ModalContainer, ModalDialog } from 'react-modal-dialog'
 import db from '../lib/db'
 import SideBar from '../components/Sidebar'
 import LinksList from '../components/LinksList'
-import { initGA, logPageView } from '../lib/analytics'
+import { logPageView } from '../lib/analytics'
 
 class Home extends Component {
   static async getInitialProps ({ query, req }) {
@@ -74,7 +75,6 @@ class Home extends Component {
     }
   }
   componentDidMount () {
-    initGA()
     logPageView()
   }
   toggleFilter (e) {
@@ -187,4 +187,4 @@ class Home extends Component {
   }
 }
 
-export default PublicPage(Home)
+export default ContainerPage(PublicPage(Home))
