@@ -14,7 +14,10 @@ export default class About extends React.Component {
         <main>
           <h1>About</h1>
           <p>
-            Linklet as of now contains the links which are shared in whatsapp freeCodeCamp Hyderabad group. Since many useful links were shared in the group so I thought to create an app where we can find all links easily based on particular date.
+            Linklet as of now contains the links which are shared in whatsapp
+            freeCodeCamp Hyderabad group. Since many useful links were shared in
+            the group so I thought to create an app where we can find all links
+            easily based on particular date.
           </p>
         </main>
         <Footer />

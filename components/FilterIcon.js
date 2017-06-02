@@ -1,4 +1,4 @@
-export default () => (
+export default () =>
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 247.46 247.46'>
     <path
       fill='#FFF'
@@ -13,4 +13,3 @@ export default () => (
     `}
     </style>
   </svg>
-)

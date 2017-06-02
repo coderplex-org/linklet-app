@@ -4,7 +4,9 @@ import cookie from 'react-cookie'
 import axios from 'axios'
 
 export function login () {
-  const href = `${db.baseUrl}/login/github?appRedirectUrl=${encodeURIComponent(location.href)}`
+  const href = `${db.baseUrl}/login/github?appRedirectUrl=${encodeURIComponent(
+    location.href
+  )}`
   location.href = href
 }
 
@@ -13,7 +15,9 @@ export function logout () {
   const camebackUrl = `${location.href}?logout=1`
   // It's important to send the loginToken since that's the way
   // how we say our auth server to logout the user
-  const href = `${db.baseUrl}/logout?loginToken=${loginToken}&appRedirectUrl=${encodeURIComponent(camebackUrl)}`
+  const href = `${db.baseUrl}/logout?loginToken=${loginToken}&appRedirectUrl=${encodeURIComponent(
+    camebackUrl
+  )}`
   window.localStorage.removeItem('sharedState')
   window.localStorage.setItem('logout', Date.now())
   location.href = href

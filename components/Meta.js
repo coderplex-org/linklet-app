@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default ({ title }) => (
+export default ({ title }) =>
   <Head>
     <meta charSet='utf-8' />
     <meta
@@ -58,4 +58,3 @@ export default ({ title }) => (
     <link rel='preconnect' href='https://www.google-analytics.com' />
     <link rel='preconnect' href='https://cdn.rawgit.com' />
   </Head>
-)

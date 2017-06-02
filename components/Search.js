@@ -95,7 +95,8 @@ export default class Search extends React.Component {
       let { start, end } = this.props.query
       if (start && end) {
         Router.push(
-          `${this.props.url.pathname}?start=${start}&end=${end}&search=${suggestionValue}`
+          `${this.props.url
+            .pathname}?start=${start}&end=${end}&search=${suggestionValue}`
         )
           .then(() => window.scrollTo(0, 0))
           .catch(e => console.log(e))

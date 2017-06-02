@@ -13,7 +13,8 @@ const changeRoute = (start, end, props) => {
   if (search) {
     if (sort) {
       Router.push(
-        `${props.url.pathname}?start=${start}&end=${end}&search=${search}&sort=${sort}`
+        `${props.url
+          .pathname}?start=${start}&end=${end}&search=${search}&sort=${sort}`
       )
         .then(() => window.scrollTo(0, 0))
         .catch(e => console.log(e))
@@ -56,10 +57,22 @@ export default props => {
 
   const todayStr = format(today, 'dddd, MMM Do')
   const yesterdayStr = format(yesterday, 'dddd, MMM Do')
-  const last7Days = `${format(last7thDay, 'MMM Do')} - ${format(today, 'MMM Do')}`
-  const thisWeek = `${format(thisWeekStartDay, 'MMM Do')} - ${format(thisWeekLastDay, 'MMM Do')}`
-  const lastWeek = `${format(lastWeekStartDay, 'MMM Do')} - ${format(lastWeekLastDay, 'MMM Do')}`
-  const last30days = `${format(last30thDay, 'MMM Do')} - ${format(today, 'MMM Do')}`
+  const last7Days = `${format(last7thDay, 'MMM Do')} - ${format(
+    today,
+    'MMM Do'
+  )}`
+  const thisWeek = `${format(thisWeekStartDay, 'MMM Do')} - ${format(
+    thisWeekLastDay,
+    'MMM Do'
+  )}`
+  const lastWeek = `${format(lastWeekStartDay, 'MMM Do')} - ${format(
+    lastWeekLastDay,
+    'MMM Do'
+  )}`
+  const last30days = `${format(last30thDay, 'MMM Do')} - ${format(
+    today,
+    'MMM Do'
+  )}`
   const thisMonth = format(today, 'MMMM')
   const lastMonth = format(last30thDay, 'MMMM')
   return (

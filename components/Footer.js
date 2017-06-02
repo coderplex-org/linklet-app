@@ -1,6 +1,6 @@
 import FaGithub from 'react-icons/lib/fa/github'
 
-export default () => (
+export default () =>
   <footer>
     <p>
       Made with ❤ By
@@ -95,4 +95,3 @@ export default () => (
     `}
     </style>
   </footer>
-)

@@ -1,4 +1,4 @@
-export default () => (
+export default () =>
   <div className='link__wrapper'>
     <div className='animated-background'>
       <div className='background-masker content-top' />
@@ -91,4 +91,3 @@ export default () => (
       }
     `}</style>
   </div>
-)

@@ -2,7 +2,9 @@ import Router from 'next/router'
 
 export default (
   ctx,
-  to = `/profile?next=${encodeURIComponent(ctx.req ? ctx.req.url : ctx.pathname)}`
+  to = `/profile?next=${encodeURIComponent(
+    ctx.req ? ctx.req.url : ctx.pathname
+  )}`
 ) => {
   console.log(ctx)
   if (ctx.res) {

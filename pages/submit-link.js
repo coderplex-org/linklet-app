@@ -13,7 +13,8 @@ class SubmitLink extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      info: 'Simply give us the URL we will fetch metadata and show preview before you can submit it to linklet',
+      info:
+        'Simply give us the URL we will fetch metadata and show preview before you can submit it to linklet',
       url: '',
       showPreview: false,
       linkData: {},
@@ -74,7 +75,8 @@ class SubmitLink extends React.Component {
   }
   handleBack () {
     this.setState({
-      info: 'Simply give us the URL we will fetch metadata and show preview before you can submit it to linklet',
+      info:
+        'Simply give us the URL we will fetch metadata and show preview before you can submit it to linklet',
       linkData: {},
       showPreview: false,
       error: ''

@@ -103,7 +103,9 @@ class Home extends Component {
     const { from, to } = this.state
     this.handleClose()
     Router.push(
-      `${this.props.url.pathname}?start=${new Date(from).getTime()}&end=${new Date(to).getTime()}`
+      `${this.props.url.pathname}?start=${new Date(
+        from
+      ).getTime()}&end=${new Date(to).getTime()}`
     )
       .then(() => window.scrollTo(0, 0))
       .catch(e => console.log(e))

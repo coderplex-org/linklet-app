@@ -1,4 +1,4 @@
-export default () => (
+export default () =>
   <div className='loading'>
     <div className='cssload-loader'>
       <div className='cssload-side' />
@@ -183,4 +183,3 @@ export default () => (
         }
     `}</style>
   </div>
-)

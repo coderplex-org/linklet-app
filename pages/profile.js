@@ -29,8 +29,8 @@ class Profile extends React.Component {
               ? 'Please login to view links added by you!...'
               : this.props.url.query &&
                   this.props.url.query.next === '/submit-link'
-                  ? 'Please login to submit new link'
-                  : ''}
+                ? 'Please login to submit new link'
+                : ''}
           </p>
           {this.props.isAuthenticated
             ? <div className='actual'>

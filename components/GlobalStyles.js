@@ -1,4 +1,4 @@
-export default () => (
+export default () =>
   <div>
     <style jsx global>
       {`
@@ -339,4 +339,3 @@ export default () => (
     `}
     </style>
   </div>
-)

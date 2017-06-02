@@ -15,7 +15,10 @@ const renderInfo = (query, totalLinks, url) => {
           were found from
           <span>
             {' ' +
-              `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(Number(query.end), 'MMM, Do YYYY')} ${query.search ? `containing ${query.search} word` : ''}` +
+              `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(
+                Number(query.end),
+                'MMM, Do YYYY'
+              )} ${query.search ? `containing ${query.search} word` : ''}` +
               ' '}
             <Link href={`${url.pathname}?sort=${query.sort || -1}`} scroll>
               <a>clear</a>
@@ -59,7 +62,10 @@ const renderInfo = (query, totalLinks, url) => {
           were found from
           <span>
             {' ' +
-              `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(Number(query.end), 'MMM, Do YYYY')}` +
+              `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(
+                Number(query.end),
+                'MMM, Do YYYY'
+              )}` +
               ' '}
             <Link href={`${url.pathname}?sort=${query.sort || -1}`} scroll>
               <a>clear</a>
