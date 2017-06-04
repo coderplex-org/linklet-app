@@ -6,6 +6,7 @@ import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import format from 'date-fns/format'
 import isThisMonth from 'date-fns/is_this_month'
 import FaBookmark from 'react-icons/lib/fa/bookmark'
+import FaBookmarkO from 'react-icons/lib/fa/bookmark-o'
 import FaEye from 'react-icons/lib/fa/eye'
 import FaWA from 'react-icons/lib/fa/whatsapp'
 import FaExt from 'react-icons/lib/fa/external-link'
@@ -113,7 +114,7 @@ export default class MLinkCard extends React.Component {
               }}
               href='#'
             >
-              <FaBookmark />
+              {likedLinkClass ? <FaBookmark /> : <FaBookmarkO />}
               <span>{link.bookmarkedBy ? link.bookmarkedBy.length : 0}</span>
             </a>
           </div>
