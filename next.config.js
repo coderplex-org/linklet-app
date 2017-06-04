@@ -1,3 +1,4 @@
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
@@ -34,6 +35,14 @@ module.exports = {
               urlPattern: /^http.*/ // cache all files
             }
           ]
+        }),
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'disabled',
+        // For all options see https://github.com/th0r/webpack-bundle-analyzer#as-plugin
+          generateStatsFile: true,
+        // Will be available at `.next/stats.json`
+          statsFilename: 'stats.json',
+          logLevel: 'info'
         })
       )
     }

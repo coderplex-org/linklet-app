@@ -19,7 +19,8 @@
     "react-icons": "^2.2.4",
     "react-lazyload": "^2.2.7",
     "react-modal-dialog": "^4.0.7",
-    "sw-precache-webpack-plugin": "^0.11.2"
+    "sw-precache-webpack-plugin": "^0.11.2",
+    "webpack-bundle-analyzer": "2.8.2"
   },
   "scripts": {
     "dev": "NODE_ENV=development nodemon server.js -w server.js",
@@ -30,7 +31,8 @@
     "alias": "now alias",
     "lint": "prettier 'lib/*.js' 'utils/*.js' 'components/*.js' 'pages/*.js' --write --single-quote --no-semi && standard --fix",
     "precommit": "lint-staged",
-    "export": "next export"
+    "export": "next export",
+    "bundle:view": "webpack-bundle-analyzer .next/stats.json"
   },
   "devDependencies": {
     "husky": "^0.13.4",
