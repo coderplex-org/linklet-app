@@ -1,7 +1,7 @@
 {
   "name": "linklet-app",
   "dependencies": {
-    "axios": "^0.16.0",
+    "axios": "0.16.2",
     "color-generator": "^0.1.0",
     "cookie-parser": "^1.4.3",
     "date-fns": "^1.28.5",
@@ -38,8 +38,8 @@
     "husky": "^0.13.4",
     "lint-staged": "^3.6.0",
     "nodemon": "^1.11.0",
-    "prettier": "1.4.0",
-    "standard": "^10.0.2"
+    "prettier": "1.4.2",
+    "standard": "10.0.2"
   },
   "engines": {
     "node": "8.0.0"
