@@ -304,82 +304,83 @@ export default props => {
       </main>
       <style jsx>
         {`
-        aside {
-          width: 200px;
-          position: fixed;
-          left: 0;
-          top: 56px;
-          bottom: 0;
-          background: #3f51b5;
-          color: #fff;
-          overflow-y: auto;
-          box-shadow: 0 0 4px rgba(0,0,0,.14), 2px 4px 8px rgba(0,0,0,.28);
-          z-index: 3;
-        }
-        main {
-          padding: 0 20px;
-        }
-        section {
-          margin: 0 0 20px 0;
-        }
-        h3 {
-          color: #FFD15C;
-          padding: 0 20px;
-        }
-        section h4 {
-          margin: 0 0 15px 0;
-          color: #FF7058;
-        }
-        section ul {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-        }
-        section ul li {
-          display: flex;
-          align-items: center;
-          margin: 10px 0;
-        }
-        li label {
-          margin-left: 10px;
-          font-size: 12px;
-          line-height: 1.5;
-          cursor: pointer;
-        }
-        label .title {
-          font-weight: bold;
-        }
-        @media(max-width: 1020px) {
           aside {
-            width: 100%;
-            display: none;
+            width: 200px;
+            position: fixed;
+            left: 0;
             top: 56px;
-            bottom: 56px;
-          }
-          aside.show {
-            display: block;
+            bottom: 0;
+            background: #3f51b5;
+            color: #fff;
+            overflow-y: auto;
+            box-shadow: 0 0 4px rgba(0, 0, 0, .14),
+              2px 4px 8px rgba(0, 0, 0, .28);
+            z-index: 3;
           }
           main {
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-            height: 0;
+            padding: 0 20px;
+          }
+          section {
+            margin: 0 0 20px 0;
           }
           h3 {
-            text-align: center;
+            color: #FFD15C;
+            padding: 0 20px;
           }
-          main section {
-            width: calc(50% - 40px);
-            margin: 20px;
+          section h4 {
+            margin: 0 0 15px 0;
+            color: #FF7058;
           }
-        }
-        @media(max-width: 480px) {
-          main section {
-            width: calc(100% - 40px);
-            margin: 20px;
+          section ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
           }
-        }
-      `}
+          section ul li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+          }
+          li label {
+            margin-left: 10px;
+            font-size: 12px;
+            line-height: 1.5;
+            cursor: pointer;
+          }
+          label .title {
+            font-weight: bold;
+          }
+          @media (max-width: 1020px) {
+            aside {
+              width: 100%;
+              display: none;
+              top: 56px;
+              bottom: 56px;
+            }
+            aside.show {
+              display: block;
+            }
+            main {
+              display: flex;
+              flex-wrap: wrap;
+              position: relative;
+              height: 0;
+            }
+            h3 {
+              text-align: center;
+            }
+            main section {
+              width: calc(50% - 40px);
+              margin: 20px;
+            }
+          }
+          @media (max-width: 480px) {
+            main section {
+              width: calc(100% - 40px);
+              margin: 20px;
+            }
+          }
+        `}
       </style>
     </aside>
   )

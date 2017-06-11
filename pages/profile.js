@@ -89,117 +89,116 @@ class Profile extends React.Component {
         </main>
         <style jsx>
           {`
-        .Profile {
-          min-height: 100%;
-          width: 100%;
-        }
-        main {
-          padding: 70px 20px 20px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-        }
-        p.info {
-          font-weight: bold;
-        }
-        .dummy .avatar {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          background: #eee;
-          margin: 10px auto;
-        }
-        .dummy .name,
-        .dummy .links-shared,
-        .dummy .notifications{
-          width: 280px;
-          height: 20px;
-          background: #eee;
-          margin: 10px auto;
-          border-radius: 4px;
-        }
-        .dummy .links-shared {
-          width: 250px;
-        }
-        .dummy .notifications {
-          width: 200px;
-        }
-        .actual .avatar img {
-          border-radius: 50%;
-          margin: 20px auto;
-        }
-        .actual .username {
-          font-weight: 600;
-          font-size: 24px;
-          margin: 20px auto;
-        }
-        .actaul .name,
-        .actual .email {
-          margin: 20px auto;
-        }
-        .actual .label{
-          margin-right: 20px;
-          font-weight: bold;
-        }
-        button {
-          width: 100%;
-          margin: 50px 0;
-          border: none;
-          outline: none;
-          -webkit-appearence: none;
-          padding: 10px 20px;
-          color: #fff;
-          font-size: 16px;
-          text-transform: uppercase;
-          background: #222;
-          border-radius: 4px;
-          box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-          cursor: pointer;
-        }
-        button span {
-          padding: 0 5px; 
-        }
-        button:hover {
-          background: #111;
-        }
-        .actual button {
-          background: #f1f2f3;
-          color: #222;
-          font-size: 12px;
-          padding: 10px;
-        }
-        .actual button:hover {
-          background: #eee;
-        }
-        @media (max-width: 720px) {
-          main {
-            padding-bottom: 60px;
-          }
-          .dummy .avatar,
-          .dummy .name, 
-          .dummy .links-shared,
-          .dummy .notifications{
-            margin: 10px auto;
-          }
-          .dummy .avatar {
-            width: 100px;
-            height: 100px;
-          }
-          .dummy button {
-            margin: 20px auto;
-          }
-          .actual .avatar {
-            margin: 0 auto;
-            text-align: center;
-          }
-          .actual .avatar img {
-            margin: 0 auto 10px auto;
-            width: 100px;
-            height: 100px;
-          }
-        }
-        `}
+            .Profile {
+              min-height: 100%;
+              width: 100%;
+            }
+            main {
+              padding: 70px 20px 20px 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+            }
+            p.info {
+              font-weight: bold;
+            }
+            .dummy .avatar {
+              width: 150px;
+              height: 150px;
+              border-radius: 50%;
+              background: #eee;
+              margin: 10px auto;
+            }
+            .dummy .name, .dummy .links-shared, .dummy .notifications {
+              width: 280px;
+              height: 20px;
+              background: #eee;
+              margin: 10px auto;
+              border-radius: 4px;
+            }
+            .dummy .links-shared {
+              width: 250px;
+            }
+            .dummy .notifications {
+              width: 200px;
+            }
+            .actual .avatar img {
+              border-radius: 50%;
+              margin: 20px auto;
+            }
+            .actual .username {
+              font-weight: 600;
+              font-size: 24px;
+              margin: 20px auto;
+            }
+            .actaul .name, .actual .email {
+              margin: 20px auto;
+            }
+            .actual .label {
+              margin-right: 20px;
+              font-weight: bold;
+            }
+            button {
+              width: 100%;
+              margin: 50px 0;
+              border: none;
+              outline: none;
+              -webkit-appearence: none;
+              padding: 10px 20px;
+              color: #fff;
+              font-size: 16px;
+              text-transform: uppercase;
+              background: #222;
+              border-radius: 4px;
+              box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+              cursor: pointer;
+            }
+            button span {
+              padding: 0 5px;
+            }
+            button:hover {
+              background: #111;
+            }
+            .actual button {
+              background: #f1f2f3;
+              color: #222;
+              font-size: 12px;
+              padding: 10px;
+            }
+            .actual button:hover {
+              background: #eee;
+            }
+            @media (max-width: 720px) {
+              main {
+                padding-bottom: 60px;
+              }
+              .dummy .avatar,
+              .dummy .name,
+              .dummy .links-shared,
+              .dummy .notifications {
+                margin: 10px auto;
+              }
+              .dummy .avatar {
+                width: 100px;
+                height: 100px;
+              }
+              .dummy button {
+                margin: 20px auto;
+              }
+              .actual .avatar {
+                margin: 0 auto;
+                text-align: center;
+              }
+              .actual .avatar img {
+                margin: 0 auto 10px auto;
+                width: 100px;
+                height: 100px;
+              }
+            }
+          `}
         </style>
       </div>
     )

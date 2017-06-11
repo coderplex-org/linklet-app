@@ -6,10 +6,10 @@ export default () =>
     />
     <style jsx>
       {`
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    `}
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      `}
     </style>
   </svg>

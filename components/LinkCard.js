@@ -135,226 +135,225 @@ export default class LinkCard extends React.Component {
         </div>
         <style jsx>
           {`
-          .list__item {
-            margin: 20px auto;
-            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-            width: 360px;
-            transition: box-shadow .35s ease-out, transform .3s ease-out, opacity .2s ease-out;
-            display: flex;
-            border-radius: 12px;
-            background: #fff;
-            flex-direction: column;
-            justify-content: space-between;
-            text-decoration: none;
-            color: #444;
-          }
-          .item__content {
-            width: 100%;
-            min-height: 127px;
-          }
-          .title {
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 5px 10px;
-            font-size: 18px;
-            min-height: 75px;
-            color: #fff;
-          }
-          .image {
-            width: 100%;
-            height: 150px;
-            position: relative;
-          }
-          .image img {
-            width: 100%;
-            height: 150px;
-            position: relative;
-            z-index: 2;
-            border-radius: 12px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-          .image span {
-            z-index: 1;
-            position: absolute;
-            display: flex;
-            align-items: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            justify-content: center;
-            background-image: url("https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.png");
-            color: #fff;
-            border-radius: 12px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-          .desc {
-            margin: 0;
-            font-size: 14px;
-            padding: 10px;
-          }
-          .item__footer .info__stats {
-            color: #666;
-            display: flex;
-            align-items: center;
-          }
-          .item__footer .meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #eee;
-          }
-          .meta ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            width: 100%;
-            align-items: center;
-          }
-          .meta li {
-            flex: 1;
-            min-height: 50px;
-            display: flex;
-            justify-content: center;
-            border-right: 1px solid #eee;
-            border-left: 1px solid #eee;
-          }
-          .meta li:first-child {
-            flex: 2;
-            color: #888;
-            border-right: 0;
-          }
-          .by-user {
-            flex: 1;
-            text-decoration: none;
-            color: #0366d6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .by-user img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 5px;
-          }
-          .by-user .info {
-            display: flex;
-            flex-direction: column;
-          }
-          .by-user .info span:first-child {
-            color: #888;
-            font-size: 10px;
-          }
-          svg {
-            width: 20px;
-            height: 20px;
-            fill: blue;
-            margin-left: 10px;
-          }
-          .meta li div,
-          .item__footer .open {
-            width: 100%;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .item__footer .open {
-            cursor: pointer;
-            width: 100%;
-            text-decoration: none;
-            color: blue;
-            font-weight: bold;
-            transition: all 0.25s;
-          }
-          .item__footer .open:hover {
-            color: teal;
-          }
-          .item__footer .open:hover > svg {
-            fill: teal;
-          }
-          .timestamp {
-            flex: 1;
-            border: 1px solid #eee;
-            border-bottom: 0;
-            border-left: 0;
-            border-right: 0;
-            min-height: 29px;
-            font-size: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .stats {
-            flex: 1;
-            display: flex;
-          }
-          .views {
-            flex: 1;
-            color: #666;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #eee;
-            border-bottom: 0;
-            border-right: 0;
-            min-height: 29px;
-          }
-          .views > span {
-            color: #666;
-            font-weight: normal;
-            font-size: 12px;
-            margin-left: 5px;
-          }
-          .like__btn {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: #666;
-            border: 1px solid #eee;
-            border-bottom: 0;
-            border-right: 0;
-            min-height: 29px;
-          }
-          .like__btn:hover,
-          .like__btn.liked,
-          .like__btn.liked:hover {
-            color: red;
-          }
-          .like__btn span {
-            margin-left: 5px;
-            color: #666;
-          }
-          @media(max-width: 1020px) {
             .list__item {
-              margin: 10px auto;
+              margin: 20px auto;
+              box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+                0 3px 1px -2px rgba(0, 0, 0, .2),
+                0 1px 5px 0 rgba(0, 0, 0, .12);
+              width: 360px;
+              transition: box-shadow .35s ease-out,
+                transform .3s ease-out,
+                opacity .2s ease-out;
+              display: flex;
+              border-radius: 12px;
+              background: #fff;
+              flex-direction: column;
+              justify-content: space-between;
+              text-decoration: none;
+              color: #444;
             }
-            .like__btn:hover {
-              color: #666;
-            }
-          }
-          @media(max-width: 520px) {
-            .list__item {
-              margin: 8px auto;
+            .item__content {
               width: 100%;
+              min-height: 127px;
             }
-            .list__item,
-            .image img,
+            .title {
+              display: flex;
+              align-items: center;
+              margin: 0;
+              padding: 5px 10px;
+              font-size: 18px;
+              min-height: 75px;
+              color: #fff;
+            }
+            .image {
+              width: 100%;
+              height: 150px;
+              position: relative;
+            }
+            .image img {
+              width: 100%;
+              height: 150px;
+              position: relative;
+              z-index: 2;
+              border-radius: 12px;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+            }
             .image span {
-              border-radius: 0;
+              z-index: 1;
+              position: absolute;
+              display: flex;
+              align-items: center;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 150px;
+              justify-content: center;
+              background-image: url("https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.png");
+              color: #fff;
+              border-radius: 12px;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
             }
             .desc {
-              padding: 20px 10px;
+              margin: 0;
+              font-size: 14px;
+              padding: 10px;
             }
-          }
-        `}
+            .item__footer .info__stats {
+              color: #666;
+              display: flex;
+              align-items: center;
+            }
+            .item__footer .meta {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border-top: 1px solid #eee;
+            }
+            .meta ul {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              display: flex;
+              width: 100%;
+              align-items: center;
+            }
+            .meta li {
+              flex: 1;
+              min-height: 50px;
+              display: flex;
+              justify-content: center;
+              border-right: 1px solid #eee;
+              border-left: 1px solid #eee;
+            }
+            .meta li:first-child {
+              flex: 2;
+              color: #888;
+              border-right: 0;
+            }
+            .by-user {
+              flex: 1;
+              text-decoration: none;
+              color: #0366d6;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .by-user img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin-right: 5px;
+            }
+            .by-user .info {
+              display: flex;
+              flex-direction: column;
+            }
+            .by-user .info span:first-child {
+              color: #888;
+              font-size: 10px;
+            }
+            svg {
+              width: 20px;
+              height: 20px;
+              fill: blue;
+              margin-left: 10px;
+            }
+            .meta li div, .item__footer .open {
+              width: 100%;
+              flex: 1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .item__footer .open {
+              cursor: pointer;
+              width: 100%;
+              text-decoration: none;
+              color: blue;
+              font-weight: bold;
+              transition: all 0.25s;
+            }
+            .item__footer .open:hover {
+              color: teal;
+            }
+            .item__footer .open:hover > svg {
+              fill: teal;
+            }
+            .timestamp {
+              flex: 1;
+              border: 1px solid #eee;
+              border-bottom: 0;
+              border-left: 0;
+              border-right: 0;
+              min-height: 29px;
+              font-size: 12px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .stats {
+              flex: 1;
+              display: flex;
+            }
+            .views {
+              flex: 1;
+              color: #666;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid #eee;
+              border-bottom: 0;
+              border-right: 0;
+              min-height: 29px;
+            }
+            .views > span {
+              color: #666;
+              font-weight: normal;
+              font-size: 12px;
+              margin-left: 5px;
+            }
+            .like__btn {
+              flex: 1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-decoration: none;
+              color: #666;
+              border: 1px solid #eee;
+              border-bottom: 0;
+              border-right: 0;
+              min-height: 29px;
+            }
+            .like__btn:hover, .like__btn.liked, .like__btn.liked:hover {
+              color: red;
+            }
+            .like__btn span {
+              margin-left: 5px;
+              color: #666;
+            }
+            @media (max-width: 1020px) {
+              .list__item {
+                margin: 10px auto;
+              }
+              .like__btn:hover {
+                color: #666;
+              }
+            }
+            @media (max-width: 520px) {
+              .list__item {
+                margin: 8px auto;
+                width: 100%;
+              }
+              .list__item, .image img, .image span {
+                border-radius: 0;
+              }
+              .desc {
+                padding: 20px 10px;
+              }
+            }
+          `}
         </style>
       </li>
     )

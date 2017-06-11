@@ -30,7 +30,7 @@ export default class SnackBar extends React.Component {
       <div className={showSnackBar ? 'show' : ''}>
         {this.props.children}
         <style jsx>{`
-          div{
+          div {
             position: fixed;
             left: 50%;
             transform: translate(-50%, 20px);
@@ -53,7 +53,7 @@ export default class SnackBar extends React.Component {
           }
           div.show {
             opacity: 1;
-            transform: translate(-50%, 0)
+            transform: translate(-50%, 0);
           }
         `}</style>
       </div>

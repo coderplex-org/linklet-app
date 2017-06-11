@@ -204,55 +204,55 @@ export default class Notification extends React.Component {
         </SnackBar>
         <style jsx>
           {`
-          .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 25px;
-          }
-          .switch input {
-            display: none;
-          }
-          .switch .slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #ccc;
-            -webkit-transition: all 0.4s;
-            transition: all 0.4s;
-            cursor: pointer;
-          }
-          .switch .slider.round {
-            border-radius: 25px;
-          }
-          .switch .slider.round:before {
-            border-radius: 25px;
-          }
-          .switch .slider:before {
-            position: absolute;
-            content: "🔕";
-            font-size: 14px;
-            line-height: 22px;
-            width: 22px;
-            height: 22px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            -webkit-transition: all 0.4s;
-            transition: all 0.4s;
-          }
-          input:checked + .slider {
-            background: #ff6600;
-          }
-          input:checked + .slider:before {
-            content: "🔔";
-            text-align: center;
-            -webkit-transform: translateX(24px);
-                    transform: translateX(24px);
-          }
-        `}
+            .switch {
+              position: relative;
+              display: inline-block;
+              width: 50px;
+              height: 25px;
+            }
+            .switch input {
+              display: none;
+            }
+            .switch .slider {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: #ccc;
+              -webkit-transition: all 0.4s;
+              transition: all 0.4s;
+              cursor: pointer;
+            }
+            .switch .slider.round {
+              border-radius: 25px;
+            }
+            .switch .slider.round:before {
+              border-radius: 25px;
+            }
+            .switch .slider:before {
+              position: absolute;
+              content: "🔕";
+              font-size: 14px;
+              line-height: 22px;
+              width: 22px;
+              height: 22px;
+              left: 2px;
+              bottom: 2px;
+              background-color: white;
+              -webkit-transition: all 0.4s;
+              transition: all 0.4s;
+            }
+            input:checked + .slider {
+              background: #ff6600;
+            }
+            input:checked + .slider:before {
+              content: "🔔";
+              text-align: center;
+              -webkit-transform: translateX(24px);
+              transform: translateX(24px);
+            }
+          `}
         </style>
       </li>
     )

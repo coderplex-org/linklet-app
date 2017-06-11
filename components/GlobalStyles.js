@@ -2,71 +2,66 @@ export default () =>
   <div>
     <style jsx global>
       {`
-        *,
-        *::after,
-        *::before {
-        box-sizing: border-box;
+        *, *::after, *::before {
+          box-sizing: border-box;
         }
-        body{
-        height: 100%;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        background: rgba(63, 81, 181, 0.08);
-        font-family: -apple-system,
-              system-ui,
-              BlinkMacSystemFont,
-              "Segoe UI", 
-              Roboto, 
-              Oxygen-Sans, 
-              Ubuntu,  
-              Cantarell,
-              "Fira Sans",
-              "Droid Sans",
-              "Helvetica Neue", 
-              sans-serif;
-        font-weight: 400;
-        color: #444;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        body {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          background: rgba(63, 81, 181, 0.08);
+          font-family: -apple-system,
+            system-ui,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Oxygen-Sans,
+            Ubuntu,
+            Cantarell,
+            "Fira Sans",
+            "Droid Sans",
+            "Helvetica Neue",
+            sans-serif;
+          font-weight: 400;
+          color: #444;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
         #nprogress {
-        pointer-events: none;
+          pointer-events: none;
         }
         #nprogress .bar {
-        background: #f7e830;
-        position: fixed;
-        z-index: 1031;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
+          background: #f7e830;
+          position: fixed;
+          z-index: 1031;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
         }
         /* Fancy blur effect */
         #nprogress .peg {
-        display: block;
-        position: absolute;
-        right: 0px;
-        width: 100px;
-        height: 100%;
-        box-shadow: 0 0 10px #f7e830, 0 0 5px #f7e830;
-        opacity: 1.0;
-        transform: rotate(3deg) translate(0px, -4px);
+          display: block;
+          position: absolute;
+          right: 0px;
+          width: 100px;
+          height: 100%;
+          box-shadow: 0 0 10px #f7e830, 0 0 5px #f7e830;
+          opacity: 1.0;
+          transform: rotate(3deg) translate(0px, -4px);
         }
         .links-enter {
           opacity: 0.01;
         }
-
         .links-enter.links-enter-active {
           opacity: 1;
           transition: opacity 500ms ease-in;
         }
-
         .links-leave {
           opacity: 1;
         }
-
         .links-leave.links-leave-active {
           opacity: 0.01;
           transition: opacity 300ms ease-in;
@@ -74,7 +69,6 @@ export default () =>
         .links-appear {
           opacity: 0.01;
         }
-
         .links-appear.links-appear-active {
           opacity: 1;
           transition: opacity .5s ease-in;
@@ -133,8 +127,7 @@ export default () =>
         .rc-pagination-item-active:hover a {
           color: #fff;
         }
-        .rc-pagination-jump-prev:after,
-        .rc-pagination-jump-next:after {
+        .rc-pagination-jump-prev:after, .rc-pagination-jump-next:after {
           content: "•••";
           display: block;
           letter-spacing: 2px;
@@ -180,17 +173,14 @@ export default () =>
           content: "›";
           display: block;
         }
-        .rc-pagination-prev,
-        .rc-pagination-next {
+        .rc-pagination-prev, .rc-pagination-next {
           border: 1px solid #d9d9d9;
           font-size: 18px;
         }
-        .rc-pagination-prev a,
-        .rc-pagination-next a {
+        .rc-pagination-prev a, .rc-pagination-next a {
           color: #666;
         }
-        .rc-pagination-prev a:after,
-        .rc-pagination-next a:after {
+        .rc-pagination-prev a:after, .rc-pagination-next a:after {
           margin-top: -1px;
         }
         .rc-pagination-disabled {
@@ -279,17 +269,15 @@ export default () =>
           position: absolute;
           top: 50%;
           left: 10px;
-          transform: translateY(-40%); 
+          transform: translateY(-40%);
         }
         .react-autosuggest__input:focus {
           outline: none;
         }
-
         .react-autosuggest__container--open .react-autosuggest__input {
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
         }
-
         .react-autosuggest__suggestions-container {
           max-height: 300px;
           overflow: auto;
@@ -318,7 +306,6 @@ export default () =>
           padding: 10px 20px;
           border-bottom: 1px dotted #ccc;
         }
-
         .react-autosuggest__suggestion--highlighted {
           background-color: #ddd;
         }
@@ -336,6 +323,6 @@ export default () =>
             font-size: 20px;
           }
         }
-    `}
+      `}
     </style>
   </div>

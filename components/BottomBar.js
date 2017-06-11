@@ -12,7 +12,7 @@ const IconPlaceHolder = () =>
         width: 30px;
         height: 40px;
         fill: #888;
-      } 
+      }
     `}</style>
   </svg>
 
@@ -221,7 +221,7 @@ export default class BottomBar extends React.Component {
           li:last-child {
             border-right: none;
           }
-          @media(max-width: 1020px) {
+          @media (max-width: 1020px) {
             div {
               position: fixed;
               left: 0;

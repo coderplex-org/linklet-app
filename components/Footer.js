@@ -36,62 +36,62 @@ export default () =>
     </ul>
     <style jsx>
       {`
-      footer {
-        color: #888;
-        width: 100%;
-        min-height: 50px;
-        display: flex;
-      }
-      p{
-        margin-left: 240px;
-        font-size: 14px;
-      }
-      ul {
-        flex: 1;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        min-height: 50px;
-      }
-      ul li {
-        text-align: center;
-        padding: 0 50px 0 0;
-        font-size: 14px;
-      }
-      a {
-        text-decoration: none;
-        color: #444;
-      }
-      a:hover {
-        color: #222;
-      }
-      @media(max-width: 1020px) {
         footer {
-          margin-left: 0;
-          padding-bottom: 60px;
-          flex-direction: column;
-          align-items: center;
+          color: #888;
+          width: 100%;
+          min-height: 50px;
+          display: flex;
         }
         p {
-          margin-left: 0;
+          margin-left: 240px;
+          font-size: 14px;
         }
         ul {
-          width: 100%;
-          justify-content: flex-start;
+          flex: 1;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          min-height: 50px;
         }
         ul li {
-          flex: 2;
-          border-left: 1px solid #ccc;
-          padding: 0;
-          font-size: 10px;
+          text-align: center;
+          padding: 0 50px 0 0;
+          font-size: 14px;
         }
-        ul li:nth-child(2) {
-          flex: 1;
+        a {
+          text-decoration: none;
+          color: #444;
         }
-      }
-    `}
+        a:hover {
+          color: #222;
+        }
+        @media (max-width: 1020px) {
+          footer {
+            margin-left: 0;
+            padding-bottom: 60px;
+            flex-direction: column;
+            align-items: center;
+          }
+          p {
+            margin-left: 0;
+          }
+          ul {
+            width: 100%;
+            justify-content: flex-start;
+          }
+          ul li {
+            flex: 2;
+            border-left: 1px solid #ccc;
+            padding: 0;
+            font-size: 10px;
+          }
+          ul li:nth-child(2) {
+            flex: 1;
+          }
+        }
+      `}
     </style>
   </footer>

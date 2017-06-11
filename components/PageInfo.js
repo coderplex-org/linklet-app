@@ -26,27 +26,28 @@ const renderInfo = (query, totalLinks, url) => {
           </span>
           <style jsx>
             {`
-          .text-center {
-            text-align: center;
-            width: 100%;
-            line-height: 2;
-            margin: 10px 0 0 0;
-            padding: 0;
-            font-size: 12px;
-          }
-          span {
-            font-weight: bold;
-            text-transform: capitalize;
-          }
-          span a {
-            color: red;
-            margin: 0 10px;
-            text-decoration: none;
-          }
-          span a:hover {
-            color: teal;
-          }
-        `}
+              .text-center {
+                text-align: center;
+
+                width: 100%;
+                line-height: 2;
+                margin: 10px 0 0 0;
+                padding: 0;
+                font-size: 12px;
+              }
+              span {
+                font-weight: bold;
+                text-transform: capitalize;
+              }
+              span a {
+                color: red;
+                margin: 0 10px;
+                text-decoration: none;
+              }
+              span a:hover {
+                color: teal;
+              }
+            `}
           </style>
         </p>
       )
@@ -73,28 +74,29 @@ const renderInfo = (query, totalLinks, url) => {
           </span>
           <style jsx>
             {`
-          .text-center {
-            text-align: center;
-            width: 100%;
-            line-height: 2;
-            margin: 10px 0 0 0;
-            padding: 0;
-            font-size: 12px;
-          }
-          span {
-            font-weight: bold;
-            text-transform: capitalize;
-            padding: 10px;
-          }
-          span a {
-            color: red;
-            margin: 0 10px;
-            text-decoration: none;
-          }
-          span a:hover {
-            color: lightred;
-          }
-        `}
+              .text-center {
+                text-align: center;
+
+                width: 100%;
+                line-height: 2;
+                margin: 10px 0 0 0;
+                padding: 0;
+                font-size: 12px;
+              }
+              span {
+                font-weight: bold;
+                text-transform: capitalize;
+                padding: 10px;
+              }
+              span a {
+                color: red;
+                margin: 0 10px;
+                text-decoration: none;
+              }
+              span a:hover {
+                color: lightred;
+              }
+            `}
           </style>
         </p>
       )
@@ -118,28 +120,29 @@ const renderInfo = (query, totalLinks, url) => {
           </span>
           <style jsx>
             {`
-          .text-center {
-            text-align: center;
-            width: 100%;
-            line-height: 2;
-            margin: 10px 0 0 0;
-            padding: 0;
-            font-size: 12px;
-          }
-          span {
-            font-weight: bold;
-            text-transform: capitalize;
-            padding: 10px;
-          }
-          span a {
-            color: red;
-            margin: 0 10px;
-            text-decoration: none;
-          }
-          span a:hover {
-            color: lightred;
-          }
-        `}
+              .text-center {
+                text-align: center;
+
+                width: 100%;
+                line-height: 2;
+                margin: 10px 0 0 0;
+                padding: 0;
+                font-size: 12px;
+              }
+              span {
+                font-weight: bold;
+                text-transform: capitalize;
+                padding: 10px;
+              }
+              span a {
+                color: red;
+                margin: 0 10px;
+                text-decoration: none;
+              }
+              span a:hover {
+                color: lightred;
+              }
+            `}
           </style>
         </p>
       )
@@ -155,15 +158,16 @@ const renderInfo = (query, totalLinks, url) => {
           were added till today.
           <style jsx>
             {`
-          .text-center {
-            text-align: center;
-            width: 100%;
-            line-height: 2;
-            margin: 10px 0 0 0;
-            padding: 0;
-            font-size: 12px;
-          }
-        `}
+              .text-center {
+                text-align: center;
+
+                width: 100%;
+                line-height: 2;
+                margin: 10px 0 0 0;
+                padding: 0;
+                font-size: 12px;
+              }
+            `}
           </style>
         </p>
       )
@@ -194,62 +198,61 @@ export default ({ query, page, totalLinks, url, handelSort }) => {
       </div>
       <style jsx>
         {`
-        .page-num {
-          text-align: center;
-          width: 100%;
-          margin: 10px 0 0 0;
-          padding: 0;
-          font-size: 12px;
-        }
-        div {
-          position: relative;
-        }
-        .sort {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          right: 120px;
-          width: 160px;
-          display: flex;
-          align-items: center;
-        }
-        .sort .title {
-          font-size: 12px;
-          font-weight: bold;
-        }
-        select {
-          width: 100px;
-          margin-left: 5px;
-          background: #fff;
-        }
-        @media(max-width: 950px) {
-          .sort {
-            right: 30px;
-          }
-        }
-        @media(max-width: 1020px) {
-          .sort {
-            right: 10px;
-          }
-        }
-        @media(max-width: 600px) {
-          
-          .sort {
-            position: static;
-            flex: 1;
-            transform: translateY(0);
-          }
           .page-num {
-            flex: 1;
-            margin: 0;
+            text-align: center;
+            width: 100%;
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-size: 12px;
           }
-          .flex {
+          div {
+            position: relative;
+          }
+          .sort {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 120px;
+            width: 160px;
             display: flex;
             align-items: center;
-            margin: 10px 0;
           }
-        }
-      `}
+          .sort .title {
+            font-size: 12px;
+            font-weight: bold;
+          }
+          select {
+            width: 100px;
+            margin-left: 5px;
+            background: #fff;
+          }
+          @media (max-width: 950px) {
+            .sort {
+              right: 30px;
+            }
+          }
+          @media (max-width: 1020px) {
+            .sort {
+              right: 10px;
+            }
+          }
+          @media (max-width: 600px) {
+            .sort {
+              position: static;
+              flex: 1;
+              transform: translateY(0);
+            }
+            .page-num {
+              flex: 1;
+              margin: 0;
+            }
+            .flex {
+              display: flex;
+              align-items: center;
+              margin: 10px 0;
+            }
+          }
+        `}
       </style>
     </div>
   )

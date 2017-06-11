@@ -183,12 +183,13 @@ class Bookmarks extends Component {
               box-shadow: 0 0 5px #888;
               border-radius: 4px;
               color: #fff;
+
               font-size: 18px;
             }
             button:hover {
               background: green;
             }
-        `}
+          `}
         </style>
       </div>
     )

@@ -169,47 +169,47 @@ export default class LinksList extends React.Component {
         </SnackBar>
         <style jsx>
           {`
-          main {
-            padding: 30px 0;
-            padding-top: 100px;
-            margin-left: 200px;
-          }
-          .list {
-            list-style-type: none;
-            margin: 0 20px;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            min-height: 250px;
-          }
-          .pagination{
-            display: flex;
-            justify-content: center;
-          }
-          @media(max-width: 1020px) {
             main {
-              margin: 0;
-              padding-top: 56px;
+              padding: 30px 0;
+              padding-top: 100px;
+              margin-left: 200px;
             }
             .list {
-              margin: 0;
-            }
-          }
-          @media(max-width: 720px) {
-            .list {
-              margin-top: 10px;
-            }
-          }
-          @media(max-width: 520px) {
-            .info span {
+              list-style-type: none;
+              margin: 0 20px;
+              padding: 0;
+              display: flex;
               flex-wrap: wrap;
+              justify-content: center;
+              min-height: 250px;
             }
-            .filterDetails {
-              margin-top: 10px;
+            .pagination {
+              display: flex;
+              justify-content: center;
             }
-          }
-        `}
+            @media (max-width: 1020px) {
+              main {
+                margin: 0;
+                padding-top: 56px;
+              }
+              .list {
+                margin: 0;
+              }
+            }
+            @media (max-width: 720px) {
+              .list {
+                margin-top: 10px;
+              }
+            }
+            @media (max-width: 520px) {
+              .info span {
+                flex-wrap: wrap;
+              }
+              .filterDetails {
+                margin-top: 10px;
+              }
+            }
+          `}
         </style>
       </main>
     )

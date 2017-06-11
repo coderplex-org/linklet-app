@@ -23,22 +23,22 @@ export default class About extends React.Component {
         <Footer />
         <style jsx>
           {`
-        .about {
-          min-height: 100%;
-          width: 100%;
-        }
-        main {
-          padding: 70px 20px 200px 20px;
-          text-align: center;
-        }
-        p {
-          color: #444;
-          letter-spacing: 2px;
-          line-height: 2;
-          max-width: 600px;
-          margin: 20px auto;
-        }
-        `}
+            .about {
+              min-height: 100%;
+              width: 100%;
+            }
+            main {
+              padding: 70px 20px 200px 20px;
+              text-align: center;
+            }
+            p {
+              color: #444;
+              letter-spacing: 2px;
+              line-height: 2;
+              max-width: 600px;
+              margin: 20px auto;
+            }
+          `}
         </style>
       </div>
     )
