@@ -12,7 +12,7 @@ export default () =>
         width: 100%;
         padding: 0;
         margin: 0;
-        background: #F5F5F5;
+        background: rgba(63, 81, 181, 0.08);
         font-family: -apple-system,
               system-ui,
               BlinkMacSystemFont,
