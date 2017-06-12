@@ -1,7 +1,20 @@
 import React from 'react'
 import Router from 'next/router'
+import NProgress from 'nprogress'
 import SnackBar from '../components/Snackbar'
-import { initGA } from '../lib/analytics'
+import { initGA, logEvent, logPageView } from '../lib/analytics'
+
+Router.onRouteChangeStart = () => {
+  console.log('started listening')
+  NProgress.start()
+}
+Router.onRouteChangeComplete = url => {
+  logEvent('Navigation', `Navigated to ${url}`)
+  NProgress.done()
+}
+Router.onRouteChangeError = () => {
+  NProgress.done()
+}
 
 export default Page => {
   return class ContainerPage extends React.Component {
@@ -58,7 +71,12 @@ export default Page => {
       }
     }
     componentDidMount () {
-      initGA()
+      console.log('started')
+      if (!window.GA_INITIALIZED) {
+        initGA()
+        window.GA_INITIALIZED = true
+      }
+      logPageView()
       require('../utils/offlineInstaller')
       window.addEventListener('storage', this.handleAuthChange, false)
       window.addEventListener('online', this.updateNetworkStatus, false)
@@ -74,6 +92,7 @@ export default Page => {
     }
 
     componentWillUnmount () {
+      console.log('unmounted')
       window.removeEventListener('storage', this.handleAuthChange, false)
       window.removeEventListener('online', this.updateNetworkStatus, false)
       window.removeEventListener('offline', this.updateNetworkStatus, false)

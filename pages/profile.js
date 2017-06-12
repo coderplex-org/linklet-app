@@ -1,7 +1,6 @@
 import React from 'react'
 import NProgress from 'nprogress'
 import Header from '../components/Header'
-import { logPageView } from '../lib/analytics'
 import FaGithub from 'react-icons/lib/fa/github'
 import FaSignOut from 'react-icons/lib/fa/sign-out'
 
@@ -11,10 +10,6 @@ import PublicPage from '../hocs/PublicPage'
 import { login, logout } from '../utils/authenticate'
 
 class Profile extends React.Component {
-  componentDidMount () {
-    logPageView()
-    console.log(this.props)
-  }
   render () {
     return (
       <div className='Profile'>
@@ -30,7 +25,10 @@ class Profile extends React.Component {
               : this.props.url.query &&
                   this.props.url.query.next === '/submit-link'
                 ? 'Please login to submit new link'
-                : ''}
+                : this.props.url.query &&
+                    this.props.url.query.next === '/bookmarks'
+                  ? 'Please login to view links bookmarked by you!..'
+                  : ''}
           </p>
           {this.props.isAuthenticated
             ? <div className='actual'>
@@ -107,13 +105,13 @@ class Profile extends React.Component {
               width: 150px;
               height: 150px;
               border-radius: 50%;
-              background: #eee;
+              background: rgba(37, 53, 146, 0.10);
               margin: 10px auto;
             }
             .dummy .name, .dummy .links-shared, .dummy .notifications {
               width: 280px;
               height: 20px;
-              background: #eee;
+              background: rgba(37, 53, 146, 0.10);
               margin: 10px auto;
               border-radius: 4px;
             }
@@ -169,7 +167,7 @@ class Profile extends React.Component {
               padding: 10px;
             }
             .actual button:hover {
-              background: #eee;
+              background: rgba(37, 53, 146, 0.10);
             }
             @media (max-width: 720px) {
               main {

@@ -2,8 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import NProgress from 'nprogress'
 import Router from 'next/router'
-import LinkCard from '../components/LinkCard'
-import { logPageView } from '../lib/analytics'
+import LinkCard from '../components/MLinkCard'
 import db from '../lib/db'
 
 import ContainerPage from '../hocs/ContainerPage'
@@ -22,7 +21,6 @@ class SubmitLink extends React.Component {
     }
   }
   componentDidMount () {
-    logPageView()
     this.input.focus()
   }
   handleFetch (e) {

@@ -1,30 +1,12 @@
 import React from 'react'
-import NProgress from 'nprogress'
-import Router from 'next/router'
 import Link from 'next/link'
 import Meta from './Meta'
 import GlobalStyles from './GlobalStyles'
 import LinkIcon from './LinkIcon'
 import FilterIcon from './FilterIcon'
 import BottomBar from './BottomBar'
-import { logEvent } from '../lib/analytics'
 import NotificationBtn from './Notification'
 import FaSpinner from 'react-icons/lib/fa/spinner'
-
-console.log('started')
-Router.onRouteChangeStart = () => {
-  console.log('started listening')
-  NProgress.start()
-}
-
-Router.onRouteChangeComplete = url => {
-  logEvent('Navigation', `Navigated to ${url}`)
-  NProgress.done()
-}
-
-Router.onRouteChangeError = () => {
-  NProgress.done()
-}
 
 export default class Header extends React.Component {
   constructor (props) {
@@ -74,7 +56,7 @@ export default class Header extends React.Component {
         <style jsx>
           {`
             header {
-              background: #253592;
+              background: #514b7c;
               height: 56px;
               width: 100%;
               box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);

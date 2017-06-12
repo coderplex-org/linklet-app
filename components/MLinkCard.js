@@ -141,19 +141,18 @@ export default class MLinkCard extends React.Component {
             border-bottom: 1px solid #ddd;
             width: 480px;
             margin: 20px;
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14);
+            box-shadow: 0 2px 2px 0 rgba(63, 81, 181, 0.14);
             transition: box-shadow .35s ease-out,
               transform .3s ease-out,
               opacity .2s ease-out;
             border-radius: 4px;
           }
           .list__item:hover {
-            transform: translate(0, -4px);
-            box-shadow: 0 8px 5px 0 rgba(0, 0, 0, .12);
+            transform: translate(0, -2px) scale(1.05);
+            box-shadow: 0 8px 4px 0 rgba(63, 81, 181, 0.12);
           }
           a.open {
             display: flex;
-
             justify-content: space-between;
             padding: 15px;
             text-decoration: none;
@@ -215,6 +214,7 @@ export default class MLinkCard extends React.Component {
             text-decoration: none;
             display: flex;
             align-items: center;
+            transition: color 0.25s;
           }
           .bookmark a span, .ext-link a span, .views span span {
             margin-left: 5px;
@@ -223,6 +223,9 @@ export default class MLinkCard extends React.Component {
           .bookmark .like__btn.liked,
           .bookmark .like__btn.liked:hover {
             color: red;
+          }
+          .ext-link a:hover {
+            color: indigo;
           }
           @media (max-width: 1020px) {
             .list__item {

@@ -19,7 +19,6 @@ import { ModalContainer, ModalDialog } from 'react-modal-dialog'
 import db from '../lib/db'
 import SideBar from '../components/Sidebar'
 import LinksList from '../components/LinksList'
-import { logPageView } from '../lib/analytics'
 
 class Bookmarks extends Component {
   static async getInitialProps ({ query, req }) {
@@ -81,9 +80,6 @@ class Bookmarks extends Component {
       from: null,
       to: null
     }
-  }
-  componentDidMount () {
-    logPageView()
   }
   toggleFilter (e) {
     e && e.preventDefault()

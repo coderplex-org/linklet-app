@@ -1,12 +1,8 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { logPageView } from '../lib/analytics'
 
 export default class About extends React.Component {
-  componentDidMount () {
-    logPageView()
-  }
   render () {
     return (
       <div className='about'>
