@@ -56,7 +56,7 @@ export default class Header extends React.Component {
         <style jsx>
           {`
             header {
-              background: #514b7c;
+              background: #253592;
               height: 56px;
               width: 100%;
               box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
