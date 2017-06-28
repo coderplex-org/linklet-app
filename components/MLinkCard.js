@@ -57,7 +57,7 @@ export default class MLinkCard extends React.Component {
                   <img
                     src={`//images.weserv.nl/?url=${link.image
                         .replace('http://', '')
-                        .replace('https://', '')}&w=80&h=80`}
+                        .replace('https://', '')}&w=80&h=80&output=webp`}
                     alt={'No Img'}
                     />
                 </LazyLoad>
@@ -66,7 +66,7 @@ export default class MLinkCard extends React.Component {
                 style={{
                   backgroundImage: `url(${`//images.weserv.nl/?url=${defaultBg
                       .replace('http://', '')
-                      .replace('https://', '')}&w=80&h=80`})`
+                      .replace('https://', '')}&w=80&h=80&output=webp`})`
                 }}
                 className='image'
                 />}
@@ -86,7 +86,10 @@ export default class MLinkCard extends React.Component {
                   <img
                     src={`//images.weserv.nl/?url=${link._creator.avatarUrl
                         .replace('http://', '')
-                        .replace('https://', '')}&w=20&h=20&&shape=circle`}
+                        .replace(
+                          'https://',
+                          ''
+                        )}&w=20&h=20&shape=circle&output=webp`}
                     alt={link._creator.username}
                     />
                 </LazyLoad>

@@ -36,7 +36,10 @@ class Profile extends React.Component {
                 <img
                   src={`//images.weserv.nl/?url=${this.props.user.avatarUrl
                       .replace('http://', '')
-                      .replace('https://', '')}&w=180&h=180&&shape=circle`}
+                      .replace(
+                        'https://',
+                        ''
+                      )}&w=180&h=180&shape=circle&output=webp`}
                   alt={this.props.username}
                   />
               </div>

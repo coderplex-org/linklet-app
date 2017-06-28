@@ -37,7 +37,7 @@ export default class LinkCard extends React.Component {
                 <img
                   src={`//images.weserv.nl/?url=${link.image
                     .replace('http://', '')
-                    .replace('https://', '')}&w=360&h=150`}
+                    .replace('https://', '')}&w=360&h=150&output=webp`}
                   alt={link.title}
                 />
               </LazyLoad>}
@@ -102,7 +102,10 @@ export default class LinkCard extends React.Component {
                       <img
                         src={`//images.weserv.nl/?url=${link._creator.avatarUrl
                             .replace('http://', '')
-                            .replace('https://', '')}&w=40&h=40&&shape=circle`}
+                            .replace(
+                              'https://',
+                              ''
+                            )}&w=40&h=40&&shape=circle&output=webp`}
                         alt={link._creator.username}
                         />
                     </LazyLoad>
@@ -189,7 +192,7 @@ export default class LinkCard extends React.Component {
               width: 100%;
               height: 150px;
               justify-content: center;
-              background-image: url("https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.png");
+              background-image: url("https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.webp");
               color: #fff;
               border-radius: 12px;
               border-bottom-left-radius: 0;
