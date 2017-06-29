@@ -1,10 +1,18 @@
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const { ANALYZE } = process.env
 
 module.exports = {
   webpack: (config, { dev }) => {
     /* Enable only in Production */
+    console.log(dev)
     if (!dev) {
+      // preact
+      console.log('> Using Preact instead of React')
+      config.resolve.alias = {
+        react: 'preact-compat/dist/preact-compat',
+        'react-dom': 'preact-compat/dist/preact-compat'
+      }
       // Service Worker
       config.plugins.push(
         new SWPrecacheWebpackPlugin({
@@ -35,16 +43,17 @@ module.exports = {
               urlPattern: /^http.*/ // cache all files
             }
           ]
-        }),
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'disabled',
-        // For all options see https://github.com/th0r/webpack-bundle-analyzer#as-plugin
-          generateStatsFile: true,
-        // Will be available at `.next/stats.json`
-          statsFilename: 'stats.json',
-          logLevel: 'info'
         })
       )
+      if (ANALYZE) {
+        config.plugins.push(
+          new BundleAnalyzerPlugin({
+            analyzerMode: 'server',
+            analyzerPort: 8888,
+            openAnalyzer: true
+          })
+        )
+      }
     }
     return config
   }

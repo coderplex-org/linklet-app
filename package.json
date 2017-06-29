@@ -7,15 +7,17 @@
     "date-fns": "^1.28.5",
     "express": "^4.15.3",
     "ismobilejs": "^0.4.1",
-    "next": "3.0.0-beta13",
+    "next": "3.0.1-beta.5",
     "nprogress": "^0.2.0",
-    "rc-pagination": "^1.9.5",
-    "react": "^15.5.4",
-    "react-autosuggest": "^9.0.1",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.16.0",
+    "rc-pagination": "^1.9.8",
+    "react": "^15.6.1",
+    "react-autosuggest": "^9.3.1",
     "react-cookie": "1.0.5",
-    "react-dom": "^15.5.4",
+    "react-dom": "^15.6.1",
     "react-ga": "^2.2.0",
-    "react-highlight-words": "^0.7.2",
+    "react-highlight-words": "^0.8.0",
     "react-icons": "^2.2.4",
     "react-lazyload": "^2.2.7",
     "react-modal-dialog": "^4.0.7",
@@ -29,17 +31,16 @@
     "start": "NODE_ENV=production node server",
     "deploy": "npm run lint && now",
     "alias": "now alias",
-    "lint": "prettier 'lib/*.js' 'utils/*.js' 'components/*.js' 'pages/*.js' --write --single-quote --no-semi && standard --fix",
+    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
     "precommit": "lint-staged",
-    "postcommit": "npm run lint",
-    "export": "next export",
-    "bundle:view": "webpack-bundle-analyzer .next/stats.json"
+    "analyze": "cross-env ANALYZE=1 next build"
   },
   "devDependencies": {
-    "husky": "^0.13.4",
-    "lint-staged": "^3.6.1",
+    "cross-env": "^5.0.1",
+    "husky": "^0.14.1",
+    "lint-staged": "^4.0.0",
     "nodemon": "^1.11.0",
-    "prettier": "^1.4.4",
+    "prettier": "^1.5.2",
     "standard": "10.0.2"
   },
   "engines": {
@@ -47,7 +48,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "npm run lint",
+      "prettier --write --single-quote --no-semi",
+      "standard --fix",
       "git add"
     ]
   },
