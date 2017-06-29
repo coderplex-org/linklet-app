@@ -2,7 +2,9 @@ export default () =>
   <div>
     <style jsx global>
       {`
-        *, *::after, *::before {
+        *,
+        *::after,
+        *::before {
           box-sizing: border-box;
         }
         body {
@@ -11,23 +13,18 @@ export default () =>
           padding: 0;
           margin: 0;
           background: rgba(63, 81, 181, 0.08);
-          font-family: -apple-system,
-            system-ui,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            Roboto,
-            Oxygen-Sans,
-            Ubuntu,
-            Cantarell,
-            "Fira Sans",
-            "Droid Sans",
-            "Helvetica Neue",
-            sans-serif;
+          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+            "Helvetica Neue", sans-serif;
           font-weight: 400;
           color: #444;
           text-rendering: optimizeLegibility;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
+        }
+        #HW_badge {
+          top: 0 !important;
+          left: 0 !important;
         }
         #nprogress {
           pointer-events: none;
@@ -127,7 +124,8 @@ export default () =>
         .rc-pagination-item-active:hover a {
           color: #fff;
         }
-        .rc-pagination-jump-prev:after, .rc-pagination-jump-next:after {
+        .rc-pagination-jump-prev:after,
+        .rc-pagination-jump-next:after {
           content: "•••";
           display: block;
           letter-spacing: 2px;
@@ -173,14 +171,17 @@ export default () =>
           content: "›";
           display: block;
         }
-        .rc-pagination-prev, .rc-pagination-next {
+        .rc-pagination-prev,
+        .rc-pagination-next {
           border: 1px solid #d9d9d9;
           font-size: 18px;
         }
-        .rc-pagination-prev a, .rc-pagination-next a {
+        .rc-pagination-prev a,
+        .rc-pagination-next a {
           color: #666;
         }
-        .rc-pagination-prev a:after, .rc-pagination-next a:after {
+        .rc-pagination-prev a:after,
+        .rc-pagination-next a:after {
           margin-top: -1px;
         }
         .rc-pagination-disabled {

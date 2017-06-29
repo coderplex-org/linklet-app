@@ -58,7 +58,7 @@ export default Page => {
         body.style.pointerEvents = 'auto'
         this.setState({
           show: true,
-          message: 'You are \'Online\''
+          message: "You are 'Online'"
         })
       } else {
         const body = document.querySelector('body')
@@ -66,7 +66,7 @@ export default Page => {
         body.style.pointerEvents = 'none'
         this.setState({
           show: true,
-          message: 'You are \'Offline\''
+          message: "You are 'Offline'"
         })
       }
     }
@@ -81,12 +81,21 @@ export default Page => {
       window.addEventListener('storage', this.handleAuthChange, false)
       window.addEventListener('online', this.updateNetworkStatus, false)
       window.addEventListener('offline', this.updateNetworkStatus, false)
+      window.HW_config = {
+        selector: '#changelog', // CSS selector where to inject the badge
+        account: 'xMjW37' // your account ID
+      }
+      const s1 = document.createElement('script')
+      s1.async = true
+      s1.src = 'https://cdn.headwayapp.co/widget.js'
+      s1.charset = 'UTF-8'
+      document.body.appendChild(s1)
       if (!navigator.onLine) {
         const body = document.querySelector('body')
         body.style.filter = 'grayscale(1)'
         this.setState({
           show: true,
-          message: 'You are \'Offline\''
+          message: "You are 'Offline'"
         })
       }
     }
@@ -106,7 +115,9 @@ export default Page => {
             show={this.state.show}
             timer={4000}
           >
-            <p>{this.state.message}</p>
+            <p>
+              {this.state.message}
+            </p>
           </SnackBar>
         </div>
       )

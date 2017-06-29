@@ -77,9 +77,8 @@ export default class LinksList extends React.Component {
     const end = query && query.end
     const search = query && query.search
     sort = sort || (query && query.sort) || -1
-    current = typeof current === 'undefined'
-      ? query.page ? query.page : 1
-      : current
+    current =
+      typeof current === 'undefined' ? (query.page ? query.page : 1) : current
     if (start && end) {
       if (search) {
         Router.push(
@@ -165,7 +164,9 @@ export default class LinksList extends React.Component {
           show={this.state.show}
           timer={3000}
         >
-          <p>{this.state.message}</p>
+          <p>
+            {this.state.message}
+          </p>
         </SnackBar>
         <style jsx>
           {`

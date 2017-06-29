@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Meta from './Meta'
 import GlobalStyles from './GlobalStyles'
 import LinkIcon from './LinkIcon'
@@ -25,15 +24,13 @@ export default class Header extends React.Component {
       <header>
         <Meta title={this.props.title} />
         <GlobalStyles />
-        <Link href='/'>
-          <a className='logo'>
-            <LinkIcon />
-            <h1>
-              <span>Link</span>
-              <span>let</span>
-            </h1>
-          </a>
-        </Link>
+        <a id='changelog' className='logo'>
+          <LinkIcon />
+          <h1>
+            <span>Link</span>
+            <span>let</span>
+          </h1>
+        </a>
         <nav>
           <BottomBar user={this.props.user} url={this.props.url} />
 
@@ -120,14 +117,14 @@ export default class Header extends React.Component {
               padding: 0 5px;
               font-size: 24px;
               line-height: 56px;
-              color: #FFF;
+              color: #fff;
               text-align: center;
             }
             .logo h1 span:first-child {
-              color: #FFD15C;
+              color: #ffd15c;
             }
             .logo h1 span {
-              color: #FF7058;
+              color: #ff7058;
             }
             @media (max-width: 1020px) {
               .filterBtn {
