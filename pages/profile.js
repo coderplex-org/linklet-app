@@ -23,10 +23,10 @@ class Profile extends React.Component {
             {this.props.url.query && this.props.url.query.next === '/my-links'
               ? 'Please login to view links added by you!...'
               : this.props.url.query &&
-                  this.props.url.query.next === '/submit-link'
+                this.props.url.query.next === '/submit-link'
                 ? 'Please login to submit new link'
                 : this.props.url.query &&
-                    this.props.url.query.next === '/bookmarks'
+                  this.props.url.query.next === '/bookmarks'
                   ? 'Please login to view links bookmarked by you!..'
                   : ''}
           </p>
@@ -36,10 +36,7 @@ class Profile extends React.Component {
                 <img
                   src={`//images.weserv.nl/?url=${this.props.user.avatarUrl
                       .replace('http://', '')
-                      .replace(
-                        'https://',
-                        ''
-                      )}&w=180&h=180&shape=circle&output=webp`}
+                      .replace('https://', '')}&w=180&h=180&shape=circle`}
                   alt={this.props.username}
                   />
               </div>
@@ -111,7 +108,9 @@ class Profile extends React.Component {
               background: rgba(37, 53, 146, 0.10);
               margin: 10px auto;
             }
-            .dummy .name, .dummy .links-shared, .dummy .notifications {
+            .dummy .name,
+            .dummy .links-shared,
+            .dummy .notifications {
               width: 280px;
               height: 20px;
               background: rgba(37, 53, 146, 0.10);
@@ -133,7 +132,8 @@ class Profile extends React.Component {
               font-size: 24px;
               margin: 20px auto;
             }
-            .actaul .name, .actual .email {
+            .actaul .name,
+            .actual .email {
               margin: 20px auto;
             }
             .actual .label {

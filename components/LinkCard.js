@@ -23,11 +23,10 @@ export default class LinkCard extends React.Component {
   }
   render () {
     const { link, query: { search } = {}, user } = this.props
-    const likedLinkClass = user &&
-      link.bookmarkedBy &&
-      ~link.bookmarkedBy.indexOf(user._id)
-      ? 'liked'
-      : ''
+    const likedLinkClass =
+      user && link.bookmarkedBy && ~link.bookmarkedBy.indexOf(user._id)
+        ? 'liked'
+        : ''
     return (
       <li key={link._id} className='list__item'>
         <div className='item__content'>
@@ -37,7 +36,7 @@ export default class LinkCard extends React.Component {
                 <img
                   src={`//images.weserv.nl/?url=${link.image
                     .replace('http://', '')
-                    .replace('https://', '')}&w=360&h=150&output=webp`}
+                    .replace('https://', '')}&w=360&h=150`}
                   alt={link.title}
                 />
               </LazyLoad>}
@@ -80,11 +79,15 @@ export default class LinkCard extends React.Component {
                 href='#'
               >
                 <FaHeart />
-                <span>{link.bookmarkedBy ? link.bookmarkedBy.length : 0}</span>
+                <span>
+                  {link.bookmarkedBy ? link.bookmarkedBy.length : 0}
+                </span>
               </a>
               <span title='Views' className='views'>
                 <FaEye />
-                <span>{link.views || 0}</span>
+                <span>
+                  {link.views || 0}
+                </span>
               </span>
             </span>
           </div>
@@ -102,21 +105,18 @@ export default class LinkCard extends React.Component {
                       <img
                         src={`//images.weserv.nl/?url=${link._creator.avatarUrl
                             .replace('http://', '')
-                            .replace(
-                              'https://',
-                              ''
-                            )}&w=40&h=40&&shape=circle&output=webp`}
+                            .replace('https://', '')}&w=40&h=40&&shape=circle`}
                         alt={link._creator.username}
                         />
                     </LazyLoad>
                     <span className='info'>
                       <span>Added By</span>
-                      <span>{link._creator.username}</span>
+                      <span>
+                        {link._creator.username}
+                      </span>
                     </span>
                   </a>
-                  : <div className='by-wa'>
-                      Added From whatsapp
-                    </div>}
+                  : <div className='by-wa'>Added From whatsapp</div>}
               </li>
               <li>
                 <a
@@ -141,11 +141,9 @@ export default class LinkCard extends React.Component {
             .list__item {
               margin: 20px auto;
               box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
-                0 3px 1px -2px rgba(0, 0, 0, .2),
-                0 1px 5px 0 rgba(0, 0, 0, .12);
+                0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
               width: 360px;
-              transition: box-shadow .35s ease-out,
-                transform .3s ease-out,
+              transition: box-shadow .35s ease-out, transform .3s ease-out,
                 opacity .2s ease-out;
               display: flex;
               border-radius: 12px;
@@ -192,7 +190,7 @@ export default class LinkCard extends React.Component {
               width: 100%;
               height: 150px;
               justify-content: center;
-              background-image: url("https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.webp");
+              background-image: url("https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.png");
               color: #fff;
               border-radius: 12px;
               border-bottom-left-radius: 0;
@@ -263,7 +261,8 @@ export default class LinkCard extends React.Component {
               fill: blue;
               margin-left: 10px;
             }
-            .meta li div, .item__footer .open {
+            .meta li div,
+            .item__footer .open {
               width: 100%;
               flex: 1;
               display: flex;
@@ -329,7 +328,9 @@ export default class LinkCard extends React.Component {
               border-right: 0;
               min-height: 29px;
             }
-            .like__btn:hover, .like__btn.liked, .like__btn.liked:hover {
+            .like__btn:hover,
+            .like__btn.liked,
+            .like__btn.liked:hover {
               color: red;
             }
             .like__btn span {
@@ -349,7 +350,9 @@ export default class LinkCard extends React.Component {
                 margin: 8px auto;
                 width: 100%;
               }
-              .list__item, .image img, .image span {
+              .list__item,
+              .image img,
+              .image span {
                 border-radius: 0;
               }
               .desc {

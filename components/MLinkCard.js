@@ -14,11 +14,10 @@ import FaExt from 'react-icons/lib/fa/external-link'
 export default class MLinkCard extends React.Component {
   render () {
     const { link, query: { search } = {}, user } = this.props
-    const likedLinkClass = user &&
-      link.bookmarkedBy &&
-      ~link.bookmarkedBy.indexOf(user._id)
-      ? 'liked'
-      : ''
+    const likedLinkClass =
+      user && link.bookmarkedBy && ~link.bookmarkedBy.indexOf(user._id)
+        ? 'liked'
+        : ''
     const defaultBg =
       'https://res.cloudinary.com/vinaypuppal/image/upload/v1493986755/diagmonds-light_libvwv.png'
     return (
@@ -57,7 +56,7 @@ export default class MLinkCard extends React.Component {
                   <img
                     src={`//images.weserv.nl/?url=${link.image
                         .replace('http://', '')
-                        .replace('https://', '')}&w=80&h=80&output=webp`}
+                        .replace('https://', '')}&w=80&h=80`}
                     alt={'No Img'}
                     />
                 </LazyLoad>
@@ -66,11 +65,10 @@ export default class MLinkCard extends React.Component {
                 style={{
                   backgroundImage: `url(${`//images.weserv.nl/?url=${defaultBg
                       .replace('http://', '')
-                      .replace('https://', '')}&w=80&h=80&output=webp`})`
+                      .replace('https://', '')}&w=80&h=80`})`
                 }}
                 className='image'
                 />}
-
           </div>
         </a>
         <div className='meta'>
@@ -86,22 +84,19 @@ export default class MLinkCard extends React.Component {
                   <img
                     src={`//images.weserv.nl/?url=${link._creator.avatarUrl
                         .replace('http://', '')
-                        .replace(
-                          'https://',
-                          ''
-                        )}&w=20&h=20&shape=circle&output=webp`}
+                        .replace('https://', '')}&w=20&h=20&shape=circle`}
                     alt={link._creator.username}
                     />
                 </LazyLoad>
-                <span>{link._creator.username}</span>
+                <span>
+                  {link._creator.username}
+                </span>
               </a>
               : <span className='wa'>
                 <FaWA size={20} />Added From Whatsapp Group
                 </span>}
             <span>
-              {' '}
-              -
-              {' '}
+              {' '}-{' '}
               {isThisMonth(link.timestamp)
                 ? distanceInWordsToNow(link.timestamp) + ' ' + 'ago'
                 : format(link.timestamp, 'MMM, Do YYYY')}
@@ -118,13 +113,17 @@ export default class MLinkCard extends React.Component {
               href='#'
             >
               {likedLinkClass ? <FaBookmark /> : <FaBookmarkO />}
-              <span>{link.bookmarkedBy ? link.bookmarkedBy.length : 0}</span>
+              <span>
+                {link.bookmarkedBy ? link.bookmarkedBy.length : 0}
+              </span>
             </a>
           </div>
           <div className='views'>
             <span title='Views'>
               <FaEye />
-              <span>{link.views || 0}</span>
+              <span>
+                {link.views || 0}
+              </span>
             </span>
           </div>
           <div className='ext-link'>
@@ -145,8 +144,7 @@ export default class MLinkCard extends React.Component {
             width: 480px;
             margin: 20px;
             box-shadow: 0 2px 2px 0 rgba(63, 81, 181, 0.14);
-            transition: box-shadow .35s ease-out,
-              transform .3s ease-out,
+            transition: box-shadow .35s ease-out, transform .3s ease-out,
               opacity .2s ease-out;
             border-radius: 4px;
           }
@@ -198,7 +196,8 @@ export default class MLinkCard extends React.Component {
           .by {
             font-size: 12px;
           }
-          .by, .by a {
+          .by,
+          .by a {
             color: #666;
             display: flex;
             align-items: center;
@@ -212,14 +211,18 @@ export default class MLinkCard extends React.Component {
             margin-right: 5px;
             text-decoration: underline;
           }
-          .bookmark a, .ext-link a, .views span {
+          .bookmark a,
+          .ext-link a,
+          .views span {
             color: #666;
             text-decoration: none;
             display: flex;
             align-items: center;
             transition: color 0.25s;
           }
-          .bookmark a span, .ext-link a span, .views span span {
+          .bookmark a span,
+          .ext-link a span,
+          .views span span {
             margin-left: 5px;
           }
           .bookmark .like__btn:hover,
