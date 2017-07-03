@@ -13,8 +13,8 @@ So I extracted all those resources and created a website that lists all the reso
 - Frontend - [Next.js](https://github.com/zeit/next.js)
 - [Backend API](https://github.com/vinaypuppal/linklet-api) - Node.js ([express.js](expressjs.com))
 - Database - [MongoDB](https://www.mongodb.com/)
-- Hosted on - Azure using Dokku(http://dokku.viewdocs.io/dokku/getting-started/installation/)
-- Database hosted on -  Azure using Dokku(http://dokku.viewdocs.io/dokku/getting-started/installation/)
+- Hosted on - Azure using [Dokku](http://dokku.viewdocs.io/dokku/getting-started/installation/)
+- Database hosted on -  Azure using [Dokku](http://dokku.viewdocs.io/dokku/getting-started/installation/)
 - linklet.ml registered for free on [freenom](http://www.freenom.com/en/index.html)
 
 ## Community Ports
