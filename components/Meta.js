@@ -5,8 +5,9 @@ export default ({ title }) =>
     <meta charSet='utf-8' />
     <meta
       name='viewport'
-      content='width=device-width, initial-scale=1.0, maximum-scale=1.0'
+      content='width=device-width, initial-scale=1, shrink-to-fit=no'
     />
+    <meta httpEquiv='x-ua-compatible' content='ie=edge' />
     <link
       rel='apple-touch-icon'
       sizes='180x180'
@@ -36,7 +37,9 @@ export default ({ title }) =>
       content='static/favicons/mstile-144x144.png'
     />
     <meta name='theme-color' content='#3f51b5' />
-    <title>{title}</title>
+    <title>
+      {title}
+    </title>
     <meta
       name='description'
       content='The app that helps you find the best links shared by FCC community!'

@@ -280,27 +280,6 @@ export default props => {
             </li>
           </ul>
         </section>
-        <section>
-          <h4># Custom</h4>
-          <ul>
-            <li>
-              <div className='input'>
-                <input
-                  onClick={e => {
-                    props.toggleFilter()
-                    props.showModal()
-                  }}
-                  name='filter'
-                  id='custom'
-                  type='radio'
-                />
-              </div>
-              <label htmlFor='custom'>
-                <div className='title'>Select date range</div>
-              </label>
-            </li>
-          </ul>
-        </section>
       </main>
       <style jsx>
         {`
@@ -324,12 +303,12 @@ export default props => {
             margin: 0 0 20px 0;
           }
           h3 {
-            color: #FFD15C;
+            color: #ffd15c;
             padding: 0 20px;
           }
           section h4 {
             margin: 0 0 15px 0;
-            color: #FF7058;
+            color: #ff7058;
           }
           section ul {
             padding: 0;

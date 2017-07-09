@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Router from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -13,8 +12,6 @@ import lastDayOfWeek from 'date-fns/last_day_of_week'
 import addWeeks from 'date-fns/add_weeks'
 import startOfMonth from 'date-fns/start_of_month'
 import lastDayOfMonth from 'date-fns/last_day_of_month'
-
-import { ModalContainer, ModalDialog } from 'react-modal-dialog'
 
 import db from '../lib/db'
 import SideBar from '../components/Sidebar'
@@ -87,31 +84,6 @@ class MyLinks extends Component {
       toggleFilter: !this.state.toggleFilter
     })
   }
-  handleClick () {
-    this.setState({ isShowingModal: true })
-  }
-  handleClose () {
-    this.setState({ isShowingModal: false })
-  }
-  handleFrom (e) {
-    this.setState({
-      from: e.target.value
-    })
-  }
-  handleTo (e) {
-    this.setState({
-      to: e.target.value
-    })
-  }
-  search (e) {
-    const { from, to } = this.state
-    this.handleClose()
-    Router.push(
-      `/?start=${new Date(from).getTime()}&end=${new Date(to).getTime()}`
-    )
-      .then(() => window.scrollTo(0, 0))
-      .catch(e => console.log(e))
-  }
   render () {
     const { data, filterOptions, url, user, isMobile } = this.props
     return (
@@ -128,33 +100,9 @@ class MyLinks extends Component {
           filterOptions={filterOptions}
           toggleFilter={this.toggleFilter.bind(this)}
           filterOpenState={this.state.toggleFilter}
-          showModal={this.handleClick.bind(this)}
         />
         <LinksList user={user} data={data} url={url} isMobile={isMobile} />
         <Footer />
-        {this.state.isShowingModal &&
-          <ModalContainer onClose={this.handleClose.bind(this)}>
-            <ModalDialog onClose={this.handleClose.bind(this)}>
-              <h1>Select Date Range</h1>
-              <p>
-                <strong>From: </strong>
-                <input
-                  onChange={this.handleFrom.bind(this)}
-                  value={this.state.from}
-                  type='date'
-                />
-              </p>
-              <p>
-                <strong>To: </strong>
-                <input
-                  onChange={this.handleTo.bind(this)}
-                  value={this.state.to}
-                  type='date'
-                />
-              </p>
-              <button onClick={this.search.bind(this)}>Search</button>
-            </ModalDialog>
-          </ModalContainer>}
         <style jsx>
           {`
             .home {

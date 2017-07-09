@@ -1,7 +1,7 @@
 /* global location */
 import db from '../lib/db'
 import cookie from 'react-cookie'
-import axios from 'axios'
+import fetch from 'isomorphic-unfetch'
 
 export function login () {
   const href = `${db.baseUrl}/login/github?appRedirectUrl=${encodeURIComponent(
@@ -25,12 +25,12 @@ export function logout () {
 
 const fetchUser = async loginToken => {
   try {
-    const result = await axios.get(`${db.baseUrl}/users/me`, {
+    const result = await fetch(`${db.baseUrl}/users/me`, {
       headers: {
         'x-auth': loginToken
       }
-    })
-    return result.data
+    }).then(r => r.json())
+    return result
   } catch (e) {
     return Promise.reject(e)
   }

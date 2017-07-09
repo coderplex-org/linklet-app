@@ -2,7 +2,7 @@ import React from 'react'
 import Router from 'next/router'
 import Autosuggest from 'react-autosuggest'
 import isMobile from 'ismobilejs'
-import axios from 'axios'
+import fetch from 'isomorphic-unfetch'
 
 // calculate suggestions for any given input value.
 function getSuggestions (value) {
@@ -23,7 +23,11 @@ function getSuggestionValue (suggestion) {
 
 // render suggestions.
 function renderSuggestion (suggestion) {
-  return <span>{suggestion}</span>
+  return (
+    <span>
+      {suggestion}
+    </span>
+  )
 }
 
 export default class Search extends React.Component {
@@ -51,11 +55,11 @@ export default class Search extends React.Component {
       'developers',
       'app'
     ]
-    axios
-      .get(
-        'https://cdn.rawgit.com/vinaypuppal/linklet-app/aca4b5d1/lib/tags.json'
-      )
-      .then(({ data }) => {
+    fetch(
+      'https://cdn.rawgit.com/vinaypuppal/linklet-app/aca4b5d1/lib/tags.json'
+    )
+      .then(r => r.json())
+      .then(data => {
         window.tags = data
       })
   }

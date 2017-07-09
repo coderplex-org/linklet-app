@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import fetch from 'isomorphic-unfetch'
 import SnackBar from './Snackbar'
 import NProgress from 'nprogress'
 
@@ -156,15 +156,19 @@ export default class Notification extends React.Component {
       subscription.endpoint.split(/\/wpush\/v\d\//)[1]
 
     console.log('Subscription ID', subscriptionId)
-
-    return axios.post(`${db.baseUrl}/subscriptions`, {
-      subscriptionId: subscriptionId,
-      subscription: subscription
+    return fetch(`${db.baseUrl}/subscriptions`, {
+      method: 'POST',
+      body: JSON.stringify({
+        subscriptionId: subscriptionId,
+        subscription: subscription
+      })
     })
   }
   deleteSubscriptionID (subscription) {
     var subscriptionId = subscription.endpoint.split('gcm/send/')[1]
-    return axios.delete(`${db.baseUrl}/subscriptions/` + subscriptionId)
+    return fetch(`${db.baseUrl}/subscriptions/` + subscriptionId, {
+      method: 'DELETE'
+    })
   }
 
   handelInput (e) {
@@ -200,7 +204,9 @@ export default class Notification extends React.Component {
           show={this.state.show}
           timer={4000}
         >
-          <p>{this.state.message}</p>
+          <p>
+            {this.state.message}
+          </p>
         </SnackBar>
         <style jsx>
           {`

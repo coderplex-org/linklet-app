@@ -1,12 +1,12 @@
 {
   "name": "linklet-app",
   "dependencies": {
-    "axios": "0.16.2",
     "color-generator": "^0.1.0",
     "cookie-parser": "^1.4.3",
     "date-fns": "^1.28.5",
     "express": "^4.15.3",
     "ismobilejs": "^0.4.1",
+    "isomorphic-unfetch": "^2.0.0",
     "next": "^3.0.1-beta.8",
     "nprogress": "^0.2.0",
     "preact": "^8.1.0",
