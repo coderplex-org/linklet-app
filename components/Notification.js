@@ -161,7 +161,10 @@ export default class Notification extends React.Component {
       body: JSON.stringify({
         subscriptionId: subscriptionId,
         subscription: subscription
-      })
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
   }
   deleteSubscriptionID (subscription) {
