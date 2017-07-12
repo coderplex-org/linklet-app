@@ -43,9 +43,9 @@ class SubmitLink extends React.Component {
         })
       })
       .catch(e => {
+        console.log(e)
         NProgress.done()
-        console.log(e.response)
-        this.setState({ error: e.response.data.message })
+        this.setState({ error: e.message })
       })
   }
   handleSave () {
@@ -53,15 +53,16 @@ class SubmitLink extends React.Component {
     NProgress.start()
     db
       .saveLink(this.state.linkData)
-      .then(link => {
+      .then(res => {
         NProgress.done()
+        console.log(res)
         Router.push('/my-links')
       })
       .catch(e => {
+        console.log(e)
         NProgress.done()
         let message
-        console.log(e.response)
-        if (e.response.data.code === 11000) {
+        if (e.message === '11000') {
           message =
             'Sorry, its seems like this link already exist in linklet!...'
         } else {
@@ -122,8 +123,7 @@ class SubmitLink extends React.Component {
                   _creator: this.props.user
                 })}
                 url={this.props.url}
-              />
-              {' '}
+              />{' '}
             </ul>}
           {this.state.showPreview &&
             <div className='btns'>
@@ -139,7 +139,9 @@ class SubmitLink extends React.Component {
                 <button onClick={this.handleSave.bind(this)}>save</button>
               </div>
             </div>}
-          <p className='info'>{this.state.info}</p>
+          <p className='info'>
+            {this.state.info}
+          </p>
         </main>
         <style jsx>
           {`
@@ -243,23 +245,25 @@ class SubmitLink extends React.Component {
               -moz-transition: 0.2s ease all;
               -webkit-transition: 0.2s ease all;
             }
-            input:focus ~ label, input:valid ~ label {
+            input:focus ~ label,
+            input:valid ~ label {
               top: -20px;
               font-size: 14px;
-              color: #5264AE;
+              color: #5264ae;
             }
             .bar {
               position: relative;
               display: block;
               width: 100%;
             }
-            .bar:before, .bar:after {
+            .bar:before,
+            .bar:after {
               content: '';
               height: 2px;
               width: 0;
               bottom: 1px;
               position: absolute;
-              background: #5264AE;
+              background: #5264ae;
               transition: 0.2s ease all;
               -moz-transition: 0.2s ease all;
               -webkit-transition: 0.2s ease all;
@@ -270,7 +274,8 @@ class SubmitLink extends React.Component {
             .bar:after {
               right: 50%;
             }
-            input:focus ~ .bar:before, input:focus ~ .bar:after {
+            input:focus ~ .bar:before,
+            input:focus ~ .bar:after {
               width: 50%;
             }
             .highlight {
@@ -289,7 +294,7 @@ class SubmitLink extends React.Component {
             }
             @-webkit-keyframes inputHighlighter {
               from {
-                background: #5264AE;
+                background: #5264ae;
               }
               to {
                 width: 0;
@@ -298,7 +303,7 @@ class SubmitLink extends React.Component {
             }
             @-moz-keyframes inputHighlighter {
               from {
-                background: #5264AE;
+                background: #5264ae;
               }
               to {
                 width: 0;
@@ -307,7 +312,7 @@ class SubmitLink extends React.Component {
             }
             @keyframes inputHighlighter {
               from {
-                background: #5264AE;
+                background: #5264ae;
               }
               to {
                 width: 0;

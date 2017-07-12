@@ -8,4 +8,14 @@ const truncateString = (str, num) => {
   return str
 }
 
-export { truncateString }
+const checkStatus = res => {
+  if (res.ok) {
+    return res
+  }
+  return res.json().then(err => {
+    console.log(err)
+    return Promise.reject(new Error(err.message || err.code))
+  })
+}
+
+export { truncateString, checkStatus }

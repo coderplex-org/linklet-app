@@ -2,6 +2,7 @@
 import db from '../lib/db'
 import cookie from 'react-cookie'
 import fetch from 'isomorphic-unfetch'
+import { checkStatus } from '../utils'
 
 export function login () {
   const href = `${db.baseUrl}/login/github?appRedirectUrl=${encodeURIComponent(
@@ -29,7 +30,9 @@ const fetchUser = async loginToken => {
       headers: {
         'x-auth': loginToken
       }
-    }).then(r => r.json())
+    })
+      .then(checkStatus)
+      .then(r => r.json())
     return result
   } catch (e) {
     return Promise.reject(e)
