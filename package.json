@@ -7,11 +7,11 @@
     "express": "^4.15.3",
     "ismobilejs": "^0.4.1",
     "isomorphic-unfetch": "^2.0.0",
-    "next": "3.0.1-beta.13",
+    "next": "3.0.1-beta.18",
     "nprogress": "^0.2.0",
     "preact": "^8.2.1",
     "preact-compat": "^3.16.0",
-    "rc-pagination": "^1.10.0",
+    "rc-pagination": "^1.10.1",
     "react": "^15.6.1",
     "react-autosuggest": "^9.3.1",
     "react-cookie": "1.0.5",
@@ -22,7 +22,7 @@
     "react-lazyload": "^2.2.7",
     "react-modal-dialog": "^4.0.7",
     "sw-precache-webpack-plugin": "^0.11.4",
-    "webpack-bundle-analyzer": "2.8.2"
+    "webpack-bundle-analyzer": "^2.8.3"
   },
   "scripts": {
     "dev": "NODE_ENV=development nodemon server.js -w server.js",
@@ -38,9 +38,9 @@
   "devDependencies": {
     "cross-env": "^5.0.1",
     "husky": "^0.14.3",
-    "lint-staged": "^4.0.1",
+    "lint-staged": "^4.0.2",
     "nodemon": "^1.11.0",
-    "prettier": "^1.5.2",
+    "prettier": "^1.5.3",
     "standard": "10.0.2"
   },
   "engines": {

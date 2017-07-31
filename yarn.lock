@@ -33,9 +33,13 @@ acorn@^4.0.3:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
-acorn@^5.0.0, acorn@^5.0.1, acorn@^5.0.3:
+acorn@^5.0.0, acorn@^5.0.1:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.0.3.tgz#c460df08491463f028ccb82eab3730bf01087b3d"
+
+acorn@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.1.1.tgz#53fe161111f912ab999ee887a90a0bc52822fd75"
 
 active-event-stack@^1.0.0:
   version "1.0.0"
@@ -1065,7 +1069,7 @@ chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chokidar@^1.4.3:
+chokidar@^1.4.3, chokidar@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
@@ -2952,9 +2956,9 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-4.0.1.tgz#05365469898439dbade8a455893cf11e24d12b0f"
+lint-staged@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-4.0.2.tgz#8e83e11e9e1656c09b6117f6db0d55fd4960a1c0"
   dependencies:
     app-root-path "^2.0.0"
     cosmiconfig "^1.1.0"
@@ -3396,9 +3400,9 @@ nested-error-stacks@^1.0.0:
   dependencies:
     inherits "~2.0.1"
 
-next@3.0.1-beta.13:
-  version "3.0.1-beta.13"
-  resolved "https://registry.yarnpkg.com/next/-/next-3.0.1-beta.13.tgz#bd3ecfb401b98b4b3243c531c19e04344ac0c30b"
+next@3.0.1-beta.18:
+  version "3.0.1-beta.18"
+  resolved "https://registry.yarnpkg.com/next/-/next-3.0.1-beta.18.tgz#fa09e59c54a2c1ed23bbc89746ed74545bebcaa0"
   dependencies:
     ansi-html "0.0.7"
     babel-core "6.25.0"
@@ -3437,6 +3441,7 @@ next@3.0.1-beta.13:
     path-match "1.2.4"
     pkg-up "2.0.0"
     prop-types "15.5.10"
+    prop-types-exact "^1.1.1"
     react-hot-loader "3.0.0-beta.7"
     recursive-copy "^2.0.6"
     send "^0.15.3"
@@ -3449,7 +3454,7 @@ next@3.0.1-beta.13:
     url "0.11.0"
     uuid "3.1.0"
     walk "^2.3.9"
-    webpack "3.1.0"
+    webpack "3.3.0"
     webpack-dev-middleware "1.11.0"
     webpack-hot-middleware "2.18.2"
     write-file-webpack-plugin "4.1.0"
@@ -3933,9 +3938,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.5.2.tgz#7ea0751da27b93bfb6cecfcec509994f52d83bb3"
+prettier@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.5.3.tgz#59dadc683345ec6b88f88b94ed4ae7e1da394bfe"
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -3976,6 +3981,13 @@ promise@^7.1.1:
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.1.1.tgz#489654c692616b8aa55b0724fa809bb7db49c5bf"
   dependencies:
     asap "~2.0.3"
+
+prop-types-exact@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/prop-types-exact/-/prop-types-exact-1.1.1.tgz#c2620207e4f77f9762fa1835b0387a464bd08978"
+  dependencies:
+    has "^1.0.1"
+    object.assign "^4.0.4"
 
 prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8:
   version "15.5.10"
@@ -4058,9 +4070,9 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
-rc-pagination@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/rc-pagination/-/rc-pagination-1.10.0.tgz#24697b65755a1c2d87553ed4b2daeec994490232"
+rc-pagination@^1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/rc-pagination/-/rc-pagination-1.10.1.tgz#683ecae46d8bad5644a8068214fc4755bdbdb8f5"
   dependencies:
     babel-runtime "^6.23.0"
     prop-types "^15.5.7"
@@ -5164,19 +5176,19 @@ walk@^2.3.9:
   dependencies:
     foreachasync "^3.0.0"
 
-watchpack@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.3.1.tgz#7d8693907b28ce6013e7f3610aa2a1acf07dad87"
+watchpack@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.4.0.tgz#4a1472bcbb952bd0a9bb4036801f954dfb39faac"
   dependencies:
     async "^2.1.2"
-    chokidar "^1.4.3"
+    chokidar "^1.7.0"
     graceful-fs "^4.1.2"
 
-webpack-bundle-analyzer@2.8.2:
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/webpack-bundle-analyzer/-/webpack-bundle-analyzer-2.8.2.tgz#8b6240c29a9d63bc72f09d920fb050adbcce9fe8"
+webpack-bundle-analyzer@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/webpack-bundle-analyzer/-/webpack-bundle-analyzer-2.8.3.tgz#8e7b3deb3832698c24b09c84dfe5b43902a83991"
   dependencies:
-    acorn "^5.0.3"
+    acorn "^5.1.1"
     chalk "^1.1.3"
     commander "^2.9.0"
     ejs "^2.5.6"
@@ -5213,9 +5225,9 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.1.0.tgz#ac0675e500db835f9ab2369d29ba096f51ad0731"
+webpack@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.3.0.tgz#ce2f9e076566aba91f74887133a883fd7da187bc"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
@@ -5236,7 +5248,7 @@ webpack@3.1.0:
     supports-color "^3.1.0"
     tapable "~0.2.5"
     uglifyjs-webpack-plugin "^0.4.6"
-    watchpack "^1.3.1"
+    watchpack "^1.4.0"
     webpack-sources "^1.0.1"
     yargs "^6.0.0"
 

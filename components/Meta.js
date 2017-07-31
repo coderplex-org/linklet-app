@@ -42,7 +42,7 @@ export default ({ title }) =>
     </title>
     <meta
       name='description'
-      content='The app that helps you find the best links shared by FCC community!'
+      content='The app that helps you find the best links shared by Coderplex community'
     />
     <meta property='og:type' content='website' />
     <meta property='og:title' content={title} />
@@ -54,7 +54,7 @@ export default ({ title }) =>
     <meta property='og:site_name' content='Linklet' />
     <meta
       property='og:description'
-      content='The app that helps you find the best links shared by FCC community!'
+      content='The app that helps you find the best links shared by Coderplex community!'
     />
     <link rel='preconnect' href='https://images.weserv.nl' />
     <link rel='preconnect' href='https://res.cloudinary.com' />
