@@ -10,6 +10,7 @@ import FaBookmarkO from 'react-icons/lib/fa/bookmark-o'
 import FaEye from 'react-icons/lib/fa/eye'
 import FaWA from 'react-icons/lib/fa/whatsapp'
 import FaExt from 'react-icons/lib/fa/external-link'
+import FaExclamation from 'react-icons/lib/fa/exclamation'
 
 export default class MLinkCard extends React.Component {
   render () {
@@ -40,67 +41,84 @@ export default class MLinkCard extends React.Component {
               />
             </h5>
             <p className='desc'>
-              {link.description
-                ? <Highlighter
+              {link.description ? (
+                <Highlighter
                   highlightClassName='highlight'
                   searchWords={[search]}
                   textToHighlight={truncateString(link.description, 90)}
-                  />
-                : 'No Description'}
+                />
+              ) : (
+                'No Description'
+              )}
             </p>
           </div>
           <div className='right'>
-            {link.image
-              ? <div className='image'>
+            {link.image ? (
+              <div className='image'>
                 <LazyLoad height={80} offset={100}>
                   <img
                     src={`//images.weserv.nl/?url=${link.image
-                        .replace('http://', '')
-                        .replace('https://', '')}&w=80&h=80`}
+                      .replace('http://', '')
+                      .replace('https://', '')}&w=80&h=80`}
                     alt={'No Img'}
-                    />
+                  />
                 </LazyLoad>
               </div>
-              : <div
+            ) : (
+              <div
                 style={{
                   backgroundImage: `url(${`//images.weserv.nl/?url=${defaultBg
-                      .replace('http://', '')
-                      .replace('https://', '')}&w=80&h=80`})`
+                    .replace('http://', '')
+                    .replace('https://', '')}&w=80&h=80`})`
                 }}
                 className='image'
-                />}
+              />
+            )}
           </div>
         </a>
         <div className='meta'>
           <div className='by'>
-            {link._creator
-              ? <a
+            {link._creator ? (
+              <a
                 className='by-user'
                 rel='noopener'
                 href={`https://github.com/${link._creator.username}`}
                 target='_blank'
-                >
+              >
                 <LazyLoad height={20} offset={50}>
                   <img
                     src={`//images.weserv.nl/?url=${link._creator.avatarUrl
-                        .replace('http://', '')
-                        .replace('https://', '')}&w=20&h=20&shape=circle`}
+                      .replace('http://', '')
+                      .replace('https://', '')}&w=20&h=20&shape=circle`}
                     alt={link._creator.username}
-                    />
+                  />
                 </LazyLoad>
-                <span>
-                  {link._creator.username}
-                </span>
+                <span>{link._creator.username}</span>
               </a>
-              : <span className='wa'>
+            ) : (
+              <span className='wa'>
                 <FaWA size={20} />Added From Whatsapp Group
-                </span>}
+              </span>
+            )}
             <span>
-              {' '}-{' '}
+              {' '}
+              -{' '}
               {isThisMonth(link.timestamp)
                 ? distanceInWordsToNow(link.timestamp) + ' ' + 'ago'
                 : format(link.timestamp, 'MMM, Do YYYY')}
             </span>
+          </div>
+          <div className='report'>
+            <a
+              title='report'
+              className='report_btn'
+              onClick={e => {
+                e.preventDefault()
+                console.log('report Button clicked')
+              }}
+            >
+              <FaExclamation />
+            </a>
           </div>
           <div className='bookmark'>
             <a
@@ -113,17 +131,13 @@ export default class MLinkCard extends React.Component {
               href='#'
             >
               {likedLinkClass ? <FaBookmark /> : <FaBookmarkO />}
-              <span>
-                {link.bookmarkedBy ? link.bookmarkedBy.length : 0}
-              </span>
+              <span>{link.bookmarkedBy ? link.bookmarkedBy.length : 0}</span>
             </a>
           </div>
           <div className='views'>
             <span title='Views'>
               <FaEye />
-              <span>
-                {link.views || 0}
-              </span>
+              <span>{link.views || 0}</span>
             </span>
           </div>
           <div className='ext-link'>
@@ -144,8 +158,8 @@ export default class MLinkCard extends React.Component {
             width: 480px;
             margin: 20px;
             box-shadow: 0 2px 2px 0 rgba(63, 81, 181, 0.14);
-            transition: box-shadow .35s ease-out, transform .3s ease-out,
-              opacity .2s ease-out;
+            transition: box-shadow 0.35s ease-out, transform 0.3s ease-out,
+              opacity 0.2s ease-out;
             border-radius: 4px;
           }
           .list__item:hover {
@@ -232,6 +246,10 @@ export default class MLinkCard extends React.Component {
           }
           .ext-link a:hover {
             color: indigo;
+          }
+          .report_btn:hover {
+            color: orange;
+            cursor: pointer;
           }
           @media (max-width: 1020px) {
             .list__item {
