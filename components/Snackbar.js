@@ -48,7 +48,7 @@ export default class SnackBar extends React.Component {
             text-transform: initial;
             opacity: 0;
             will-change: transform;
-            transition: transform 0.3s cubic-bezier(0, 0, 0.30, 1);
+            transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
             z-index: 999999;
           }
           div.show {

@@ -7,7 +7,8 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 
-app.prepare()
+app
+  .prepare()
   .then(() => {
     const server = express()
     server.use(cookieParser())
@@ -39,11 +40,17 @@ app.prepare()
     })
 
     // serve service worker
-    server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')))
-    server.get('/push-sw.qwddbhjbhnj.js', (req, res) => res.sendFile(path.resolve('./push-sw.qwddbhjbhnj.js')))
+    server.get('/sw.js', (req, res) =>
+      res.sendFile(path.resolve('./.next/sw.js'))
+    )
+    server.get('/push-sw.qwddbhjbhnj.js', (req, res) =>
+      res.sendFile(path.resolve('./push-sw.qwddbhjbhnj.js'))
+    )
 
     // tos
-    server.get('/tos', (req, res) => res.sendFile(path.resolve('./static/tos.html')))
+    server.get('/tos', (req, res) =>
+      res.sendFile(path.resolve('./static/tos.html'))
+    )
 
     server.get('*', (req, res) => handle(req, res))
 
@@ -53,7 +60,7 @@ app.prepare()
       console.log('> App running on port', process.env.PORT || 3000)
     })
   })
-  .catch((ex) => {
+  .catch(ex => {
     console.error(ex.stack)
     process.exit(1)
   })

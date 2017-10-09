@@ -23,11 +23,7 @@ function getSuggestionValue (suggestion) {
 
 // render suggestions.
 function renderSuggestion (suggestion) {
-  return (
-    <span>
-      {suggestion}
-    </span>
-  )
+  return <span>{suggestion}</span>
 }
 
 export default class Search extends React.Component {

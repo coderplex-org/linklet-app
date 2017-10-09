@@ -34,21 +34,24 @@ export default class Header extends React.Component {
         <nav>
           <BottomBar user={this.props.user} url={this.props.url} />
 
-          {this.state.interactive
-            ? <ul>
-              {this.props.about &&
-              <li className='filterBtn'>
-                <a onClick={this.props.toggleFilter} href='#'>
-                  <FilterIcon />
-                </a>
-              </li>}
+          {this.state.interactive ? (
+            <ul>
+              {this.props.about && (
+                <li className='filterBtn'>
+                  <a onClick={this.props.toggleFilter} href='#'>
+                    <FilterIcon />
+                  </a>
+                </li>
+              )}
               <NotificationBtn />
             </ul>
-            : <ul>
+          ) : (
+            <ul>
               <li className='spinner'>
                 <FaSpinner size={20} />
               </li>
-            </ul>}
+            </ul>
+          )}
         </nav>
         <style jsx>{`
           header {

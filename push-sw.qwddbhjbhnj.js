@@ -11,21 +11,19 @@ self.addEventListener('push', function (event) {
   var title = playload.title || 'No Title'
 
   var body = {
-    'body': playload.body || 'No Body',
-    'icon': playload.icon || 'https://linklet.ml/static/favicons/android-chrome-192x192.png',
-    'badge': 'https://linklet.ml/static/favicons/mstile-70x70.png'
+    body: playload.body || 'No Body',
+    icon:
+      playload.icon ||
+      'https://linklet.ml/static/favicons/android-chrome-192x192.png',
+    badge: 'https://linklet.ml/static/favicons/mstile-70x70.png'
   }
   url = playload.body
 
-  event.waitUntil(
-    self.registration.showNotification(title, body)
-  )
+  event.waitUntil(self.registration.showNotification(title, body))
 })
 
 self.addEventListener('notificationclick', function (event) {
   console.log(event.notification)
   event.notification.close() // Close the notification
-  event.waitUntil(
-    clients.openWindow(url || '/')
-  )
+  event.waitUntil(clients.openWindow(url || '/'))
 })

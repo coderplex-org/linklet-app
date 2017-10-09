@@ -90,10 +90,8 @@ class SubmitLink extends React.Component {
           title='Linklet | SubmitLink'
         />
         <main>
-          <p className='error'>
-            {this.state.error}
-          </p>
-          {!this.state.showPreview &&
+          <p className='error'>{this.state.error}</p>
+          {!this.state.showPreview && (
             <div className='card'>
               <form onSubmit={this.handleFetch.bind(this)}>
                 <div className='group'>
@@ -114,8 +112,9 @@ class SubmitLink extends React.Component {
                   <button type='submit'>Fetch</button>
                 </div>
               </form>
-            </div>}
-          {this.state.showPreview &&
+            </div>
+          )}
+          {this.state.showPreview && (
             <ul className='preview'>
               <LinkCard
                 link={Object.assign(this.state.linkData, {
@@ -124,8 +123,9 @@ class SubmitLink extends React.Component {
                 })}
                 url={this.props.url}
               />{' '}
-            </ul>}
-          {this.state.showPreview &&
+            </ul>
+          )}
+          {this.state.showPreview && (
             <div className='btns'>
               <div className='group'>
                 <button
@@ -138,10 +138,9 @@ class SubmitLink extends React.Component {
               <div className='group'>
                 <button onClick={this.handleSave.bind(this)}>save</button>
               </div>
-            </div>}
-          <p className='info'>
-            {this.state.info}
-          </p>
+            </div>
+          )}
+          <p className='info'>{this.state.info}</p>
         </main>
         <style jsx>
           {`

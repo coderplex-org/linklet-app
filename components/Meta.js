@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default ({ title }) =>
+export default ({ title }) => (
   <Head>
     <meta charSet='utf-8' />
     <meta
@@ -37,9 +37,7 @@ export default ({ title }) =>
       content='static/favicons/mstile-144x144.png'
     />
     <meta name='theme-color' content='#3f51b5' />
-    <title>
-      {title}
-    </title>
+    <title>{title}</title>
     <meta
       name='description'
       content='The app that helps you find the best links shared by Coderplex community'
@@ -61,3 +59,4 @@ export default ({ title }) =>
     <link rel='preconnect' href='https://www.google-analytics.com' />
     <link rel='preconnect' href='https://cdn.rawgit.com' />
   </Head>
+)

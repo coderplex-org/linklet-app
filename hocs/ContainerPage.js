@@ -120,9 +120,7 @@ export default Page => {
             show={this.state.show}
             timer={4000}
           >
-            <p>
-              {this.state.message}
-            </p>
+            <p>{this.state.message}</p>
           </SnackBar>
         </div>
       )

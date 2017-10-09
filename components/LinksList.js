@@ -109,7 +109,7 @@ export default class LinksList extends React.Component {
   }
   renderLinks (isMobile, links, user, query) {
     // if (isMobile) {
-    return links.map(link =>
+    return links.map(link => (
       <MLinkCard
         key={link._id}
         link={link}
@@ -118,7 +118,7 @@ export default class LinksList extends React.Component {
         handelLike={this.handelLike.bind(this)}
         handelOpen={this.handelOpen.bind(this)}
       />
-    )
+    ))
     /* return links.map(link =>
       <LinkCard
         key={link._id}
@@ -164,9 +164,7 @@ export default class LinksList extends React.Component {
           show={this.state.show}
           timer={3000}
         >
-          <p>
-            {this.state.message}
-          </p>
+          <p>{this.state.message}</p>
         </SnackBar>
         <style jsx>
           {`

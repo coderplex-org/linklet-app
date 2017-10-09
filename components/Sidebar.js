@@ -101,9 +101,7 @@ export default props => {
               </div>
               <label htmlFor='today'>
                 <div className='title'>Today</div>
-                <div className='sub-title'>
-                  {todayStr}
-                </div>
+                <div className='sub-title'>{todayStr}</div>
               </label>
             </li>
             <li>
@@ -124,9 +122,7 @@ export default props => {
               </div>
               <label htmlFor='yesterday'>
                 <div className='title'>Yesterday</div>
-                <div className='sub-title'>
-                  {yesterdayStr}
-                </div>
+                <div className='sub-title'>{yesterdayStr}</div>
               </label>
             </li>
           </ul>
@@ -152,9 +148,7 @@ export default props => {
               </div>
               <label htmlFor='last-seven-days'>
                 <div className='title'>Last 7 days</div>
-                <div className='sub-title'>
-                  {last7Days}
-                </div>
+                <div className='sub-title'>{last7Days}</div>
               </label>
             </li>
             <li>
@@ -175,9 +169,7 @@ export default props => {
               </div>
               <label htmlFor='this-week'>
                 <div className='title'>This week</div>
-                <div className='sub-title'>
-                  {thisWeek}
-                </div>
+                <div className='sub-title'>{thisWeek}</div>
               </label>
             </li>
             <li>
@@ -198,9 +190,7 @@ export default props => {
               </div>
               <label htmlFor='last-week'>
                 <div className='title'>Last week</div>
-                <div className='sub-title'>
-                  {lastWeek}
-                </div>
+                <div className='sub-title'>{lastWeek}</div>
               </label>
             </li>
           </ul>
@@ -226,9 +216,7 @@ export default props => {
               </div>
               <label htmlFor='last-30-days'>
                 <div className='title'>Last 30 days</div>
-                <div className='sub-title'>
-                  {last30days}
-                </div>
+                <div className='sub-title'>{last30days}</div>
               </label>
             </li>
             <li>
@@ -250,9 +238,7 @@ export default props => {
               </div>
               <label htmlFor='this-month'>
                 <div className='title'>This month</div>
-                <div className='sub-title'>
-                  {thisMonth}
-                </div>
+                <div className='sub-title'>{thisMonth}</div>
               </label>
             </li>
             <li>
@@ -273,9 +259,7 @@ export default props => {
               </div>
               <label htmlFor='last-month'>
                 <div className='title'>Last month</div>
-                <div className='sub-title'>
-                  {lastMonth}
-                </div>
+                <div className='sub-title'>{lastMonth}</div>
               </label>
             </li>
           </ul>
@@ -292,8 +276,8 @@ export default props => {
             background: #3f51b5;
             color: #fff;
             overflow-y: auto;
-            box-shadow: 0 0 4px rgba(0, 0, 0, .14),
-              2px 4px 8px rgba(0, 0, 0, .28);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.14),
+              2px 4px 8px rgba(0, 0, 0, 0.28);
             z-index: 3;
           }
           main {

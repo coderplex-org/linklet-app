@@ -207,9 +207,7 @@ export default class Notification extends React.Component {
           show={this.state.show}
           timer={4000}
         >
-          <p>
-            {this.state.message}
-          </p>
+          <p>{this.state.message}</p>
         </SnackBar>
         <style jsx>
           {`
@@ -241,7 +239,7 @@ export default class Notification extends React.Component {
             }
             .switch .slider:before {
               position: absolute;
-              content: "🔕";
+              content: '🔕';
               font-size: 14px;
               line-height: 22px;
               width: 22px;
@@ -256,7 +254,7 @@ export default class Notification extends React.Component {
               background: #ff6600;
             }
             input:checked + .slider:before {
-              content: "🔔";
+              content: '🔔';
               text-align: center;
               -webkit-transform: translateX(24px);
               transform: translateX(24px);

@@ -1,4 +1,4 @@
-export default () =>
+export default () => (
   <div>
     <style jsx global>
       {`
@@ -13,9 +13,9 @@ export default () =>
           padding: 0;
           margin: 0;
           background: rgba(63, 81, 181, 0.08);
-          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-            Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-            "Helvetica Neue", sans-serif;
+          font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+            Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+            'Helvetica Neue', sans-serif;
           font-weight: 400;
           color: #444;
           text-rendering: optimizeLegibility;
@@ -46,7 +46,7 @@ export default () =>
           width: 100px;
           height: 100%;
           box-shadow: 0 0 10px #f7e830, 0 0 5px #f7e830;
-          opacity: 1.0;
+          opacity: 1;
           transform: rotate(3deg) translate(0px, -4px);
         }
         .links-enter {
@@ -68,7 +68,7 @@ export default () =>
         }
         .links-appear.links-appear-active {
           opacity: 1;
-          transition: opacity .5s ease-in;
+          transition: opacity 0.5s ease-in;
         }
         .rc-pagination {
           font-size: 12px;
@@ -84,7 +84,7 @@ export default () =>
           margin-right: 10px;
         }
         .rc-pagination:after {
-          content: " ";
+          content: ' ';
           display: block;
           height: 0;
           clear: both;
@@ -126,7 +126,7 @@ export default () =>
         }
         .rc-pagination-jump-prev:after,
         .rc-pagination-jump-next:after {
-          content: "•••";
+          content: '•••';
           display: block;
           letter-spacing: 2px;
           color: #ccc;
@@ -138,10 +138,10 @@ export default () =>
           color: #2db7f5;
         }
         .rc-pagination-jump-prev:hover:after {
-          content: "«";
+          content: '«';
         }
         .rc-pagination-jump-next:hover:after {
-          content: "»";
+          content: '»';
         }
         .rc-pagination-prev,
         .rc-pagination-jump-prev,
@@ -164,11 +164,11 @@ export default () =>
           text-align: center;
         }
         .rc-pagination-prev a:after {
-          content: "‹";
+          content: '‹';
           display: block;
         }
         .rc-pagination-next a:after {
-          content: "›";
+          content: '›';
           display: block;
         }
         .rc-pagination-prev,
@@ -257,7 +257,7 @@ export default () =>
           width: 100%;
           height: 60px;
           padding: 20px 0 20px 40px;
-          font-family: "Dosis", sans-serif;
+          font-family: 'Dosis', sans-serif;
           font-weight: 300;
           font-size: 18px;
           outline: none;
@@ -290,7 +290,7 @@ export default () =>
           padding: 0;
           list-style-type: none;
           background-color: #fff;
-          font-family: "Dosis", sans-serif;
+          font-family: 'Dosis', sans-serif;
           font-weight: 300;
           font-size: 16px;
           border-bottom-left-radius: 4px;
@@ -327,3 +327,4 @@ export default () =>
       `}
     </style>
   </div>
+)

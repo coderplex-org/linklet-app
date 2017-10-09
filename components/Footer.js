@@ -1,10 +1,9 @@
 import FaGithub from 'react-icons/lib/fa/github'
 
-export default () =>
+export default () => (
   <footer>
     <p>
-      Made with ❤ By
-      {' '}
+      Made with ❤ By{' '}
       <a rel='noopener' target='_blank' href='https://vinaypuppal.com'>
         VinayPuppal
       </a>
@@ -95,3 +94,4 @@ export default () =>
       `}
     </style>
   </footer>
+)

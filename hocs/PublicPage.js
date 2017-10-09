@@ -19,7 +19,7 @@ export default Page => {
       }
     }
     render () {
-      return (<Page {...this.props} />)
+      return <Page {...this.props} />
     }
   }
 }

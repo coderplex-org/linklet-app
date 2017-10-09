@@ -20,54 +20,54 @@ class Profile extends React.Component {
         />
         <main>
           <p className='info'>
-            {this.props.url.query && this.props.url.query.next === '/my-links'
-              ? 'Please login to view links added by you!...'
-              : this.props.url.query &&
-                this.props.url.query.next === '/submit-link'
-                ? 'Please login to submit new link'
-                : this.props.url.query &&
-                  this.props.url.query.next === '/bookmarks'
-                  ? 'Please login to view links bookmarked by you!..'
-                  : ''}
+            {this.props.url.query &&
+            this.props.url.query.next === '/my-links' ? (
+              'Please login to view links added by you!...'
+            ) : this.props.url.query &&
+            this.props.url.query.next === '/submit-link' ? (
+              'Please login to submit new link'
+            ) : this.props.url.query &&
+            this.props.url.query.next === '/bookmarks' ? (
+              'Please login to view links bookmarked by you!..'
+            ) : (
+              ''
+            )}
           </p>
-          {this.props.isAuthenticated
-            ? <div className='actual'>
+          {this.props.isAuthenticated ? (
+            <div className='actual'>
               <div className='avatar'>
                 <img
                   src={`//images.weserv.nl/?url=${this.props.user.avatarUrl
-                      .replace('http://', '')
-                      .replace('https://', '')}&w=180&h=180&shape=circle`}
+                    .replace('http://', '')
+                    .replace('https://', '')}&w=180&h=180&shape=circle`}
                   alt={this.props.username}
-                  />
+                />
               </div>
-              <div className='username'>
-                  @{this.props.user.username}
-              </div>
-              {this.props.user.name &&
-              <div className='name'>
-                <span className='label'>Name</span>
-                <span className='value'>
-                  {this.props.user.name}
-                </span>
-              </div>}
-              {this.props.user.email &&
-              <div className='email'>
-                <span className='label'>Email</span>
-                <span className='value'>
-                  {this.props.user.email}
-                </span>
-              </div>}
+              <div className='username'>@{this.props.user.username}</div>
+              {this.props.user.name && (
+                <div className='name'>
+                  <span className='label'>Name</span>
+                  <span className='value'>{this.props.user.name}</span>
+                </div>
+              )}
+              {this.props.user.email && (
+                <div className='email'>
+                  <span className='label'>Email</span>
+                  <span className='value'>{this.props.user.email}</span>
+                </div>
+              )}
               <button
                 onClick={() => {
                   NProgress.start()
                   logout()
                 }}
-                >
+              >
                 <FaSignOut size={20} />
                 <span>LogOut</span>
               </button>
             </div>
-            : <div className='dummy'>
+          ) : (
+            <div className='dummy'>
               <div className='avatar' />
               <div className='info'>
                 <div className='name' />
@@ -79,11 +79,12 @@ class Profile extends React.Component {
                   NProgress.start()
                   login()
                 }}
-                >
+              >
                 <FaGithub size={40} />
                 <span>Login With Github</span>
               </button>
-            </div>}
+            </div>
+          )}
         </main>
         <style jsx>
           {`
@@ -105,7 +106,7 @@ class Profile extends React.Component {
               width: 150px;
               height: 150px;
               border-radius: 50%;
-              background: rgba(37, 53, 146, 0.10);
+              background: rgba(37, 53, 146, 0.1);
               margin: 10px auto;
             }
             .dummy .name,
@@ -113,7 +114,7 @@ class Profile extends React.Component {
             .dummy .notifications {
               width: 280px;
               height: 20px;
-              background: rgba(37, 53, 146, 0.10);
+              background: rgba(37, 53, 146, 0.1);
               margin: 10px auto;
               border-radius: 4px;
             }
@@ -170,7 +171,7 @@ class Profile extends React.Component {
               padding: 10px;
             }
             .actual button:hover {
-              background: rgba(37, 53, 146, 0.10);
+              background: rgba(37, 53, 146, 0.1);
             }
             @media (max-width: 720px) {
               main {

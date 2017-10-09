@@ -109,7 +109,7 @@ class MyLinks extends Component {
               min-height: 100%;
               width: 100%;
             }
-            input[type=date] {
+            input[type='date'] {
               border: none;
               width: 100%;
               font-size: 20px;

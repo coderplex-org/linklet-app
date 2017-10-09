@@ -6,13 +6,9 @@ const renderInfo = (query, totalLinks, url) => {
     if (query.search) {
       return (
         <p className='text-center'>
-          Total:
-          {' '}
-          <strong>{totalLinks}</strong>
-          {' '}
-          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
-          {' '}
-          were found from
+          Total: <strong>{totalLinks}</strong>{' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'} were found
+          from
           <span>
             {' ' +
               `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(
@@ -54,13 +50,9 @@ const renderInfo = (query, totalLinks, url) => {
     } else {
       return (
         <p className='text-center'>
-          Total:
-          {' '}
-          <strong>{totalLinks}</strong>
-          {' '}
-          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
-          {' '}
-          were found from
+          Total: <strong>{totalLinks}</strong>{' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'} were found
+          from
           <span>
             {' ' +
               `${format(Number(query.start), 'MMM, Do YYYY')} to ${format(
@@ -105,13 +97,9 @@ const renderInfo = (query, totalLinks, url) => {
     if (query && query.search) {
       return (
         <p className='text-center'>
-          Total:
-          {' '}
-          <strong>{totalLinks}</strong>
-          {' '}
-          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
-          {' '}
-          were found containing word
+          Total: <strong>{totalLinks}</strong>{' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'} were found
+          containing word
           <span>
             {' ' + query.search + ' '}
             <Link href={`${url.pathname}?sort=${query.sort || -1}`} scroll>
@@ -149,13 +137,9 @@ const renderInfo = (query, totalLinks, url) => {
     } else {
       return (
         <p className='text-center'>
-          Total:
-          {' '}
-          <strong>{totalLinks}</strong>
-          {' '}
-          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'}
-          {' '}
-          were added till today.
+          Total: <strong>{totalLinks}</strong>{' '}
+          {url.pathname === '/bookmarks' ? 'bookmark/s' : 'link/s'} were added
+          till today.
           <style jsx>
             {`
               .text-center {
@@ -179,9 +163,7 @@ export default ({ query, page, totalLinks, url, handelSort }) => {
   const sort = (query && query.sort) || -1
   return (
     <div>
-      <div className='info'>
-        {renderInfo(query, totalLinks, url)}
-      </div>
+      <div className='info'>{renderInfo(query, totalLinks, url)}</div>
       <div className='flex'>
         <p className='page-num'>Page: {page}</p>
         <div className='sort'>
