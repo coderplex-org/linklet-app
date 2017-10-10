@@ -7,12 +7,6 @@ module.exports = {
     /* Enable only in Production */
     console.log(dev)
     if (!dev) {
-      // preact
-      console.log('> Using Preact instead of React')
-      config.resolve.alias = {
-        react: 'preact-compat/dist/preact-compat',
-        'react-dom': 'preact-compat/dist/preact-compat'
-      }
       // Service Worker
       config.plugins.push(
         new SWPrecacheWebpackPlugin({
@@ -22,7 +16,7 @@ module.exports = {
           staticFileGlobs: [
             'static/**/*' // Precache all static files by default
           ],
-          importScripts: ['/push-sw.qwddbhjbhnj.js'],
+          importScripts: ['/push-sw.js'],
           forceDelete: true,
           runtimeCaching: [
             {
