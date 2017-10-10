@@ -102,11 +102,9 @@ export default class MLinkCard extends React.Component {
             <span>
               {' '}
               -{' '}
-              {isThisMonth(link.timestamp) ? (
-                distanceInWordsToNow(link.timestamp) + ' ' + 'ago'
-              ) : (
-                format(link.timestamp, 'MMM, Do YYYY')
-              )}
+              {isThisMonth(link.timestamp)
+                ? distanceInWordsToNow(link.timestamp) + ' ' + 'ago'
+                : format(link.timestamp, 'MMM, Do YYYY')}
             </span>
           </div>
           <div className='bookmark'>

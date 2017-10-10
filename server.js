@@ -43,8 +43,8 @@ app
     server.get('/sw.js', (req, res) =>
       res.sendFile(path.resolve('./.next/sw.js'))
     )
-    server.get('/push-sw.qwddbhjbhnj.js', (req, res) =>
-      res.sendFile(path.resolve('./push-sw.qwddbhjbhnj.js'))
+    server.get('/push-sw.js', (req, res) =>
+      res.sendFile(path.resolve('./push-sw.js'))
     )
 
     // tos

@@ -1,6 +1,6 @@
 {
   "name": "linklet-app",
-  "alias": "inklet-app.now.sh",
+  "alias": "linklet-app.now.sh",
   "env": {
     "NODE_ENV": "production"
   }

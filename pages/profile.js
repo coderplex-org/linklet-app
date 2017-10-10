@@ -20,18 +20,15 @@ class Profile extends React.Component {
         />
         <main>
           <p className='info'>
-            {this.props.url.query &&
-            this.props.url.query.next === '/my-links' ? (
-              'Please login to view links added by you!...'
-            ) : this.props.url.query &&
-            this.props.url.query.next === '/submit-link' ? (
-              'Please login to submit new link'
-            ) : this.props.url.query &&
-            this.props.url.query.next === '/bookmarks' ? (
-              'Please login to view links bookmarked by you!..'
-            ) : (
-              ''
-            )}
+            {this.props.url.query && this.props.url.query.next === '/my-links'
+              ? 'Please login to view links added by you!...'
+              : this.props.url.query &&
+                this.props.url.query.next === '/submit-link'
+                ? 'Please login to submit new link'
+                : this.props.url.query &&
+                  this.props.url.query.next === '/bookmarks'
+                  ? 'Please login to view links bookmarked by you!..'
+                  : ''}
           </p>
           {this.props.isAuthenticated ? (
             <div className='actual'>

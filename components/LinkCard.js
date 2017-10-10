@@ -67,11 +67,9 @@ export default class LinkCard extends React.Component {
         <div className='item__footer'>
           <div className='info__stats'>
             <span className='timestamp'>
-              {isThisMonth(link.timestamp) ? (
-                'Added ' + distanceInWordsToNow(link.timestamp) + ' ' + 'ago'
-              ) : (
-                'Added On ' + format(link.timestamp, 'MMM, Do YYYY')
-              )}
+              {isThisMonth(link.timestamp)
+                ? 'Added ' + distanceInWordsToNow(link.timestamp) + ' ' + 'ago'
+                : 'Added On ' + format(link.timestamp, 'MMM, Do YYYY')}
             </span>
             <span className='stats'>
               <a
