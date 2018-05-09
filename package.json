@@ -28,7 +28,8 @@
     "start": "NODE_ENV=production node server",
     "deploy": "npm run lint && now",
     "alias": "now alias",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build"
   },
